@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Horizon Line Film Company" description="Independent film production and distribution. Toronto-based. Genre-forward.">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Horizon Line</h1>
+        <p class="subtitle">Genre-forward independent film production and distribution</p>
+      </div>
+    </section>
+
+    <section class="slate">
+      <div class="container">
+        <h2>Current Slate</h2>
+        <div class="film-grid">
+          <a href="/raptus" class="film-card">
+            <div class="film-badge">Now Streaming</div>
+            <h3>Raptus</h3>
+            <p class="genre">Erotic Thriller / Dark Comedy</p>
+            <p class="cast">Starring Ksenia Solo</p>
+            <p class="logline">A sex bot therapist navigates the space between transgression and tenderness.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>Horizon Line Film Company produces and distributes bold, genre-defying independent cinema. Based in Toronto, we specialize in films that resist easy categorization — work that is too transgressive for festivals, too smart for mainstream, and too compelling to ignore.</p>
+        <p>For distribution inquiries, screener requests, or press: <a href="mailto:info@horizonlinefilm.com">info@horizonlinefilm.com</a></p>
+      </div>
+    </section>
+  </main>
+</Base>
+
+<style>
+  .hero {
+    padding: 120px 0 80px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .hero .subtitle {
+    font-size: 16px;
+    color: #888;
+    letter-spacing: 2px;
+  }
+  .slate {
+    padding: 60px 0;
+  }
+  .slate h2, .about h2 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 32px;
+  }
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .film-card {
+    display: block;
+    padding: 32px;
+    border: 1px solid #222;
+    border-radius: 8px;
+    transition: border-color 0.2s, transform 0.2s;
+    color: #e5e5e5;
+    position: relative;
+  }
+  .film-card:hover {
+    border-color: #d4a574;
+    transform: translateY(-2px);
+    color: #e5e5e5;
+  }
+  .film-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #d4a574;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .film-card h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .film-card .genre {
+    font-size: 13px;
+    color: #d4a574;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .film-card .cast {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  .film-card .logline {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.5;
+  }
+  .about {
+    padding: 60px 0;
+  }
+  .about p {
+    font-size: 16px;
+    color: #aaa;
+    max-width: 640px;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+</style>
