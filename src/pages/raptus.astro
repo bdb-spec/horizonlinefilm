@@ -50,27 +50,31 @@ const film = {
     </section>
 
     <section class="synopsis-section">
-      <h2>Synopsis</h2>
-      <p>{film.synopsis}</p>
+      <div class="inner">
+        <h2>Synopsis</h2>
+        <p>{film.synopsis}</p>
+      </div>
     </section>
 
     <section class="details-section">
-      <div class="details-grid">
-        <div class="detail-block">
-          <h3>Availability</h3>
-          <p>Now streaming on <strong>Apple TV</strong></p>
-          <p class="territory-note">{film.territories_available}</p>
-        </div>
-        <div class="detail-block">
-          <h3>Deliverables</h3>
-          <ul>
-            {film.deliverables.map(d => <li>{d}</li>)}
-          </ul>
-        </div>
-        <div class="detail-block">
-          <h3>Press & Sales</h3>
-          <p>For press materials, screener access, or distribution inquiries:</p>
-          <p><a href="mailto:info@horizonlinefilm.com">info@horizonlinefilm.com</a></p>
+      <div class="inner">
+        <div class="details-grid">
+          <div class="detail-block">
+            <h3>Availability</h3>
+            <p>Now streaming on <strong>Apple TV</strong></p>
+            <p class="territory-note">{film.territories_available}</p>
+          </div>
+          <div class="detail-block">
+            <h3>Deliverables</h3>
+            <ul>
+              {film.deliverables.map(d => <li>{d}</li>)}
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>Press & Sales</h3>
+            <p>For press materials, screener access, or distribution inquiries:</p>
+            <p><a href="mailto:info@horizonlinefilm.com">info@horizonlinefilm.com</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -206,11 +210,13 @@ const film = {
     border-color: #d4a574;
     color: #d4a574;
   }
-  .synopsis-section {
-    padding: 60px 48px;
+  .synopsis-section, .details-section {
     border-top: 1px solid #1a1a1a;
+  }
+  .inner {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 60px 24px;
   }
   .synopsis-section h2, .details-section h3 {
     font-size: 12px;
@@ -225,12 +231,6 @@ const film = {
     color: #bbb;
     max-width: 680px;
     line-height: 1.8;
-  }
-  .details-section {
-    padding: 60px 48px;
-    border-top: 1px solid #1a1a1a;
-    max-width: 1100px;
-    margin: 0 auto;
   }
   .details-grid {
     display: grid;
