@@ -6,35 +6,45 @@ const film = {
   year: 2025,
   runtime: '90 min',
   genres: ['Erotic Thriller', 'Dark Comedy'],
-  director: 'TBD',
+  director: 'Bennet de Brabandere',
   cast: ['Ksenia Solo'],
   logline: 'A sex bot therapist navigates the space between transgression and tenderness. Too transgressive for festivals. Too funny to be horror. Too dark to be comedy.',
   synopsis: `In a near-future where intimacy is outsourced to machines, a therapist specializing in human-robot relationships discovers that the boundaries she draws for her clients are the same ones she can't maintain in her own life. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
+  poster: `${import.meta.env.BASE_URL}/images/raptus-poster.jpg`,
   platforms: ['Apple TV'],
-  deliverables: ['ProRes 422 HQ Master', 'DCP', 'M&E Track', 'Screener'],
+  deliverables: ['ProRes 422 HQ Master', 'DCP', 'M&E Track (Clean & DME)', 'Screener'],
   territories_available: 'Select international territories available. Contact for details.',
 };
 ---
 <Base
   title={`${film.title} (${film.year}) — Horizon Line Film Company`}
   description={film.logline}
+  ogImage={film.poster}
 >
   <main>
     <section class="film-hero">
       <div class="container">
-        <div class="film-meta">
-          <span class="year">{film.year}</span>
-          <span class="separator">·</span>
-          <span class="runtime">{film.runtime}</span>
-          <span class="separator">·</span>
-          {film.genres.map(g => <span class="genre-tag">{g}</span>)}
-        </div>
-        <h1>{film.title}</h1>
-        <p class="starring">Starring <strong>{film.cast.join(', ')}</strong></p>
-        <p class="logline-hero">{film.logline}</p>
-        <div class="cta-row">
-          <a href="mailto:info@horizonlinefilm.com?subject=Screener Request: Raptus" class="btn btn-primary">Request Screener</a>
-          <a href="mailto:info@horizonlinefilm.com?subject=Distribution Inquiry: Raptus" class="btn btn-secondary">Distribution Inquiry</a>
+        <div class="hero-layout">
+          <div class="hero-poster">
+            <img src={film.poster} alt={`${film.title} — Official Poster`} width="400" height="590" loading="eager" />
+          </div>
+          <div class="hero-info">
+            <div class="film-meta">
+              <span class="year">{film.year}</span>
+              <span class="separator">·</span>
+              <span class="runtime">{film.runtime}</span>
+              <span class="separator">·</span>
+              {film.genres.map(g => <span class="genre-tag">{g}</span>)}
+            </div>
+            <h1>{film.title}</h1>
+            <p class="director">Directed by <strong>{film.director}</strong></p>
+            <p class="starring">Starring <strong>{film.cast.join(', ')}</strong></p>
+            <p class="logline-hero">{film.logline}</p>
+            <div class="cta-row">
+              <a href="mailto:info@horizonlinefilm.com?subject=Screener Request: Raptus" class="btn btn-primary">Request Screener</a>
+              <a href="mailto:info@horizonlinefilm.com?subject=Distribution Inquiry: Raptus" class="btn btn-secondary">Distribution Inquiry</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -76,6 +86,7 @@ const film = {
     "name": film.title,
     "datePublished": String(film.year),
     "genre": film.genres,
+    "director": { "@type": "Person", "name": film.director },
     "actor": film.cast.map(name => ({ "@type": "Person", "name": name })),
     "description": film.logline,
     "duration": "PT90M",
@@ -90,11 +101,45 @@ const film = {
 <style>
   .film-hero {
     padding: 100px 0 60px;
-    text-align: center;
+  }
+  .hero-layout {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .hero-poster {
+    flex-shrink: 0;
+  }
+  .hero-poster img {
+    width: 320px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .hero-info {
+    flex: 1;
+    text-align: left;
+  }
+  .director {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .director strong { color: #ccc; }
+  @media (max-width: 720px) {
+    .hero-layout {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-poster img { width: 260px; }
+    .hero-info { text-align: center; }
+    .cta-row { justify-content: center; }
+    .film-meta { justify-content: center; }
   }
   .film-meta {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 12px;
     margin-bottom: 24px;
@@ -113,30 +158,29 @@ const film = {
   }
   .separator { color: #444; }
   .film-hero h1 {
-    font-size: 64px;
+    font-size: 56px;
     font-weight: 300;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .starring {
     font-size: 16px;
     color: #888;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .starring strong { color: #ccc; }
   .logline-hero {
-    font-size: 18px;
+    font-size: 17px;
     color: #aaa;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    max-width: 520px;
+    margin: 0 0 32px;
     line-height: 1.6;
     font-style: italic;
   }
   .cta-row {
     display: flex;
-    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
   }
