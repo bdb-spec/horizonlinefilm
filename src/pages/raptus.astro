@@ -101,6 +101,43 @@ const film = {
       </div>
     </section>
 
+    <section class="press-section">
+      <div class="inner">
+        <h2>Press</h2>
+        <div class="press-grid">
+          <a href="https://filmthreat.com/reviews/raptus/" target="_blank" rel="noopener" class="press-card">
+            <span class="press-source">Film Threat</span>
+            <blockquote>"The last 20 or so minutes are white-knuckle-thrilling in the best way possible."</blockquote>
+            <span class="press-author">Bobby LePire</span>
+          </a>
+          <a href="https://filmblitz.org/raptus-2025/" target="_blank" rel="noopener" class="press-card">
+            <span class="press-source">Film Blitz</span>
+            <blockquote>"Solo and Funk's performances are both excellent, and leave me willing to forgive this its occasional missteps."</blockquote>
+            <span class="press-author">Jim McLennan</span>
+          </a>
+          <a href="https://infinitymagazine.co.uk/raptus-2025-review-by-steve-kirkham/" target="_blank" rel="noopener" class="press-card">
+            <span class="press-source">Infinity Magazine</span>
+            <blockquote>"A film exploring dealing with trauma as much as it is a sci-fi thriller."</blockquote>
+            <span class="press-author">Allan Bryce</span>
+          </a>
+          <a href="https://www.firstshowing.net/2024/promo-trailer-for-android-therapy-thriller-raptus-with-ksenia-solo/" target="_blank" rel="noopener" class="press-card">
+            <span class="press-source">FirstShowing.net</span>
+            <blockquote>"Android therapy thriller — as their relationship intensifies, things spiral dangerously out of control."</blockquote>
+            <span class="press-author">Alex Billington</span>
+          </a>
+        </div>
+        <div class="press-links">
+          <a href="https://www.imdb.com/title/tt23744832/" target="_blank" rel="noopener">IMDb</a>
+          <span class="separator">·</span>
+          <a href="https://letterboxd.com/film/raptus-2025/" target="_blank" rel="noopener">Letterboxd</a>
+          <span class="separator">·</span>
+          <a href="https://www.rottentomatoes.com/m/raptus" target="_blank" rel="noopener">Rotten Tomatoes</a>
+          <span class="separator">·</span>
+          <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.wgku5oq3amiisw4tgfx69w6m" target="_blank" rel="noopener">Apple TV</a>
+        </div>
+      </div>
+    </section>
+
     <section class="details-section">
       <div class="inner">
         <div class="details-grid">
@@ -334,4 +371,51 @@ const film = {
     color: #666;
     font-style: italic;
   }
+  .press-section { border-top: 1px solid #1a1a1a; }
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .press-card {
+    display: block;
+    padding: 28px;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+    color: #e5e5e5;
+  }
+  .press-card:hover {
+    border-color: #d4a574;
+    color: #e5e5e5;
+  }
+  .press-source {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d4a574;
+    margin-bottom: 12px;
+  }
+  .press-card blockquote {
+    font-size: 15px;
+    color: #bbb;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .press-author {
+    font-size: 12px;
+    color: #666;
+  }
+  .press-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .press-links .separator { color: #333; }
 </style>
