@@ -4,16 +4,27 @@ import Base from '../layouts/Base.astro';
 const film = {
   title: 'Raptus',
   year: 2025,
-  runtime: '90 min',
+  runtime: '86 min',
   genres: ['Erotic Thriller', 'Dark Comedy'],
   director: 'Bennet de Brabandere',
-  cast: ['Ksenia Solo'],
-  logline: 'A sex bot therapist navigates the space between transgression and tenderness. Too transgressive for festivals. Too funny to be horror. Too dark to be comedy.',
-  synopsis: `In a near-future where intimacy is outsourced to machines, a therapist specializing in human-robot relationships discovers that the boundaries she draws for her clients are the same ones she can't maintain in her own life. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
+  tagline: 'His controls are at her command.',
+  cast: ['Ksenia Solo', 'Nolan Gerard Funk', 'Zion Forrest Lee', 'Christina Cox', 'Michael Lipka', 'Kerry-Ann James', 'Rachel Sellan'],
+  logline: 'After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion\'s controls will be pushed to the limit, putting her in extreme danger.',
+  synopsis: `After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit, putting her in extreme danger. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
   poster: `${import.meta.env.BASE_URL}/images/raptus-poster.jpg`,
-  platforms: ['Apple TV'],
   deliverables: ['ProRes 422 HQ Master', 'DCP', 'M&E Track (Clean & DME)', 'Screener'],
-  territories_available: 'Select international territories available. Contact for details.',
+  territories_available: 'Select international territories available — contact for details.',
+  // Where to watch — US & UK platforms
+  platforms: [
+    { name: 'Apple TV', region: 'US / UK / CA', icon: '🍎', rent: '#', buy: '#' },
+    { name: 'Amazon Video', region: 'US', icon: '▶', rent: '#', buy: '#' },
+    { name: 'Google Play', region: 'US', icon: '▷', rent: '#', buy: '#' },
+    { name: 'YouTube', region: 'US', icon: '⏵', rent: '#', buy: '#' },
+    { name: 'Fandango at Home', region: 'US', icon: '◉', rent: '#', buy: '#' },
+  ],
+  // Payhip product URL for direct international purchase (set when created)
+  payhipUrl: null, // e.g. 'https://payhip.com/b/XXXXX'
+  letterboxd: 'https://letterboxd.com/film/raptus-2025/',
 };
 ---
 <Base
