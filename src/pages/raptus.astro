@@ -50,31 +50,27 @@ const film = {
     </section>
 
     <section class="synopsis-section">
-      <div class="container">
-        <h2>Synopsis</h2>
-        <p>{film.synopsis}</p>
-      </div>
+      <h2>Synopsis</h2>
+      <p>{film.synopsis}</p>
     </section>
 
     <section class="details-section">
-      <div class="container">
-        <div class="details-grid">
-          <div class="detail-block">
-            <h3>Availability</h3>
-            <p>Now streaming on <strong>Apple TV</strong></p>
-            <p class="territory-note">{film.territories_available}</p>
-          </div>
-          <div class="detail-block">
-            <h3>Deliverables</h3>
-            <ul>
-              {film.deliverables.map(d => <li>{d}</li>)}
-            </ul>
-          </div>
-          <div class="detail-block">
-            <h3>Press & Sales</h3>
-            <p>For press materials, screener access, or distribution inquiries:</p>
-            <p><a href="mailto:info@horizonlinefilm.com">info@horizonlinefilm.com</a></p>
-          </div>
+      <div class="details-grid">
+        <div class="detail-block">
+          <h3>Availability</h3>
+          <p>Now streaming on <strong>Apple TV</strong></p>
+          <p class="territory-note">{film.territories_available}</p>
+        </div>
+        <div class="detail-block">
+          <h3>Deliverables</h3>
+          <ul>
+            {film.deliverables.map(d => <li>{d}</li>)}
+          </ul>
+        </div>
+        <div class="detail-block">
+          <h3>Press & Sales</h3>
+          <p>For press materials, screener access, or distribution inquiries:</p>
+          <p><a href="mailto:info@horizonlinefilm.com">info@horizonlinefilm.com</a></p>
         </div>
       </div>
     </section>
@@ -211,7 +207,7 @@ const film = {
     color: #d4a574;
   }
   .synopsis-section {
-    padding: 60px 24px;
+    padding: 60px 48px;
     border-top: 1px solid #1a1a1a;
     max-width: 1100px;
     margin: 0 auto;
@@ -231,7 +227,7 @@ const film = {
     line-height: 1.8;
   }
   .details-section {
-    padding: 60px 24px;
+    padding: 60px 48px;
     border-top: 1px solid #1a1a1a;
     max-width: 1100px;
     margin: 0 auto;
