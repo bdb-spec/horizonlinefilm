@@ -38,10 +38,10 @@ const { title, description = 'Horizon Line Film Company — Independent film pro
 <body>
   <nav>
     <div class="container">
-      <a href="/" class="logo">Horizon Line</a>
+      <a href={`${import.meta.env.BASE_URL}/`} class="logo">Horizon Line</a>
       <div class="links">
-        <a href="/">Slate</a>
-        <a href="/raptus">Raptus</a>
+        <a href={`${import.meta.env.BASE_URL}/`}>Slate</a>
+        <a href={`${import.meta.env.BASE_URL}/raptus`}>Raptus</a>
         <a href="mailto:info@horizonlinefilm.com">Contact</a>
       </div>
     </div>
