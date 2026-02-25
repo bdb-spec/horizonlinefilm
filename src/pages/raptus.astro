@@ -146,7 +146,18 @@ const film = {
     <!-- CAST & CREW -->
     <section class="cast">
       <div class="section-inner">
-        <h2 class="section-label">Cast</h2>
+        <h2 class="section-label">Cast &amp; Filmmakers</h2>
+        <div class="filmmakers">
+          <div class="filmmaker-card">
+            <p class="cast-name">Bennet de Brabandere</p>
+            <p class="cast-role">Writer / Director / Producer</p>
+          </div>
+          <div class="filmmaker-card">
+            <p class="cast-name">Jeff Stephenson</p>
+            <p class="cast-role">Producer</p>
+          </div>
+        </div>
+        <div class="cast-divider"></div>
         <div class="cast-grid">
           {film.cast.filter(c => c.note || c.role).map(c => (
             <div class="cast-card">
@@ -163,14 +174,15 @@ const film = {
     <section class="contact">
       <div class="section-inner contact-grid">
         <div class="contact-block">
-          <h3>Now Streaming</h3>
-          <p>Available on <strong>Apple TV</strong>, Amazon Video, Google Play, YouTube, and Fandango at Home (US/UK/CA)</p>
-          <p class="territory-note">Select international territories available — contact for details.</p>
+          <h3>Availability</h3>
+          <p>Now on <strong>Apple TV</strong>, Amazon, Google Play, YouTube, Fandango at Home (US/UK/CA)</p>
+          <p class="territory-note">International territories available. North American digital rights sold. Contact for territory-specific availability.</p>
         </div>
         <div class="contact-block">
           <h3>Sales &amp; Press</h3>
           <p>For screener access, press materials, or distribution inquiries:</p>
           <a href="mailto:info@horizonlinefilms.com" class="contact-email">info@horizonlinefilms.com</a>
+          <a href={`${import.meta.env.BASE_URL}press/RAPTUS-Press-Kit.pdf`} class="btn-ghost btn-sm press-kit-link" download>Download Press Kit</a>
         </div>
         <div class="contact-block">
           <h3>Request Screener</h3>
@@ -533,6 +545,24 @@ const film = {
     color: #555;
     margin-top: 4px;
     letter-spacing: 0.5px;
+  }
+  .filmmakers {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 24px;
+  }
+  .filmmaker-card .cast-name {
+    font-size: 18px;
+  }
+  .cast-divider {
+    width: 40px;
+    height: 1px;
+    background: #333;
+    margin-bottom: 32px;
+  }
+  .press-kit-link {
+    display: inline-block;
+    margin-top: 16px;
   }
 
   /* ===== CONTACT ===== */
