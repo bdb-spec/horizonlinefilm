@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const film = {
   title: 'Raptus',
@@ -19,15 +20,15 @@ const film = {
   ],
   logline: 'After a brutal assault, Sarah enters an experimental android-therapy program. Her new companion begins to blur care with control — pushing their bond into dangerous, erotic territory she can\'t shut off.',
   synopsis: `After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit, putting her in extreme danger. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
-  poster: `${import.meta.env.BASE_URL}images/raptus-poster.jpg`,
-  heroBg: `${import.meta.env.BASE_URL}images/hero-bg.jpg`,
+  poster: `${base}/images/raptus-poster.jpg`,
+  heroBg: `${base}/images/hero-bg.jpg`,
   stills: [
-    { src: `${import.meta.env.BASE_URL}images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design' },
-    { src: `${import.meta.env.BASE_URL}images/stills/sarah-closeup.jpg`, alt: 'Sarah — intimate close-up' },
-    { src: `${import.meta.env.BASE_URL}images/stills/control-tablet.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
-    { src: `${import.meta.env.BASE_URL}images/stills/android-arrival.jpg`, alt: 'The android arrives' },
-    { src: `${import.meta.env.BASE_URL}images/stills/sarah-mirror.jpg`, alt: 'Sarah — vulnerability' },
-    { src: `${import.meta.env.BASE_URL}images/stills/sarah-reaching.jpg`, alt: 'Sarah reaching out' },
+    { src: `${base}/images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design' },
+    { src: `${base}/images/stills/sarah-closeup.jpg`, alt: 'Sarah — intimate close-up' },
+    { src: `${base}/images/stills/control-tablet.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
+    { src: `${base}/images/stills/android-arrival.jpg`, alt: 'The android arrives' },
+    { src: `${base}/images/stills/sarah-mirror.jpg`, alt: 'Sarah — vulnerability' },
+    { src: `${base}/images/stills/sarah-reaching.jpg`, alt: 'Sarah reaching out' },
   ],
 };
 ---
@@ -52,7 +53,7 @@ const film = {
         <p class="hero-tagline">{film.tagline}</p>
         <p class="hero-cast">Starring <strong>Ksenia Solo</strong> &amp; <strong>Nolan Gerard Funk</strong></p>
         <div class="hero-cta">
-          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="btn-primary">Watch Now — $2.99</a>
+          <a href={`${base}/raptus/watch`} class="btn-primary">Watch Now — $2.99</a>
           <a href="#trailer" class="btn-ghost">Watch Trailer</a>
         </div>
       </div>
@@ -176,12 +177,12 @@ const film = {
         <h2 class="section-label">Watch Now</h2>
         <p class="watch-cta-text">Stream or own Raptus — no subscription required.</p>
         <div class="watch-cta-prices">
-          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="watch-price-card">
+          <a href={`${base}/raptus/watch`} class="watch-price-card">
             <span class="watch-price-label">Rent</span>
             <span class="watch-price-amount">$2.99</span>
             <span class="watch-price-detail">48-hour streaming</span>
           </a>
-          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="watch-price-card featured">
+          <a href={`${base}/raptus/watch`} class="watch-price-card featured">
             <span class="watch-price-badge">Best Value</span>
             <span class="watch-price-label">Own</span>
             <span class="watch-price-amount">$6.99</span>
@@ -214,11 +215,11 @@ const film = {
           <h3>Sales &amp; Press</h3>
           <p>For press materials or distribution inquiries:</p>
           <a href="mailto:info@horizonlinefilms.com" class="contact-email">info@horizonlinefilms.com</a>
-          <a href={`${import.meta.env.BASE_URL}press/RAPTUS-Press-Kit.pdf`} class="btn-ghost btn-sm press-kit-link" download>Download Press Kit</a>
+          <a href={`${base}/press/RAPTUS-Press-Kit.pdf`} class="btn-ghost btn-sm press-kit-link" download>Download Press Kit</a>
         </div>
         <div class="contact-block">
           <h3>International</h3>
-          <p>Available in <a href={`${import.meta.env.BASE_URL}raptus/fr`}>Français</a>, <a href={`${import.meta.env.BASE_URL}raptus/es`}>Español</a>, <a href={`${import.meta.env.BASE_URL}raptus/ja`}>日本語</a></p>
+          <p>Available in <a href={`${base}/raptus/fr`}>Français</a>, <a href={`${base}/raptus/es`}>Español</a>, <a href={`${base}/raptus/ja`}>日本語</a></p>
         </div>
       </div>
     </section>

@@ -1,17 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Base title="Horizon Line Film Company" description="Independent film production and distribution. Toronto-based. Genre-forward.">
   <main>
     <section class="hero">
       <div class="container">
-        <img src={`${import.meta.env.BASE_URL}/images/logo.png`} alt="Horizon Line Film Company" class="hero-logo" />
+        <img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" class="hero-logo" />
       </div>
     </section>
 
     <section class="now-streaming">
       <div class="container">
-        <a href={`${import.meta.env.BASE_URL}/raptus`} class="film-card">
+        <a href={`${base}/raptus`} class="film-card">
           <div class="film-badge">Now Streaming</div>
           <h3>Raptus</h3>
           <p class="genre">Erotic Thriller / Dark Comedy</p>
