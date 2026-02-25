@@ -52,7 +52,7 @@ const film = {
         <p class="hero-tagline">{film.tagline}</p>
         <p class="hero-cast">Starring <strong>Ksenia Solo</strong> &amp; <strong>Nolan Gerard Funk</strong></p>
         <div class="hero-cta">
-          <a href="mailto:info@horizonlinefilms.com?subject=Screener%20Request%3A%20Raptus" class="btn-primary">Request Screener</a>
+          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="btn-primary">Watch Now — $2.99</a>
           <a href="#trailer" class="btn-ghost">Watch Trailer</a>
         </div>
       </div>
@@ -170,24 +170,55 @@ const film = {
       </div>
     </section>
 
-    <!-- AVAILABILITY & CONTACT -->
+    <!-- WATCH NOW -->
+    <section class="watch-cta">
+      <div class="section-inner watch-cta-inner">
+        <h2 class="section-label">Watch Now</h2>
+        <p class="watch-cta-text">Stream or own Raptus — no subscription required.</p>
+        <div class="watch-cta-prices">
+          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="watch-price-card">
+            <span class="watch-price-label">Rent</span>
+            <span class="watch-price-amount">$2.99</span>
+            <span class="watch-price-detail">48-hour streaming</span>
+          </a>
+          <a href={`${import.meta.env.BASE_URL}raptus/watch`} class="watch-price-card featured">
+            <span class="watch-price-badge">Best Value</span>
+            <span class="watch-price-label">Own</span>
+            <span class="watch-price-amount">$6.99</span>
+            <span class="watch-price-detail">Download &amp; stream forever</span>
+          </a>
+        </div>
+        <p class="watch-also">Also on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> in the US, UK &amp; Germany</p>
+      </div>
+    </section>
+
+    <!-- EMAIL SIGNUP -->
+    <section class="signup-strip">
+      <div class="section-inner signup-strip-inner">
+        <div class="signup-strip-text">
+          <h2 class="section-label">Stay in the Loop</h2>
+          <p>Behind-the-scenes content, early access to new films, and no spam. Ever.</p>
+        </div>
+        <form class="signup-strip-form" id="signup-form">
+          <input type="email" name="email" placeholder="Email address" required />
+          <button type="submit" class="btn-primary btn-sm">Sign Up</button>
+        </form>
+        <p class="signup-strip-success" id="signup-success" style="display:none;">You're in — check your inbox.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="contact">
       <div class="section-inner contact-grid">
         <div class="contact-block">
-          <h3>Availability</h3>
-          <p>Now on <strong>Apple TV</strong>, Amazon, Google Play, YouTube, Fandango at Home (US/UK/CA)</p>
-          <p class="territory-note">International territories available. North American digital rights sold. Contact for territory-specific availability.</p>
-        </div>
-        <div class="contact-block">
           <h3>Sales &amp; Press</h3>
-          <p>For screener access, press materials, or distribution inquiries:</p>
+          <p>For press materials or distribution inquiries:</p>
           <a href="mailto:info@horizonlinefilms.com" class="contact-email">info@horizonlinefilms.com</a>
           <a href={`${import.meta.env.BASE_URL}press/RAPTUS-Press-Kit.pdf`} class="btn-ghost btn-sm press-kit-link" download>Download Press Kit</a>
         </div>
         <div class="contact-block">
-          <h3>Request Screener</h3>
-          <p>Secure screener links available for qualified buyers, programmers, and press.</p>
-          <a href="mailto:info@horizonlinefilms.com?subject=Screener%20Request%3A%20Raptus" class="btn-primary btn-sm">Request Access</a>
+          <h3>International</h3>
+          <p>Available in <a href={`${import.meta.env.BASE_URL}raptus/fr`}>Français</a>, <a href={`${import.meta.env.BASE_URL}raptus/es`}>Español</a>, <a href={`${import.meta.env.BASE_URL}raptus/ja`}>日本語</a></p>
         </div>
       </div>
     </section>
@@ -606,6 +637,124 @@ const film = {
     font-style: italic;
   }
 
+  /* ===== WATCH CTA ===== */
+  .watch-cta {
+    border-top: 1px solid #1a1816;
+    background: #0d0b09;
+  }
+  .watch-cta-inner {
+    text-align: center;
+  }
+  .watch-cta-text {
+    font-size: 1.1rem;
+    color: #999;
+    margin-bottom: 40px;
+  }
+  .watch-cta-prices {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .watch-price-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    padding: 32px 28px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    transition: border-color 0.3s, transform 0.3s;
+    text-decoration: none;
+  }
+  .watch-price-card:hover {
+    border-color: rgba(212,165,116,0.4);
+    transform: translateY(-2px);
+    color: #e5e5e5;
+  }
+  .watch-price-card.featured {
+    border-color: rgba(212,165,116,0.2);
+    background: rgba(212,165,116,0.03);
+  }
+  .watch-price-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: #d4a574;
+    color: #0a0908;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  .watch-price-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .watch-price-amount {
+    font-size: 2.2rem;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .watch-price-detail {
+    font-size: 12px;
+    color: #555;
+  }
+  .watch-also {
+    font-size: 13px;
+    color: #444;
+  }
+  .watch-also a { color: #d4a574; }
+
+  /* ===== SIGNUP STRIP ===== */
+  .signup-strip {
+    border-top: 1px solid #1a1816;
+  }
+  .signup-strip-inner {
+    text-align: center;
+  }
+  .signup-strip-text {
+    margin-bottom: 24px;
+  }
+  .signup-strip-text p {
+    font-size: 1rem;
+    color: #888;
+  }
+  .signup-strip-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .signup-strip-form input {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #e5e5e5;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .signup-strip-form input:focus {
+    border-color: #d4a574;
+  }
+  .signup-strip-form input::placeholder { color: #555; }
+  .signup-strip-success {
+    color: #d4a574;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
     .hero h1 { letter-spacing: 0.08em; }
@@ -617,5 +766,34 @@ const film = {
     .story-poster { display: none; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
+    .watch-cta-prices { flex-direction: column; align-items: center; }
+    .signup-strip-form { flex-direction: column; }
   }
 </style>
+
+<script is:inline>
+  document.getElementById('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const data = {
+      email: form.email.value,
+      source: 'website',
+      source_detail: 'raptus_page_strip',
+      territory: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+      language: navigator.language?.slice(0, 2) || 'en'
+    };
+    try {
+      await fetch('https://axuaxxvnbyngxupcikmi.supabase.co/rest/v1/uil_subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF4dWF4eHZuYnluZ3h1cGNpa21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgwODc3MjEsImV4cCI6MjA4MzY2MzcyMX0.Qyx_sehtSbnzr7NnQ0a-ziGBwABcLl9tUs6LoCk_xp0',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(data)
+      });
+    } catch {}
+    form.style.display = 'none';
+    document.getElementById('signup-success').style.display = 'block';
+  });
+</script>
