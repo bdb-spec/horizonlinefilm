@@ -9,26 +9,16 @@ import Base from '../layouts/Base.astro';
       </div>
     </section>
 
-    <section class="slate">
+    <section class="now-streaming">
       <div class="container">
-        <h2>Current Slate</h2>
-        <div class="film-grid">
-          <a href={`${import.meta.env.BASE_URL}/raptus`} class="film-card">
-            <div class="film-badge">Now Streaming</div>
-            <h3>Raptus</h3>
-            <p class="genre">Erotic Thriller / Dark Comedy</p>
-            <p class="cast">Starring Ksenia Solo</p>
-            <p class="logline">A sex bot therapist navigates the space between transgression and tenderness.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about">
-      <div class="container">
-        <h2>About</h2>
-        <p>Horizon Line Film Company produces and distributes bold, genre-defying independent cinema. Based in Toronto, we specialize in films that resist easy categorization — work that is too transgressive for festivals, too smart for mainstream, and too compelling to ignore.</p>
-        <p>For distribution inquiries, screener requests, or press: <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
+        <a href={`${import.meta.env.BASE_URL}/raptus`} class="film-card">
+          <div class="film-badge">Now Streaming</div>
+          <h3>Raptus</h3>
+          <p class="genre">Erotic Thriller / Dark Comedy</p>
+          <p class="cast">Starring Ksenia Solo</p>
+          <p class="logline">A sex bot therapist navigates the space between transgression and tenderness.</p>
+        </a>
+        <p class="slate-note">Full slate available by request: <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
       </div>
     </section>
   </main>
@@ -58,21 +48,11 @@ import Base from '../layouts/Base.astro';
     color: #888;
     letter-spacing: 2px;
   }
-  .slate {
-    padding: 60px 0;
+  .now-streaming {
+    padding: 60px 0 80px;
   }
-  .slate h2, .about h2 {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: 32px;
-  }
-  .film-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+  .now-streaming .container {
+    max-width: 480px;
   }
   .film-card {
     display: block;
@@ -123,14 +103,10 @@ import Base from '../layouts/Base.astro';
     color: #aaa;
     line-height: 1.5;
   }
-  .about {
-    padding: 60px 0;
-  }
-  .about p {
-    font-size: 16px;
-    color: #aaa;
-    max-width: 640px;
-    margin-bottom: 16px;
-    line-height: 1.7;
+  .slate-note {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #555;
+    letter-spacing: 0.5px;
   }
 </style>
