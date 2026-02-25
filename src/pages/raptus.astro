@@ -23,12 +23,13 @@ const film = {
   poster: `${base}/images/raptus-poster.jpg`,
   heroBg: `${base}/images/hero-bg.jpg`,
   stills: [
-    { src: `${base}/images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design' },
-    { src: `${base}/images/stills/sarah-closeup.jpg`, alt: 'Sarah — intimate close-up' },
-    { src: `${base}/images/stills/control-tablet.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
-    { src: `${base}/images/stills/android-arrival.jpg`, alt: 'The android arrives' },
-    { src: `${base}/images/stills/sarah-mirror.jpg`, alt: 'Sarah — vulnerability' },
-    { src: `${base}/images/stills/sarah-reaching.jpg`, alt: 'Sarah reaching out' },
+    { src: `${base}/images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design', wide: true },
+    { src: `${base}/images/stills/android-arrival.jpg`, alt: 'Raptus standing in the entry' },
+    { src: `${base}/images/stills/raptus-closeup.jpg`, alt: 'Raptus — eerily perfect' },
+    { src: `${base}/images/stills/control-tablet-new.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
+    { src: `${base}/images/stills/raptus-stairs.jpg`, alt: 'Raptus descending the stairs' },
+    { src: `${base}/images/stills/sarah-stun-gun.jpg`, alt: 'Sarah fights back' },
+    { src: `${base}/images/stills/raptus-shower.jpg`, alt: 'Raptus — blue-lit shower scene' },
   ],
 };
 ---
@@ -136,7 +137,7 @@ const film = {
         <h2 class="section-label">Gallery</h2>
         <div class="gallery-grid">
           {film.stills.map(s => (
-            <div class="gallery-item">
+            <div class={`gallery-item${s.wide ? ' wide' : ''}`}>
               <img src={s.src} alt={s.alt} loading="lazy" />
             </div>
           ))}
@@ -548,6 +549,9 @@ const film = {
     object-fit: cover;
     transition: transform 0.4s ease;
   }
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
   .gallery-item:hover img {
     transform: scale(1.05);
   }
@@ -766,6 +770,7 @@ const film = {
     .story-layout { flex-direction: column; }
     .story-poster { display: none; }
     .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.wide { grid-column: span 1; }
     .contact-grid { grid-template-columns: 1fr; }
     .watch-cta-prices { flex-direction: column; align-items: center; }
     .signup-strip-form { flex-direction: column; }
