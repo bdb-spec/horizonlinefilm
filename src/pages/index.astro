@@ -5,21 +5,23 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <Base title="Horizon Line Film Company" description="Independent film production and distribution. Toronto-based. Genre-forward.">
   <main>
     <section class="hero">
-      <div class="container">
-        <img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" class="hero-logo" />
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" class="hero-logo" width="630" height="120" />
       </div>
     </section>
 
     <section class="now-streaming">
       <div class="container">
-        <a href={`${base}/raptus`} class="film-card">
+        <a href={`${base}/raptus`} class="film-card" aria-label="Watch Raptus — Now Streaming">
           <div class="film-badge">Now Streaming</div>
           <h3>Raptus</h3>
           <p class="genre">Erotic Thriller / Dark Comedy</p>
-          <p class="cast">Starring Ksenia Solo</p>
+          <p class="cast">Starring Ksenia Solo &amp; Nolan Gerard Funk</p>
           <p class="logline">A sex bot therapist navigates the space between transgression and tenderness.</p>
+          <span class="film-cta">Watch Film &rarr;</span>
         </a>
-        <p class="slate-note">Full slate available by request: <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
+        <p class="slate-note">Full slate available by request &mdash; <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
       </div>
     </section>
   </main>
@@ -27,87 +29,140 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <style>
   .hero {
-    padding: 100px 0 80px;
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('/horizonlinefilm/images/hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.15;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, #0a0908 0%, transparent 30%, transparent 70%, #0a0908 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
     text-align: center;
+    padding: 120px 24px 60px;
   }
   .hero-logo {
-    width: 630px;
+    width: min(630px, 80vw);
     height: auto;
-    margin-bottom: 32px;
     opacity: 0.9;
+    animation: fadeIn 1.2s ease;
   }
-  .hero h1 {
-    font-size: 48px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 16px;
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 0.9; transform: translateY(0); }
   }
-  .hero .subtitle {
-    font-size: 16px;
-    color: #888;
-    letter-spacing: 2px;
-  }
+
   .now-streaming {
-    padding: 60px 0 80px;
+    padding: 40px 0 100px;
   }
   .now-streaming .container {
-    max-width: 480px;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 0 24px;
   }
   .film-card {
     display: block;
-    padding: 32px;
-    border: 1px solid #222;
+    padding: 36px 32px;
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
-    transition: border-color 0.2s, transform 0.2s;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     color: #e5e5e5;
     position: relative;
+    background: rgba(255,255,255,0.02);
   }
   .film-card:hover {
-    border-color: #d4a574;
-    transform: translateY(-2px);
+    border-color: rgba(212, 165, 116, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
     color: #e5e5e5;
+  }
+  .film-card:focus-visible {
+    outline: 2px solid #d4a574;
+    outline-offset: 4px;
   }
   .film-badge {
     position: absolute;
     top: 12px;
     right: 12px;
     background: #d4a574;
-    color: #0a0a0a;
+    color: #0a0908;
     font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
+    padding: 4px 12px;
+    border-radius: 3px;
   }
   .film-card h3 {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 200;
+    letter-spacing: 6px;
+    text-transform: uppercase;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   .film-card .genre {
-    font-size: 13px;
+    font-size: 12px;
     color: #d4a574;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
   }
   .film-card .cast {
     font-size: 13px;
-    color: #888;
-    margin-bottom: 12px;
+    color: #777;
+    margin-bottom: 16px;
   }
   .film-card .logline {
     font-size: 15px;
-    color: #aaa;
-    line-height: 1.5;
+    color: #999;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .film-cta {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d4a574;
+    transition: color 0.2s;
+  }
+  .film-card:hover .film-cta {
+    color: #e8c49a;
   }
   .slate-note {
-    margin-top: 24px;
+    margin-top: 32px;
     font-size: 13px;
-    color: #555;
-    letter-spacing: 0.5px;
+    color: #444;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+  .slate-note a {
+    color: #666;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .slate-note a:hover {
+    color: #d4a574;
+    border-color: rgba(212,165,116,0.3);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content { padding: 100px 24px 40px; }
+    .film-card h3 { font-size: 24px; letter-spacing: 4px; }
   }
 </style>

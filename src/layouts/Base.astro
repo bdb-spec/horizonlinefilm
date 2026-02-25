@@ -30,6 +30,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: #d4a574; text-decoration: none; transition: color 0.2s; }
     a:hover { color: #e8c49a; }
+    a:focus-visible { outline: 2px solid #d4a574; outline-offset: 2px; }
     img { max-width: 100%; height: auto; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     nav {
@@ -46,32 +47,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     }
     nav .logo:hover { color: #fff; }
     nav .logo img { height: 28px; width: auto; opacity: 0.8; }
-    nav .links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    nav .links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; align-items: center; }
     nav .links a { color: rgba(255,255,255,0.4); font-weight: 500; }
     nav .links a:hover { color: #d4a574; }
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      margin-top: 12px;
-      background: #151513;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 6px;
-      padding: 8px 0;
-      min-width: 160px;
-      z-index: 20;
-    }
-    .dropdown:hover .dropdown-menu { display: block; }
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-      font-size: 11px;
-      letter-spacing: 1px;
-      white-space: nowrap;
-    }
-    .dropdown-menu a:hover { background: rgba(255,255,255,0.04); }
     footer {
       padding: 48px 24px;
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -85,14 +63,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <body>
   <nav>
     <div class="container">
-      <a href={`${base}/`} class="logo"><img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" /> Horizon Line</a>
+      <a href={`${base}/`} class="logo"><img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" width="112" height="28" /> Horizon Line</a>
       <div class="links">
-        <div class="dropdown">
-          <a href={`${base}/raptus`} class="dropdown-toggle">Watch</a>
-          <div class="dropdown-menu">
-            <a href={`${base}/raptus`}>Raptus (2025)</a>
-          </div>
-        </div>
+        <a href={`${base}/raptus`}>Watch</a>
         <a href="mailto:info@horizonlinefilms.com">Contact</a>
       </div>
     </div>
