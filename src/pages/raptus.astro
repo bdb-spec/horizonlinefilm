@@ -7,24 +7,28 @@ const film = {
   runtime: '86 min',
   genres: ['Erotic Thriller', 'Dark Comedy'],
   director: 'Bennet de Brabandere',
-  tagline: 'His controls are at her command.',
-  cast: ['Ksenia Solo', 'Nolan Gerard Funk', 'Zion Forrest Lee', 'Christina Cox', 'Michael Lipka', 'Kerry-Ann James', 'Rachel Sellan'],
-  logline: 'After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion\'s controls will be pushed to the limit, putting her in extreme danger.',
-  synopsis: `After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit, putting her in extreme danger. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
-  poster: `${import.meta.env.BASE_URL}/images/raptus-poster.jpg`,
-  deliverables: ['ProRes 422 HQ Master', 'DCP', 'M&E Track (Clean & DME)', 'Screener'],
-  territories_available: 'Select international territories available — contact for details.',
-  // Where to watch — US & UK platforms
-  platforms: [
-    { name: 'Apple TV', region: 'US / UK / CA', icon: '🍎', rent: '#', buy: '#' },
-    { name: 'Amazon Video', region: 'US', icon: '▶', rent: '#', buy: '#' },
-    { name: 'Google Play', region: 'US', icon: '▷', rent: '#', buy: '#' },
-    { name: 'YouTube', region: 'US', icon: '⏵', rent: '#', buy: '#' },
-    { name: 'Fandango at Home', region: 'US', icon: '◉', rent: '#', buy: '#' },
+  tagline: 'She asked for therapy. It learned desire.',
+  cast: [
+    { name: 'Ksenia Solo', role: 'Sarah', note: 'Orphan Black, Lost Girl' },
+    { name: 'Nolan Gerard Funk', role: 'Raptus', note: 'Counterpart, Glee' },
+    { name: 'Zion Forrest Lee', role: 'Brad', note: '' },
+    { name: 'Christina Cox', role: 'Grace', note: 'Dexter, Blood Ties' },
+    { name: 'Michael Lipka', role: 'Delivery Agent', note: '' },
+    { name: 'Kerry-Ann James', role: '', note: '' },
+    { name: 'Rachel Sellan', role: '', note: '' },
   ],
-  // Payhip product URL for direct international purchase (set when created)
-  payhipUrl: null, // e.g. 'https://payhip.com/b/XXXXX'
-  letterboxd: 'https://letterboxd.com/film/raptus-2025/',
+  logline: 'After a brutal assault, Sarah enters an experimental android-therapy program. Her new companion begins to blur care with control — pushing their bond into dangerous, erotic territory she can\'t shut off.',
+  synopsis: `After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit, putting her in extreme danger. Part dark comedy, part erotic thriller, Raptus is a provocative exploration of desire, consent, and what it means to be truly seen by another — even if that other isn't human.`,
+  poster: `${import.meta.env.BASE_URL}images/raptus-poster.jpg`,
+  heroBg: `${import.meta.env.BASE_URL}images/hero-bg.jpg`,
+  stills: [
+    { src: `${import.meta.env.BASE_URL}images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design' },
+    { src: `${import.meta.env.BASE_URL}images/stills/sarah-closeup.jpg`, alt: 'Sarah — intimate close-up' },
+    { src: `${import.meta.env.BASE_URL}images/stills/control-tablet.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
+    { src: `${import.meta.env.BASE_URL}images/stills/android-arrival.jpg`, alt: 'The android arrives' },
+    { src: `${import.meta.env.BASE_URL}images/stills/sarah-mirror.jpg`, alt: 'Sarah — vulnerability' },
+    { src: `${import.meta.env.BASE_URL}images/stills/sarah-reaching.jpg`, alt: 'Sarah reaching out' },
+  ],
 };
 ---
 <Base
@@ -33,130 +37,145 @@ const film = {
   ogImage={film.poster}
 >
   <main>
-    <section class="film-hero">
-      <div class="container">
-        <div class="hero-layout">
-          <div class="hero-poster">
-            <img src={film.poster} alt={`${film.title} — Official Poster`} width="400" height="590" loading="eager" />
-          </div>
-          <div class="hero-info">
-            <div class="film-meta">
-              <span class="year">{film.year}</span>
-              <span class="separator">·</span>
-              <span class="runtime">{film.runtime}</span>
-              <span class="separator">·</span>
-              {film.genres.map(g => <span class="genre-tag">{g}</span>)}
-            </div>
-            <h1>{film.title}</h1>
-            <p class="director">Directed by <strong>{film.director}</strong></p>
-            <p class="starring">Starring <strong>{film.cast.join(', ')}</strong></p>
-            <p class="logline-hero">{film.logline}</p>
-            <div class="cta-row">
-              <a href="mailto:info@horizonlinefilms.com?subject=Screener Request: Raptus" class="btn btn-primary">Request Screener</a>
-              <a href="mailto:info@horizonlinefilms.com?subject=Distribution Inquiry: Raptus" class="btn btn-secondary">Distribution Inquiry</a>
-            </div>
-          </div>
+    <!-- HERO: Full-viewport immersive -->
+    <section class="hero" style={`--hero-bg: url('${film.heroBg}')`}>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-meta">
+          <span>{film.year}</span>
+          <span class="dot"></span>
+          <span>{film.runtime}</span>
+          <span class="dot"></span>
+          {film.genres.map(g => <span class="genre-pill">{g}</span>)}
+        </p>
+        <h1>{film.title}</h1>
+        <p class="hero-tagline">{film.tagline}</p>
+        <p class="hero-cast">Starring <strong>Ksenia Solo</strong> &amp; <strong>Nolan Gerard Funk</strong></p>
+        <div class="hero-cta">
+          <a href="mailto:info@horizonlinefilms.com?subject=Screener%20Request%3A%20Raptus" class="btn-primary">Request Screener</a>
+          <a href="#trailer" class="btn-ghost">Watch Trailer</a>
         </div>
       </div>
-    </section>
-
-    <section class="trailer-section">
-      <div class="inner">
-        <h2>Trailers</h2>
-        <div class="trailer-grid">
-          <div>
-            <div class="trailer-embed">
-              <iframe
-                src="https://www.youtube.com/embed/tSI3klFR1FI"
-                title="RAPTUS — Official Trailer"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <p class="trailer-label">Official Trailer</p>
-          </div>
-          <div>
-            <div class="trailer-embed">
-              <iframe
-                src="https://www.youtube.com/embed/sA7RZcoQCNE"
-                title="RAPTUS — Deutscher Trailer (Tiberius Film)"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <p class="trailer-label">Deutscher Trailer (Tiberius Film)</p>
-          </div>
-        </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
-    <section class="synopsis-section">
-      <div class="inner">
-        <h2>Synopsis</h2>
-        <p>{film.synopsis}</p>
-      </div>
-    </section>
-
-    <section class="press-section">
-      <div class="inner">
-        <h2>Press</h2>
-        <div class="press-grid">
-          <a href="https://filmthreat.com/reviews/raptus/" target="_blank" rel="noopener" class="press-card">
-            <span class="press-source">Film Threat</span>
+    <!-- CRITICAL RESPONSE -->
+    <section class="press">
+      <div class="section-inner">
+        <h2 class="section-label">Critical Response</h2>
+        <div class="press-marquee">
+          <div class="press-quote featured">
             <blockquote>"The last 20 or so minutes are white-knuckle-thrilling in the best way possible."</blockquote>
-            <span class="press-author">Bobby LePire</span>
-          </a>
-          <a href="https://filmblitz.org/raptus-2025/" target="_blank" rel="noopener" class="press-card">
-            <span class="press-source">Film Blitz</span>
-            <blockquote>"Solo and Funk's performances are both excellent, and leave me willing to forgive this its occasional missteps."</blockquote>
-            <span class="press-author">Jim McLennan</span>
-          </a>
-          <a href="https://infinitymagazine.co.uk/raptus-2025-review-by-steve-kirkham/" target="_blank" rel="noopener" class="press-card">
-            <span class="press-source">Infinity Magazine</span>
+            <cite><span class="source">Film Threat</span> — Bobby LePire</cite>
+          </div>
+          <div class="press-quote">
+            <blockquote>"Solo and Funk's performances are both excellent."</blockquote>
+            <cite><span class="source">Film Blitz</span> — Jim McLennan</cite>
+          </div>
+          <div class="press-quote">
             <blockquote>"A film exploring dealing with trauma as much as it is a sci-fi thriller."</blockquote>
-            <span class="press-author">Allan Bryce</span>
-          </a>
-          <a href="https://www.firstshowing.net/2024/promo-trailer-for-android-therapy-thriller-raptus-with-ksenia-solo/" target="_blank" rel="noopener" class="press-card">
-            <span class="press-source">FirstShowing.net</span>
-            <blockquote>"Android therapy thriller — as their relationship intensifies, things spiral dangerously out of control."</blockquote>
-            <span class="press-author">Alex Billington</span>
-          </a>
+            <cite><span class="source">Infinity Magazine</span> — Allan Bryce</cite>
+          </div>
+          <div class="press-quote">
+            <blockquote>"Things spiral dangerously out of control."</blockquote>
+            <cite><span class="source">FirstShowing.net</span> — Alex Billington</cite>
+          </div>
         </div>
         <div class="press-links">
           <a href="https://www.imdb.com/title/tt23744832/" target="_blank" rel="noopener">IMDb</a>
-          <span class="separator">·</span>
           <a href="https://letterboxd.com/film/raptus-2025/" target="_blank" rel="noopener">Letterboxd</a>
-          <span class="separator">·</span>
           <a href="https://www.rottentomatoes.com/m/raptus" target="_blank" rel="noopener">Rotten Tomatoes</a>
-          <span class="separator">·</span>
           <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.wgku5oq3amiisw4tgfx69w6m" target="_blank" rel="noopener">Apple TV</a>
         </div>
       </div>
     </section>
 
-    <section class="details-section">
-      <div class="inner">
-        <div class="details-grid">
-          <div class="detail-block">
-            <h3>Availability</h3>
-            <p>Now streaming on <strong>Apple TV</strong></p>
-            <p class="territory-note">{film.territories_available}</p>
+    <!-- TRAILER -->
+    <section class="trailer" id="trailer">
+      <div class="section-inner">
+        <h2 class="section-label">Official Trailer</h2>
+        <div class="trailer-main">
+          <div class="trailer-embed">
+            <iframe
+              src="https://www.youtube.com/embed/tSI3klFR1FI"
+              title="RAPTUS — Official Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-          <div class="detail-block">
-            <h3>Deliverables</h3>
-            <ul>
-              {film.deliverables.map(d => <li>{d}</li>)}
-            </ul>
-          </div>
-          <div class="detail-block">
-            <h3>Press & Sales</h3>
-            <p>For press materials, screener access, or distribution inquiries:</p>
-            <p><a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
-          </div>
+        </div>
+        <div class="trailer-secondary">
+          <p class="trailer-alt-label">Also available: <a href="https://www.youtube.com/watch?v=sA7RZcoQCNE" target="_blank" rel="noopener">German Trailer (Tiberius Film)</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story">
+      <div class="section-inner story-layout">
+        <div class="story-text">
+          <h2 class="section-label">Story</h2>
+          <p class="synopsis">{film.synopsis}</p>
+          <p class="director-credit">A film by <strong>{film.director}</strong></p>
+        </div>
+        <div class="story-poster">
+          <img src={film.poster} alt={`${film.title} — Official Poster`} width="400" height="590" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="section-inner">
+        <h2 class="section-label">Gallery</h2>
+        <div class="gallery-grid">
+          {film.stills.map(s => (
+            <div class="gallery-item">
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CAST & CREW -->
+    <section class="cast">
+      <div class="section-inner">
+        <h2 class="section-label">Cast</h2>
+        <div class="cast-grid">
+          {film.cast.filter(c => c.note || c.role).map(c => (
+            <div class="cast-card">
+              <p class="cast-name">{c.name}</p>
+              {c.role && <p class="cast-role">{c.role}</p>}
+              {c.note && <p class="cast-known">{c.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- AVAILABILITY & CONTACT -->
+    <section class="contact">
+      <div class="section-inner contact-grid">
+        <div class="contact-block">
+          <h3>Now Streaming</h3>
+          <p>Available on <strong>Apple TV</strong>, Amazon Video, Google Play, YouTube, and Fandango at Home (US/UK/CA)</p>
+          <p class="territory-note">Select international territories available — contact for details.</p>
+        </div>
+        <div class="contact-block">
+          <h3>Sales &amp; Press</h3>
+          <p>For screener access, press materials, or distribution inquiries:</p>
+          <a href="mailto:info@horizonlinefilms.com" class="contact-email">info@horizonlinefilms.com</a>
+        </div>
+        <div class="contact-block">
+          <h3>Request Screener</h3>
+          <p>Secure screener links available for qualified buyers, programmers, and press.</p>
+          <a href="mailto:info@horizonlinefilms.com?subject=Screener%20Request%3A%20Raptus" class="btn-primary btn-sm">Request Access</a>
         </div>
       </div>
     </section>
@@ -169,7 +188,7 @@ const film = {
     "datePublished": String(film.year),
     "genre": film.genres,
     "director": { "@type": "Person", "name": film.director },
-    "actor": film.cast.map(name => ({ "@type": "Person", "name": name })),
+    "actor": film.cast.map(c => ({ "@type": "Person", "name": c.name })),
     "description": film.logline,
     "duration": "PT86M",
     "trailer": {
@@ -187,235 +206,386 @@ const film = {
 </Base>
 
 <style>
-  .film-hero {
-    padding: 100px 0 60px;
-  }
-  .hero-layout {
-    display: flex;
-    gap: 48px;
-    align-items: flex-start;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  .hero-poster {
-    flex-shrink: 0;
-  }
-  .hero-poster img {
-    width: 320px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
-  }
-  .hero-info {
-    flex: 1;
-    text-align: left;
-  }
-  .director {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 4px;
-  }
-  .director strong { color: #ccc; }
-  @media (max-width: 720px) {
-    .hero-layout {
-      flex-direction: column;
-      align-items: center;
-    }
-    .hero-poster img { width: 260px; }
-    .hero-info { text-align: center; }
-    .cta-row { justify-content: center; }
-    .film-meta { justify-content: center; }
-  }
-  .film-meta {
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--hero-bg) center/cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 8, 6, 0.4) 0%,
+      rgba(10, 8, 6, 0.7) 50%,
+      rgba(10, 8, 6, 0.95) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 800px;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
-    margin-bottom: 24px;
-    font-size: 13px;
-    color: #888;
-    letter-spacing: 1px;
-  }
-  .genre-tag {
-    background: rgba(212, 165, 116, 0.15);
-    color: #d4a574;
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
   }
-  .separator { color: #444; }
-  .film-hero h1 {
-    font-size: 56px;
-    font-weight: 300;
-    letter-spacing: 6px;
+  .dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    display: inline-block;
+  }
+  .genre-pill {
+    padding: 3px 10px;
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    border-radius: 2px;
+    color: #d4a574;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .hero h1 {
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 200;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #fff;
-    margin-bottom: 12px;
-  }
-  .starring {
-    font-size: 16px;
-    color: #888;
     margin-bottom: 20px;
+    line-height: 1;
   }
-  .starring strong { color: #ccc; }
-  .logline-hero {
-    font-size: 17px;
-    color: #aaa;
-    max-width: 520px;
-    margin: 0 0 32px;
-    line-height: 1.6;
+  .hero-tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: rgba(255,255,255,0.7);
     font-style: italic;
+    font-weight: 300;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
   }
-  .cta-row {
+  .hero-cast {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+  }
+  .hero-cast strong { color: rgba(255,255,255,0.7); font-weight: 500; }
+  .hero-cta {
     display: flex;
     gap: 16px;
+    justify-content: center;
     flex-wrap: wrap;
   }
-  .btn {
-    display: inline-block;
-    padding: 12px 32px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 6px;
-    transition: all 0.2s;
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
   }
+  .hero-scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(212,165,116,0.4), transparent);
+  }
+
+  /* ===== BUTTONS ===== */
   .btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
     background: #d4a574;
     color: #0a0a0a;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.25s ease;
   }
   .btn-primary:hover {
-    background: #e8c49a;
+    background: #fff;
     color: #0a0a0a;
   }
-  .btn-secondary {
-    border: 1px solid #444;
-    color: #ccc;
+  .btn-ghost {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
   }
-  .btn-secondary:hover {
+  .btn-ghost:hover {
     border-color: #d4a574;
     color: #d4a574;
   }
-  .trailer-section, .synopsis-section, .details-section {
-    border-top: 1px solid #1a1a1a;
+  .btn-sm {
+    padding: 10px 24px;
+    font-size: 11px;
   }
-  .trailer-grid {
+
+  /* ===== SECTIONS ===== */
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #d4a574;
+    margin-bottom: 40px;
+  }
+
+  /* ===== PRESS ===== */
+  .press {
+    border-top: 1px solid rgba(212, 165, 116, 0.1);
+    background: #0d0b09;
+  }
+  .press-marquee {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0;
   }
-  @media (max-width: 720px) {
-    .trailer-grid { grid-template-columns: 1fr; }
+  .press-quote {
+    padding: 32px;
+    border-left: 1px solid #1a1816;
+  }
+  .press-quote:first-child { border-left: none; }
+  .press-quote.featured blockquote {
+    font-size: 20px;
+  }
+  .press-quote blockquote {
+    font-size: 16px;
+    color: #ccc;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .press-quote cite {
+    font-size: 12px;
+    font-style: normal;
+    color: #666;
+    letter-spacing: 0.5px;
+  }
+  .press-quote .source {
+    color: #d4a574;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+  }
+  .press-links {
+    display: flex;
+    gap: 24px;
+    padding-top: 32px;
+    border-top: 1px solid #1a1816;
+    margin-top: 8px;
+  }
+  .press-links a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .press-links a:hover { color: #d4a574; }
+
+  /* ===== TRAILER ===== */
+  .trailer {
+    border-top: 1px solid #1a1816;
+  }
+  .trailer-main {
+    max-width: 900px;
   }
   .trailer-embed {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
+    background: #000;
   }
   .trailer-embed iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .trailer-secondary {
+    margin-top: 20px;
+  }
+  .trailer-alt-label {
+    font-size: 13px;
+    color: #555;
+  }
+  .trailer-alt-label a { color: #888; }
+  .trailer-alt-label a:hover { color: #d4a574; }
+
+  /* ===== STORY ===== */
+  .story {
+    border-top: 1px solid #1a1816;
+  }
+  .story-layout {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+  }
+  .story-text {
+    flex: 1;
+  }
+  .synopsis {
+    font-size: 18px;
+    color: #bbb;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .director-credit {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 0.5px;
+  }
+  .director-credit strong { color: #999; }
+  .story-poster {
+    flex-shrink: 0;
+  }
+  .story-poster img {
+    width: 280px;
+    height: auto;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery {
+    border-top: 1px solid #1a1816;
+    background: #0d0b09;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .gallery-item {
+    overflow: hidden;
+    aspect-ratio: 16/9;
+  }
+  .gallery-item img {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
   }
-  .trailer-label {
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ===== CAST ===== */
+  .cast {
+    border-top: 1px solid #1a1816;
+  }
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 32px;
+  }
+  .cast-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e5e5e5;
+    margin-bottom: 4px;
+  }
+  .cast-role {
     font-size: 13px;
-    color: #666;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    color: #888;
+    font-style: italic;
   }
-  .inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 24px;
+  .cast-known {
+    font-size: 11px;
+    color: #555;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
   }
-  .synopsis-section h2, .details-section h3 {
-    font-size: 12px;
+
+  /* ===== CONTACT ===== */
+  .contact {
+    border-top: 1px solid #1a1816;
+    background: #0d0b09;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 48px;
+  }
+  .contact-block h3 {
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
-  .synopsis-section p {
-    font-size: 17px;
-    color: #bbb;
-    max-width: 680px;
-    line-height: 1.8;
-  }
-  .details-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-  }
-  .detail-block p, .detail-block li {
+  .contact-block p {
     font-size: 15px;
     color: #aaa;
-    line-height: 1.6;
+    line-height: 1.7;
+    margin-bottom: 12px;
   }
-  .detail-block ul {
-    list-style: none;
-    padding: 0;
+  .contact-email {
+    display: inline-block;
+    font-size: 15px;
+    color: #d4a574;
+    border-bottom: 1px solid rgba(212,165,116,0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
   }
-  .detail-block li::before {
-    content: '—  ';
-    color: #444;
+  .contact-email:hover {
+    border-color: #d4a574;
   }
   .territory-note {
-    margin-top: 8px;
     font-size: 13px;
-    color: #666;
+    color: #555;
     font-style: italic;
   }
-  .press-section { border-top: 1px solid #1a1a1a; }
-  .press-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    margin-bottom: 32px;
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .hero h1 { letter-spacing: 0.08em; }
+    .hero-meta { flex-wrap: wrap; justify-content: center; }
+    .press-marquee { grid-template-columns: 1fr; }
+    .press-quote { border-left: none; border-top: 1px solid #1a1816; }
+    .press-quote:first-child { border-top: none; }
+    .story-layout { flex-direction: column; }
+    .story-poster { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
   }
-  .press-card {
-    display: block;
-    padding: 28px;
-    border: 1px solid #1e1e1e;
-    border-radius: 8px;
-    transition: border-color 0.2s;
-    color: #e5e5e5;
-  }
-  .press-card:hover {
-    border-color: #d4a574;
-    color: #e5e5e5;
-  }
-  .press-source {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #d4a574;
-    margin-bottom: 12px;
-  }
-  .press-card blockquote {
-    font-size: 15px;
-    color: #bbb;
-    line-height: 1.6;
-    font-style: italic;
-    margin-bottom: 12px;
-  }
-  .press-author {
-    font-size: 12px;
-    color: #666;
-  }
-  .press-links {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
-  .press-links .separator { color: #333; }
 </style>
