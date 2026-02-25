@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { title, description = 'Horizon Line Film Company — Independent film production and distribution.', ogImage } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -19,30 +20,52 @@ const { title, description = 'Horizon Line Film Company — Independent film pro
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Horizon Line Film Company" />
   {ogImage && <meta property="og:image" content={ogImage} />}
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-family: 'Inter', system-ui, sans-serif; background: #100c0a; color: #e5e5e5; }
-    body { min-height: 100vh; line-height: 1.6; }
-    a { color: #d4a574; text-decoration: none; }
+    html { font-family: 'Inter', system-ui, sans-serif; background: #0a0908; color: #e5e5e5; }
+    body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: #d4a574; text-decoration: none; transition: color 0.2s; }
     a:hover { color: #e8c49a; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-    nav { padding: 24px 0; border-bottom: 1px solid #1a1a1a; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 24px 0;
+    }
     nav .container { display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #fff; }
-    nav .logo img { height: 36px; width: auto; }
-    nav .links { display: flex; gap: 32px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
-    footer { padding: 48px 0; border-top: 1px solid #1a1a1a; text-align: center; font-size: 13px; color: #666; margin-top: 80px; }
+    nav .logo {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: rgba(255,255,255,0.7);
+    }
+    nav .logo:hover { color: #fff; }
+    nav .logo img { height: 28px; width: auto; opacity: 0.8; }
+    nav .links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    nav .links a { color: rgba(255,255,255,0.4); font-weight: 500; }
+    nav .links a:hover { color: #d4a574; }
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
   <nav>
     <div class="container">
-      <a href={`${import.meta.env.BASE_URL}/`} class="logo"><img src={`${import.meta.env.BASE_URL}/images/logo.png`} alt="Horizon Line Film Company" /> Horizon Line</a>
+      <a href={`${base}/`} class="logo"><img src={`${base}/images/logo.png`} alt="Horizon Line Film Company" /> Horizon Line</a>
       <div class="links">
-        <a href={`${import.meta.env.BASE_URL}/`}>Slate</a>
-        <a href={`${import.meta.env.BASE_URL}/raptus`}>Raptus</a>
+        <a href={`${base}/`}>Slate</a>
+        <a href={`${base}/raptus`}>Raptus</a>
         <a href="mailto:info@horizonlinefilms.com">Contact</a>
       </div>
     </div>
