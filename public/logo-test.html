@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Concepts — Horizon Line Film Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0908; color: #e5e5e5; font-family: 'Inter', sans-serif; padding: 40px; }
+  h1 { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #d4a574; margin-bottom: 48px; }
+  .concept { margin-bottom: 80px; }
+  .concept-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+    color: #666; margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid #1a1816;
+  }
+  .concept-label span { color: #d4a574; }
+  .sizes { display: flex; flex-direction: column; gap: 40px; }
+  .size-row { display: flex; align-items: center; gap: 32px; }
+  .size-label { font-size: 11px; color: #444; letter-spacing: 1px; min-width: 120px; text-align: right; }
+  .size-row img { display: block; }
+
+  /* Nav simulation */
+  .nav-sim {
+    display: flex; align-items: center; gap: 12px; padding: 16px 24px;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px;
+    margin-top: 16px;
+  }
+  .nav-sim img { height: 28px; width: auto; opacity: 0.85; }
+  .nav-sim .nav-text { font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .nav-sim .nav-links { margin-left: auto; display: flex; gap: 24px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+  .vs { text-align: center; font-size: 32px; color: #333; margin: 40px 0; font-weight: 200; letter-spacing: 8px; }
+
+  /* On hero image background */
+  .hero-test {
+    position: relative; padding: 60px 40px; margin-top: 24px; border-radius: 4px; overflow: hidden;
+    background: url('/horizonlinefilm/images/stills/piano-room.jpg') center/cover no-repeat;
+  }
+  .hero-test::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(10,8,6,0.6), rgba(10,8,6,0.85));
+  }
+  .hero-test img { position: relative; z-index: 1; display: block; }
+  .hero-label { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 2px; text-transform: uppercase; position: relative; z-index: 1; margin-bottom: 16px; }
+
+  /* Current logo for comparison */
+  .current-label { color: #555; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-top: 64px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+  <h1>Logo Concepts — A/B Test</h1>
+
+  <!-- CONCEPT A: GPT -->
+  <div class="concept">
+    <div class="concept-label"><span>Concept A</span> — GPT: Gold line slices through wordmark</div>
+    <div class="sizes">
+      <div class="size-row">
+        <span class="size-label">Full (600px)</span>
+        <img src="/horizonlinefilm/images/logo-concept-a-gpt.svg" width="600">
+      </div>
+      <div class="size-row">
+        <span class="size-label">Medium (300px)</span>
+        <img src="/horizonlinefilm/images/logo-concept-a-gpt.svg" width="300">
+      </div>
+      <div class="size-row">
+        <span class="size-label">Nav sim (28px h)</span>
+        <div>
+          <div class="nav-sim">
+            <img src="/horizonlinefilm/images/logo-concept-a-gpt.svg">
+            <div class="nav-links"><span>Watch</span><span>Contact</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-test">
+          <div class="hero-label">On hero image</div>
+          <img src="/horizonlinefilm/images/logo-concept-a-gpt.svg" width="400">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vs">VS</div>
+
+  <!-- CONCEPT B: Gemini -->
+  <div class="concept">
+    <div class="concept-label"><span>Concept B</span> — Gemini: Branding iron + sprocket tracks</div>
+    <div class="sizes">
+      <div class="size-row">
+        <span class="size-label">Full (600px)</span>
+        <img src="/horizonlinefilm/images/logo-concept-b-gemini.svg" width="600">
+      </div>
+      <div class="size-row">
+        <span class="size-label">Medium (300px)</span>
+        <img src="/horizonlinefilm/images/logo-concept-b-gemini.svg" width="300">
+      </div>
+      <div class="size-row">
+        <span class="size-label">Nav sim (28px h)</span>
+        <div>
+          <div class="nav-sim">
+            <img src="/horizonlinefilm/images/logo-concept-b-gemini.svg">
+            <div class="nav-links"><span>Watch</span><span>Contact</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-test">
+          <div class="hero-label">On hero image</div>
+          <img src="/horizonlinefilm/images/logo-concept-b-gemini.svg" width="400">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vs" style="font-size: 16px; color: #444;">CURRENT</div>
+
+  <!-- Current logo for reference -->
+  <div class="concept">
+    <div class="concept-label">Current logo — for reference</div>
+    <div class="sizes">
+      <div class="size-row">
+        <span class="size-label">Full</span>
+        <img src="/horizonlinefilm/images/logo.png" width="200">
+      </div>
+      <div class="size-row">
+        <span class="size-label">Nav sim (28px h)</span>
+        <div>
+          <div class="nav-sim">
+            <img src="/horizonlinefilm/images/logo.png">
+            <span class="nav-text">Horizon Line</span>
+            <div class="nav-links"><span>Watch</span><span>Contact</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
