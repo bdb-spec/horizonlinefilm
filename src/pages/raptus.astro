@@ -12,24 +12,50 @@ const film = {
   cast: [
     { name: 'Ksenia Solo', role: 'Sarah', note: 'Orphan Black, Lost Girl' },
     { name: 'Nolan Gerard Funk', role: 'Raptus', note: 'Counterpart, Glee' },
-    { name: 'Zion Forrest Lee', role: 'Murry', note: '' },
+    { name: 'Zion Forrest Lee', role: 'Murry' },
     { name: 'Christina Cox', role: 'Grace', note: 'Dexter, Blood Ties' },
-    { name: 'Michael Lipka', role: 'Delivery Agent', note: '' },
-    { name: 'Kerry-Ann James', role: '', note: '' },
-    { name: 'Rachel Sellan', role: '', note: '' },
+    { name: 'Michael Lipka', role: 'Delivery Agent' },
   ],
   logline: 'After a brutal assault, Sarah enters an experimental android-therapy program. Her new companion begins to blur care with control — pushing their bond into dangerous, erotic territory she can\'t shut off.',
   synopsis: `After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit, putting her in extreme danger. Part erotic thriller, part dark comedy — DON'T TURN HIM ON.`,
   poster: `${base}/images/raptus-poster.jpg`,
   heroBg: `${base}/images/hero-bg.jpg`,
   stills: [
-    { src: `${base}/images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design', wide: true },
-    { src: `${base}/images/stills/android-arrival.jpg`, alt: 'Raptus standing in the entry' },
-    { src: `${base}/images/stills/raptus-closeup.jpg`, alt: 'Raptus — eerily perfect' },
-    { src: `${base}/images/stills/control-tablet-new.jpg`, alt: 'The Raptus control interface — Manners, Charm, Seduction, Aggression' },
-    { src: `${base}/images/stills/raptus-stairs.jpg`, alt: 'Raptus descending the stairs' },
-    { src: `${base}/images/stills/sarah-stun-gun.jpg`, alt: 'Sarah fights back' },
-    { src: `${base}/images/stills/raptus-shower.jpg`, alt: 'Raptus — blue-lit shower scene' },
+    { src: `${base}/images/stills/piano-room.jpg`, alt: 'Sarah in her home — production design', label: 'SESSION 01 — INTAKE' },
+    { src: `${base}/images/stills/android-arrival.jpg`, alt: 'Raptus standing in the entry', label: 'SESSION 02 — FIRST CONTACT' },
+    { src: `${base}/images/stills/raptus-closeup.jpg`, alt: 'Raptus — eerily perfect', label: 'SESSION 03 — CALIBRATION' },
+    { src: `${base}/images/stills/control-tablet-new.jpg`, alt: 'The Raptus control interface', label: 'SESSION 04 — OVERRIDE' },
+    { src: `${base}/images/stills/sarah-stun-gun.jpg`, alt: 'Sarah fights back', label: 'SESSION 05 — TERMINATION' },
+  ],
+  signals: [
+    // Row 1: press, letterboxd, imdb, letterboxd
+    { quote: 'The last 20 minutes are white-knuckle-thrilling in the best way possible.', source: 'Film Threat', author: 'Bobby LePire', rating: '8.5/10', dx: 'ELEVATED RESPONSE' },
+    { quote: 'It\'s not a good movie but I had a good time watching it. Now — how do I order one of these?', source: 'Letterboxd', author: 'Billy Ray Brewton', rating: '★★★½', dx: 'COGNITIVE DISSONANCE' },
+    { quote: 'The two main actors elevate this nonsense to something I\'ll definitely watch again.', source: 'IMDb', author: 'Featured Review', rating: '7/10', dx: 'REPEAT EXPOSURE' },
+    { quote: 'Pretty cool sci-fi blend of erotic, psycho from hell thriller. I\'m here for it.', source: 'Letterboxd', author: 'eXistenZZ', rating: '★★★½', dx: 'PROTOCOL ACCEPTED' },
+    // Row 2: letterboxd, press, letterboxd, imdb
+    { quote: 'Baffling; brutal; curious; derivative; familiar; genre-bending; goofy; lo-fi; short; trashy; well-cast.', source: 'Letterboxd', author: 'joshrowley', rating: '★★', dx: 'SYSTEM OVERLOAD' },
+    { quote: 'Solo and Funk\'s performances are both excellent.', source: 'Film Blitz', author: 'Jim McLennan', rating: null, dx: 'ATTACHMENT FORMED' },
+    { quote: 'The music is...A CHOICE.', source: 'Letterboxd', author: 'Billy Ray Brewton', rating: null, dx: 'SENSORY DISRUPTION' },
+    { quote: 'It\'s in the vein of M3GAN, just absurd and gratuitous. An oddly successful WTF watch.', source: 'IMDb', author: 'Featured Review', rating: null, dx: 'CLASSIFICATION FAILURE' },
+    // Row 3: press, letterboxd, imdb, press
+    { quote: 'Solo jumps through every imaginable emotion and makes each one believable.', source: 'Film Threat', author: 'Bobby LePire', rating: null, dx: 'EMPATHIC TRANSFER' },
+    { quote: 'Nolan Gerard Funk was amazing as an eye candy sex robot.', source: 'Letterboxd', author: 'eXistenZZ', rating: null, dx: 'SUBJECT FIXATION' },
+    { quote: 'And good lord, Nolan Funk is hot.', source: 'IMDb', author: 'Featured Review', rating: null, dx: 'INVOLUNTARY RESPONSE' },
+    { quote: 'Things spiral dangerously out of control.', source: 'FirstShowing.net', author: 'Alex Billington', rating: null, dx: 'LOSS OF CONTROL' },
+    // Row 4: letterboxd, press, letterboxd, imdb
+    { quote: 'Best viewed after a bottle of wine.', source: 'Letterboxd', author: 'Nikola Gocic', rating: '★★½', dx: 'LOWERED INHIBITIONS' },
+    { quote: 'A compelling little thriller with a great cast and an absolutely brilliant ending.', source: 'Film Threat', author: 'Bobby LePire', rating: null, dx: 'FULL ENGAGEMENT' },
+    { quote: 'Like an unrated Lifetime thriller with sci-fi element.', source: 'Letterboxd', author: 'eXistenZZ', rating: null, dx: 'GENRE COLLAPSE' },
+    { quote: 'The mark of a truly entertaining B movie is the cast committing 100% to the bit, and this cast does.', source: 'IMDb', author: 'Featured Review', rating: null, dx: 'TOTAL COMMITMENT' },
+    // Row 5: press, letterboxd
+    { quote: 'A film exploring dealing with trauma as much as it is a sci-fi thriller.', source: 'Infinity Magazine', author: 'Allan Bryce', rating: null, dx: 'THERAPEUTIC BREAKTHROUGH' },
+    { quote: 'It\'s wrong on SO MANY levels with what it\'s saying about sexual abuse, but it comes across more like innocence than malice.', source: 'Letterboxd', author: 'Billy Ray Brewton', rating: null, dx: 'MORAL CONFUSION' },
+  ],
+  sessionWindows: [
+    { title: 'Director\'s Commentary', desc: 'Bennet narrates every decision. Every frame. Every compromise.', tag: 'BONUS SESSION' },
+    { title: 'The Deleted Ending', desc: 'The version that was too much. Now it\'s yours.', tag: 'RESTRICTED' },
+    { title: 'Behind the Protocol', desc: 'On-set footage. The chaos between takes.', tag: 'DECLASSIFIED' },
   ],
 };
 ---
@@ -38,209 +64,199 @@ const film = {
   description={film.logline}
   ogImage={film.poster}
 >
-  <main>
-    <!-- HERO: Full-viewport immersive -->
-    <section class="hero" style={`--hero-bg: url('${film.heroBg}')`}>
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-meta">
-          <span>{film.year}</span>
-          <span class="dot"></span>
-          <span>{film.runtime}</span>
-          <span class="dot"></span>
-          {film.genres.map(g => <span class="genre-pill">{g}</span>)}
-        </p>
-        <h1>{film.title}</h1>
-        <p class="hero-tagline">{film.tagline}</p>
-        <p class="hero-cast">Starring <strong>Ksenia Solo</strong> &amp; <strong>Nolan Gerard Funk</strong></p>
-        <div class="hero-cta">
-          <a href={`${base}/raptus/watch`} class="btn-primary">Watch Now — $2.99</a>
-          <a href="#trailer" class="btn-ghost">Watch Trailer</a>
-        </div>
+  <!-- ===== CONSENT GATE ===== -->
+  <div class="consent-gate" id="consent-gate">
+    <div class="consent-inner">
+      <div class="consent-protocol mono">RAPTUS THERAPEUTIC PROTOCOL v2.1</div>
+      <div class="consent-divider"></div>
+      <p class="consent-warning">WARNING: This session contains material that may cause<br/>discomfort, arousal, or both. Proceed at your discretion.</p>
+      <div class="consent-meta mono">
+        <span>Classification: EXPERIMENTAL</span>
+        <span>Duration: 86 MIN</span>
+        <span>Subject: SARAH</span>
       </div>
-      <div class="hero-scroll-hint">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
+      <button class="consent-btn" id="consent-btn">I CONSENT TO THIS SESSION</button>
+      <p class="consent-fine mono">By proceeding you acknowledge this is a work of fiction.<br/>No androids were harmed in the making of this film.</p>
+    </div>
+  </div>
 
-    <!-- CRITICAL RESPONSE -->
-    <section class="press">
+  <main id="main-content" class="main-hidden">
+    <!-- ===== 2. LIVE SIGNAL — Social Proof ===== -->
+    <section class="signal">
       <div class="section-inner">
-        <h2 class="section-label">Critical Response</h2>
-        <div class="press-marquee">
-          <div class="press-quote featured">
-            <blockquote>"The last 20 or so minutes are white-knuckle-thrilling in the best way possible."</blockquote>
-            <cite><span class="source">Film Threat</span> — Bobby LePire</cite>
-          </div>
-          <div class="press-quote">
-            <blockquote>"Solo and Funk's performances are both excellent."</blockquote>
-            <cite><span class="source">Film Blitz</span> — Jim McLennan</cite>
-          </div>
-          <div class="press-quote">
-            <blockquote>"A film exploring dealing with trauma as much as it is a sci-fi thriller."</blockquote>
-            <cite><span class="source">Infinity Magazine</span> — Allan Bryce</cite>
-          </div>
-          <div class="press-quote">
-            <blockquote>"Things spiral dangerously out of control."</blockquote>
-            <cite><span class="source">FirstShowing.net</span> — Alex Billington</cite>
-          </div>
+        <h2 class="section-label mono"><span class="blink">&#9679;</span> SESSION LOG — PATIENT RESPONSES</h2>
+        <p class="signal-disclaimer mono">Discomfort is not a side effect. It is the treatment.</p>
+        <div class="signal-grid">
+          {film.signals.map(s => (
+            <div class="signal-card">
+              <span class="signal-dx mono">{s.dx}</span>
+              <blockquote>"{s.quote}"</blockquote>
+              <cite class="mono">
+                <span class="signal-source">{s.source}</span>
+                {s.rating && <span class="signal-rating">{s.rating}</span>}
+                <span class="signal-author">— {s.author}</span>
+              </cite>
+            </div>
+          ))}
         </div>
-        <div class="press-links">
-          <a href="https://www.imdb.com/title/tt23744832/" target="_blank" rel="noopener">IMDb</a>
+        <div class="signal-links mono">
+          <a href="https://www.imdb.com/title/tt23744832/" target="_blank" rel="noopener">IMDb 4.1</a>
+          <span class="sig-sep">/</span>
           <a href="https://letterboxd.com/film/raptus-2025/" target="_blank" rel="noopener">Letterboxd</a>
+          <span class="sig-sep">/</span>
           <a href="https://www.rottentomatoes.com/m/raptus" target="_blank" rel="noopener">Rotten Tomatoes</a>
+          <span class="sig-sep">/</span>
           <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.wgku5oq3amiisw4tgfx69w6m" target="_blank" rel="noopener">Apple TV</a>
         </div>
       </div>
     </section>
 
-    <!-- TRAILER -->
-    <section class="trailer" id="trailer">
+    <!-- ===== 3. SESSION FRAMES — Stills ===== -->
+    <section class="frames">
       <div class="section-inner">
-        <h2 class="section-label">Official Trailer</h2>
-        <div class="trailer-main">
-          <div class="trailer-embed">
-            <iframe
-              src="https://www.youtube.com/embed/tSI3klFR1FI"
-              title="RAPTUS — Official Trailer"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div class="trailer-secondary">
-          <p class="trailer-alt-label">Also available: <a href="https://www.youtube.com/watch?v=sA7RZcoQCNE" target="_blank" rel="noopener">German Trailer (Tiberius Film)</a></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- STORY -->
-    <section class="story">
-      <div class="section-inner story-layout">
-        <div class="story-text">
-          <h2 class="section-label">Story</h2>
-          <p class="synopsis">{film.synopsis}</p>
-          <p class="director-credit">A film by <strong>{film.director}</strong></p>
-        </div>
-        <div class="story-poster">
-          <img src={film.poster} alt={`${film.title} — Official Poster`} width="400" height="590" loading="lazy" />
-        </div>
-      </div>
-    </section>
-
-    <!-- DIRECT FROM THE DIRECTOR -->
-    <section class="director-direct">
-      <div class="section-inner director-direct-inner">
-        <h2 class="section-label">Direct from the Director</h2>
-        <blockquote class="director-quote">
-          "I made Raptus because I wanted to explore a question that won't leave me alone: what happens when the thing designed to fix you starts wanting something back? Every scene was a negotiation between comfort and danger. I hope it makes you as uncomfortable as it made me."
-        </blockquote>
-        <p class="director-sig">— Bennet de Brabandere, Writer/Director</p>
-        <div class="director-pitch">
-          <p>When you buy direct, you're supporting the filmmaker — not a platform. Get the director's commentary, behind-the-scenes access, and the cut exactly as intended.</p>
-          <a href={`${base}/raptus/watch`} class="btn-primary btn-sm">Buy Direct — $6.99</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section class="gallery">
-      <div class="section-inner">
-        <h2 class="section-label">Gallery</h2>
-        <div class="gallery-grid">
+        <h2 class="section-label mono">SESSION FRAMES</h2>
+        <div class="frames-grid">
           {film.stills.map(s => (
-            <div class={`gallery-item${s.wide ? ' wide' : ''}`}>
-              <img src={s.src} alt={s.alt} loading="lazy" />
+            <div class="frame-card">
+              <div class="frame-img">
+                <img src={s.src} alt={s.alt} loading="lazy" />
+                <div class="frame-pulse"></div>
+              </div>
+              <p class="frame-label mono">{s.label}</p>
             </div>
           ))}
         </div>
+        <p class="frames-tagline">Don't turn him on.</p>
       </div>
     </section>
 
-    <!-- CAST & CREW -->
-    <section class="cast">
+    <!-- ===== 4. FULL BRIEFING — Trailer ===== -->
+    <section class="briefing" id="trailer">
       <div class="section-inner">
-        <h2 class="section-label">Cast &amp; Filmmakers</h2>
-        <div class="filmmakers">
-          <div class="filmmaker-card">
-            <p class="cast-name">Bennet de Brabandere</p>
-            <p class="cast-role">Writer / Director / Producer</p>
-          </div>
+        <h2 class="section-label mono">FULL BRIEFING</h2>
+        <div class="briefing-embed">
+          <iframe
+            src="https://www.youtube.com/embed/tSI3klFR1FI"
+            title="RAPTUS — Official Trailer"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
         </div>
-        <div class="cast-divider"></div>
-        <div class="cast-grid">
-          {film.cast.filter(c => c.note || c.role).map(c => (
-            <div class="cast-card">
-              <p class="cast-name">{c.name}</p>
-              {c.role && <p class="cast-role">{c.role}</p>}
-              {c.note && <p class="cast-known">{c.note}</p>}
+        <div class="briefing-post">
+          <p>86 minutes. One android. No safe word.</p>
+          <a href={`${base}/raptus/watch`} class="btn-red">BEGIN SESSION — $2.99</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. DIRECTOR'S CONFESSION ===== -->
+    <section class="confession">
+      <div class="section-inner confession-inner">
+        <h2 class="section-label mono">DIRECTOR'S CONFESSION</h2>
+        <div class="confession-letter">
+          <p>I made Raptus because I wanted to explore a question that won't leave me alone: what happens when the thing designed to fix you starts wanting something back?</p>
+          <p>Every scene was a negotiation between comfort and danger. Between what Sarah wanted and what Raptus decided she needed. I didn't want to make something safe. I wanted to make something that stays in the room after you turn it off.</p>
+          <p>This isn't therapy. This is what happens when therapy fights back.</p>
+          <p class="confession-sig">— Bennet de Brabandere<br/><span class="mono">Writer / Director / Producer</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. SESSION WINDOWS — Urgency ===== -->
+    <section class="windows">
+      <div class="section-inner">
+        <h2 class="section-label mono">SESSION WINDOWS</h2>
+        <p class="windows-sub">The film stays. The sessions don't.</p>
+        <div class="windows-grid">
+          {film.sessionWindows.map(w => (
+            <div class="window-card">
+              <span class="window-tag mono">{w.tag}</span>
+              <h3>{w.title}</h3>
+              <p>{w.desc}</p>
+              <span class="window-status mono">AVAILABLE WITH PURCHASE</span>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- WATCH NOW -->
-    <section class="watch-cta">
-      <div class="section-inner watch-cta-inner">
-        <h2 class="section-label">Watch Now</h2>
-        <p class="watch-cta-text">Stream or own Raptus — no subscription required.</p>
-        <div class="watch-cta-prices">
-          <a href={`${base}/raptus/watch`} class="watch-price-card">
-            <span class="watch-price-label">Rent</span>
-            <span class="watch-price-amount">$2.99</span>
-            <span class="watch-price-detail">48-hour streaming</span>
+    <!-- ===== 7. CHOOSE YOUR SESSION — Purchase ===== -->
+    <section class="purchase">
+      <div class="section-inner">
+        <h2 class="section-label mono">CHOOSE YOUR SESSION</h2>
+        <div class="purchase-grid">
+          <a href="https://horizonline2.gumroad.com/l/raptus-rent" class="purchase-card gumroad-button" data-gumroad-overlay>
+            <span class="purchase-tier mono">RENT</span>
+            <span class="purchase-price">$2.99</span>
+            <span class="purchase-desc">One night. One protocol.<br/>48-hour streaming access.</span>
+            <span class="purchase-cta">Begin Session</span>
           </a>
-          <a href={`${base}/raptus/watch`} class="watch-price-card featured">
-            <span class="watch-price-badge">Best Value</span>
-            <span class="watch-price-label">Own</span>
-            <span class="watch-price-amount">$6.99</span>
-            <span class="watch-price-detail">Download &amp; stream forever</span>
+          <a href="https://horizonline2.gumroad.com/l/raptus-own" class="purchase-card featured gumroad-button" data-gumroad-overlay>
+            <span class="purchase-badge mono">RECOMMENDED</span>
+            <span class="purchase-tier mono">OWN</span>
+            <span class="purchase-price">$6.99</span>
+            <span class="purchase-desc">The session remembers you.<br/>Download &amp; stream forever.</span>
+            <span class="purchase-cta">Own the Protocol</span>
           </a>
         </div>
-        <p class="watch-also">Also on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> in the US, UK &amp; Germany</p>
+        <p class="purchase-also mono">Also on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> — US, UK &amp; Germany</p>
       </div>
     </section>
 
-    <!-- EMAIL SIGNUP -->
-    <section class="signup-strip">
-      <div class="section-inner signup-strip-inner">
-        <div class="signup-strip-text">
-          <h2 class="section-label">Hear from Bennet</h2>
-          <p>Director's notes, behind-the-scenes stories, and first look at new work. No spam. Ever.</p>
-        </div>
-        <form class="signup-strip-form" id="signup-form">
-          <input type="email" name="email" placeholder="Email address" required />
-          <button type="submit" class="btn-primary btn-sm">Sign Up</button>
+    <!-- ===== NEXT SESSION — Sequel Teaser ===== -->
+    <section class="next-session">
+      <div class="section-inner next-session-inner">
+        <p class="next-session-label mono">NEXT SESSION</p>
+        <h2 class="next-session-title">RAPTUS: HARD WIRED</h2>
+        <p class="next-session-tagline">The protocol was never deleted. It evolved.</p>
+        <p class="next-session-status mono">STATUS: IN DEVELOPMENT</p>
+      </div>
+    </section>
+
+    <!-- ===== 8. PRODUCER HINT ===== -->
+    <section class="producer-hint">
+      <div class="section-inner">
+        <a href={`${base}/raptus/screening`} class="producer-link">
+          <span class="producer-label mono">SCREENING PROTOCOL</span>
+          <span class="producer-text mono">Industry &amp; press — enter access code &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== 9. JOIN THE PROTOCOL — Email + Social ===== -->
+    <section class="protocol-join">
+      <div class="section-inner protocol-join-inner">
+        <h2 class="section-label mono">JOIN THE PROTOCOL</h2>
+        <p class="join-sub">Director's notes. Behind-the-scenes intel. First access to new work.<br/>No spam. No tracking. Just signal.</p>
+        <form class="join-form" id="signup-form">
+          <input type="email" name="email" placeholder="subject@email.com" required />
+          <button type="submit" class="btn-red btn-sm">TRANSMIT</button>
         </form>
-        <p class="signup-strip-success" id="signup-success" style="display:none;">You're in — check your inbox.</p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="contact">
-      <div class="section-inner contact-grid">
-        <div class="contact-block">
-          <h3>From the Director</h3>
-          <p>Questions, feedback, or just want to say hi:</p>
-          <a href="mailto:bennet@horizonlinefilms.com" class="contact-email">bennet@horizonlinefilms.com</a>
+        <p class="join-success" id="signup-success" style="display:none;">Signal received. You're in the protocol.</p>
+        <div class="join-links mono">
+          <a href="https://letterboxd.com/film/raptus-2025/" target="_blank" rel="noopener">Letterboxd</a>
+          <span class="sig-sep">/</span>
+          <a href="https://www.imdb.com/title/tt23744832/" target="_blank" rel="noopener">IMDb</a>
+          <span class="sig-sep">/</span>
+          <a href="https://www.rottentomatoes.com/m/raptus" target="_blank" rel="noopener">RT</a>
+          <span class="sig-sep">/</span>
+          <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.wgku5oq3amiisw4tgfx69w6m" target="_blank" rel="noopener">Apple TV</a>
+          <span class="sig-sep">/</span>
+          <a href={`${base}/press/RAPTUS-Press-Kit.pdf`} download>Press Kit</a>
         </div>
-        <div class="contact-block">
-          <h3>Sales &amp; Press</h3>
-          <p>For press materials or distribution inquiries:</p>
-          <a href="mailto:info@horizonlinefilms.com" class="contact-email">info@horizonlinefilms.com</a>
-          <a href={`${base}/press/RAPTUS-Press-Kit.pdf`} class="btn-ghost btn-sm press-kit-link" download>Download Press Kit</a>
-        </div>
-        <div class="contact-block">
-          <h3>International</h3>
-          <p>Available in <a href={`${base}/raptus/fr`}>Français</a>, <a href={`${base}/raptus/es`}>Español</a>, <a href={`${base}/raptus/ja`}>日本語</a></p>
+        <div class="join-contact mono">
+          <a href="mailto:bennet@horizonlinefilms.com">bennet@horizonlinefilms.com</a>
+          <span class="sig-sep">|</span>
+          <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a>
         </div>
       </div>
     </section>
   </main>
+
+  <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
 
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
@@ -267,576 +283,627 @@ const film = {
 </RaptusBase>
 
 <style>
-  /* ===== HERO ===== */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: var(--hero-bg) center/cover no-repeat;
-  }
-  .hero-overlay {
-    position: absolute;
+  /* ===== CONSENT GATE ===== */
+  .consent-gate {
+    position: fixed;
     inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 8, 6, 0.4) 0%,
-      rgba(10, 8, 6, 0.7) 50%,
-      rgba(10, 8, 6, 0.95) 100%
-    );
-  }
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 0 24px;
-    max-width: 800px;
-  }
-  .hero-meta {
+    z-index: 200;
+    background: #0a0a0a;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+  }
+  .consent-gate.dismissed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .consent-inner {
+    text-align: center;
+    max-width: 520px;
+    padding: 32px;
+  }
+  .consent-protocol {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #c41e1e;
+    margin-bottom: 24px;
+    animation: bootup 1.2s steps(20) forwards;
+  }
+  @keyframes bootup {
+    from { opacity: 0; clip-path: inset(0 100% 0 0); }
+    to { opacity: 1; clip-path: inset(0 0 0 0); }
+  }
+  .consent-divider {
+    width: 60px;
+    height: 1px;
+    background: #c41e1e;
+    margin: 0 auto 24px;
+  }
+  .consent-warning {
+    font-size: 15px;
+    color: #c8c8c8;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .consent-meta {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  .consent-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    background: transparent;
+    border: 1px solid #c41e1e;
+    color: #c41e1e;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 24px;
   }
-  .dot {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    display: inline-block;
+  .consent-btn:hover {
+    background: #c41e1e;
+    color: #0a0a0a;
   }
-  .genre-pill {
-    padding: 3px 10px;
-    border: 1px solid rgba(212, 165, 116, 0.3);
-    border-radius: 2px;
-    color: #d4a574;
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-  .hero h1 {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 200;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 20px;
-    line-height: 1;
-  }
-  .hero-tagline {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: rgba(255,255,255,0.7);
-    font-style: italic;
-    font-weight: 300;
-    margin-bottom: 16px;
-    letter-spacing: 0.02em;
-  }
-  .hero-cast {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
+  .consent-fine {
+    font-size: 9px;
+    color: #333;
     letter-spacing: 1px;
-    margin-bottom: 40px;
-  }
-  .hero-cast strong { color: rgba(255,255,255,0.7); font-weight: 500; }
-  .hero-cta {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    z-index: 1;
-  }
-  .hero-scroll-hint span {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-  }
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(212,165,116,0.4), transparent);
+    line-height: 1.8;
   }
 
-  /* ===== BUTTONS ===== */
-  .btn-primary {
-    display: inline-block;
-    padding: 14px 36px;
-    background: #d4a574;
-    color: #0a0a0a;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    border: none;
-    transition: all 0.25s ease;
+  /* Main content hidden until consent */
+  .main-hidden {
+    opacity: 0;
+    transition: opacity 0.8s ease 0.4s;
   }
-  .btn-primary:hover {
-    background: #fff;
-    color: #0a0a0a;
-  }
-  .btn-ghost {
-    display: inline-block;
-    padding: 14px 36px;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: rgba(255,255,255,0.7);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    transition: all 0.25s ease;
-  }
-  .btn-ghost:hover {
-    border-color: #d4a574;
-    color: #d4a574;
-  }
-  .btn-sm {
-    padding: 10px 24px;
-    font-size: 11px;
+  .main-visible {
+    opacity: 1;
   }
 
-  /* ===== SECTIONS ===== */
+  /* ===== SHARED ===== */
   .section-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 80px 24px;
   }
   .section-label {
-    font-size: 11px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 500;
     letter-spacing: 4px;
     text-transform: uppercase;
-    color: #d4a574;
+    color: #c41e1e;
     margin-bottom: 40px;
   }
+  .blink {
+    animation: pulse-dot 2s ease-in-out infinite;
+    color: #c41e1e;
+    font-size: 8px;
+    margin-right: 8px;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .btn-red {
+    display: inline-block;
+    padding: 14px 36px;
+    background: #c41e1e;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn-red:hover { background: #e8d5c4; color: #0a0a0a; }
+  .btn-sm { padding: 10px 24px; font-size: 10px; }
+  .sig-sep { color: #333; margin: 0 4px; }
 
-  /* ===== PRESS ===== */
-  .press {
-    border-top: 1px solid rgba(212, 165, 116, 0.1);
-    background: #0d0b09;
+  /* ===== 2. SIGNAL ===== */
+  .signal {
+    padding-top: 80px;
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
   }
-  .press-marquee {
+  .signal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: rgba(196, 30, 30, 0.08);
+    margin-bottom: 32px;
   }
-  .press-quote {
-    padding: 32px;
-    border-left: 1px solid #1a1816;
+  .signal-card {
+    background: #0a0a0a;
+    padding: 28px 24px;
+    transition: background 0.3s;
   }
-  .press-quote:first-child { border-left: none; }
-  .press-quote.featured blockquote {
-    font-size: 20px;
+  .signal-card:hover { background: #111; }
+  .signal-disclaimer {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 32px;
+    font-style: italic;
   }
-  .press-quote blockquote {
-    font-size: 16px;
-    color: #ccc;
+  .signal-dx {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #c41e1e;
+    margin-bottom: 12px;
+    opacity: 0.7;
+  }
+  .signal-card blockquote {
+    font-size: 15px;
+    color: #c8c8c8;
     font-style: italic;
     font-weight: 300;
     line-height: 1.7;
     margin-bottom: 16px;
   }
-  .press-quote cite {
-    font-size: 12px;
+  .signal-card cite {
     font-style: normal;
-    color: #666;
-    letter-spacing: 0.5px;
-  }
-  .press-quote .source {
-    color: #d4a574;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
     font-size: 10px;
-  }
-  .press-links {
     display: flex;
-    gap: 24px;
-    padding-top: 32px;
-    border-top: 1px solid #1a1816;
-    margin-top: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
   }
-  .press-links a {
-    font-size: 12px;
+  .signal-source {
+    color: #c41e1e;
+    font-weight: 500;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.2s;
   }
-  .press-links a:hover { color: #d4a574; }
+  .signal-rating {
+    color: #e8d5c4;
+    padding: 1px 6px;
+    border: 1px solid rgba(232, 213, 196, 0.2);
+    font-size: 9px;
+  }
+  .signal-author { color: #555; }
+  .signal-links {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #444;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid rgba(196, 30, 30, 0.08);
+  }
+  .signal-links a { color: #555; }
+  .signal-links a:hover { color: #c41e1e; }
 
-  /* ===== TRAILER ===== */
-  .trailer {
-    border-top: 1px solid #1a1816;
+  /* ===== 3. FRAMES ===== */
+  .frames {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+    background: #0d0d0d;
   }
-  .trailer-main {
-    max-width: 900px;
+  .frames-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
   }
-  .trailer-embed {
+  .frame-card { position: relative; }
+  .frame-img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+  }
+  .frame-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.6) contrast(1.1);
+    transition: filter 0.4s ease, transform 0.4s ease;
+  }
+  .frame-card:hover .frame-img img {
+    filter: saturate(1) contrast(1);
+    transform: scale(1.03);
+  }
+  .frame-pulse {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: #c41e1e;
+    border-radius: 50%;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    14% { transform: scale(1.3); opacity: 1; }
+    28% { transform: scale(1); opacity: 0.8; }
+    42% { transform: scale(1.2); opacity: 1; }
+  }
+  .frame-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-top: 10px;
+  }
+  .frames-tagline {
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #c41e1e;
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+
+  /* ===== 4. BRIEFING ===== */
+  .briefing {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+  }
+  .briefing-embed {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    max-width: 900px;
     background: #000;
   }
-  .trailer-embed iframe {
+  .briefing-embed iframe {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     border: none;
   }
-  .trailer-secondary {
-    margin-top: 20px;
+  .briefing-post {
+    text-align: center;
+    margin-top: 40px;
   }
-  .trailer-alt-label {
-    font-size: 13px;
-    color: #555;
-  }
-  .trailer-alt-label a { color: #888; }
-  .trailer-alt-label a:hover { color: #d4a574; }
-
-  /* ===== STORY ===== */
-  .story {
-    border-top: 1px solid #1a1816;
-  }
-  .story-layout {
-    display: flex;
-    gap: 64px;
-    align-items: flex-start;
-  }
-  .story-text {
-    flex: 1;
-  }
-  .synopsis {
-    font-size: 18px;
-    color: #bbb;
-    line-height: 1.8;
-    max-width: 600px;
-    margin-bottom: 32px;
-  }
-  .director-credit {
-    font-size: 14px;
+  .briefing-post p {
+    font-size: 16px;
     color: #666;
+    margin-bottom: 24px;
     letter-spacing: 0.5px;
   }
-  .director-credit strong { color: #999; }
-  .story-poster {
-    flex-shrink: 0;
-  }
-  .story-poster img {
-    width: 280px;
-    height: auto;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.5);
-  }
 
-  /* ===== DIRECTOR DIRECT ===== */
-  .director-direct {
-    border-top: 1px solid #1a1816;
-    background: #0d0b09;
+  /* ===== 5. CONFESSION ===== */
+  .confession {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+    background: #0d0d0d;
   }
-  .director-direct-inner {
-    text-align: center;
-    max-width: 700px;
+  .confession-inner {
+    max-width: 680px;
   }
-  .director-quote {
-    font-size: 1.15rem;
-    color: #ccc;
+  .confession-letter {
+    border-left: 2px solid #c41e1e;
+    padding-left: 32px;
+  }
+  .confession-letter p {
+    font-size: 17px;
+    color: #aaa;
     font-style: italic;
     font-weight: 300;
     line-height: 1.9;
-    margin-bottom: 16px;
-  }
-  .director-sig {
-    font-size: 13px;
-    color: #666;
-    letter-spacing: 0.5px;
-    margin-bottom: 40px;
-  }
-  .director-pitch {
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-  .director-pitch p {
-    font-size: 15px;
-    color: #999;
-    line-height: 1.7;
     margin-bottom: 24px;
   }
-
-  /* ===== GALLERY ===== */
-  .gallery {
-    border-top: 1px solid #1a1816;
-    background: #0d0b09;
+  .confession-sig {
+    font-style: normal !important;
+    color: #888 !important;
+    font-size: 14px !important;
+    margin-top: 32px;
   }
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
-  }
-  .gallery-item {
-    overflow: hidden;
-    aspect-ratio: 16/9;
-  }
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  .gallery-item.wide {
-    grid-column: span 2;
-  }
-  .gallery-item:hover img {
-    transform: scale(1.05);
+  .confession-sig .mono {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
   }
 
-  /* ===== CAST ===== */
-  .cast {
-    border-top: 1px solid #1a1816;
+  /* ===== 6. SESSION WINDOWS ===== */
+  .windows {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
   }
-  .cast-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 32px;
-  }
-  .cast-name {
-    font-size: 16px;
-    font-weight: 600;
-    color: #e5e5e5;
-    margin-bottom: 4px;
-  }
-  .cast-role {
-    font-size: 13px;
-    color: #888;
+  .windows-sub {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 40px;
     font-style: italic;
   }
-  .cast-known {
-    font-size: 11px;
-    color: #555;
-    margin-top: 4px;
-    letter-spacing: 0.5px;
-  }
-  .filmmakers {
-    display: flex;
-    gap: 48px;
-    margin-bottom: 24px;
-  }
-  .filmmaker-card .cast-name {
-    font-size: 18px;
-  }
-  .cast-divider {
-    width: 40px;
-    height: 1px;
-    background: #333;
-    margin-bottom: 32px;
-  }
-  .press-kit-link {
-    display: inline-block;
-    margin-top: 16px;
-  }
-
-  /* ===== CONTACT ===== */
-  .contact {
-    border-top: 1px solid #1a1816;
-    background: #0d0b09;
-  }
-  .contact-grid {
+  .windows-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 48px;
+    gap: 16px;
   }
-  .contact-block h3 {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #666;
-    margin-bottom: 16px;
+  .window-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(196, 30, 30, 0.12);
+    padding: 28px 24px;
+    transition: border-color 0.3s;
   }
-  .contact-block p {
-    font-size: 15px;
-    color: #aaa;
-    line-height: 1.7;
+  .window-card:hover { border-color: rgba(196, 30, 30, 0.4); }
+  .window-tag {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #c41e1e;
+    display: block;
     margin-bottom: 12px;
   }
-  .contact-email {
-    display: inline-block;
-    font-size: 15px;
-    color: #d4a574;
-    border-bottom: 1px solid rgba(212,165,116,0.2);
-    padding-bottom: 2px;
-    transition: border-color 0.2s;
+  .window-card h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #e8d5c4;
+    margin-bottom: 8px;
   }
-  .contact-email:hover {
-    border-color: #d4a574;
+  .window-card p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
-  .territory-note {
-    font-size: 13px;
-    color: #555;
-    font-style: italic;
+  .window-status {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #444;
   }
 
-  /* ===== WATCH CTA ===== */
-  .watch-cta {
-    border-top: 1px solid #1a1816;
-    background: #0d0b09;
+  /* ===== 7. PURCHASE ===== */
+  .purchase {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+    background: #0d0d0d;
   }
-  .watch-cta-inner {
-    text-align: center;
-  }
-  .watch-cta-text {
-    font-size: 1.1rem;
-    color: #999;
-    margin-bottom: 40px;
-  }
-  .watch-cta-prices {
+  .purchase-grid {
     display: flex;
     gap: 24px;
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 32px;
   }
-  .watch-price-card {
+  .purchase-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 200px;
-    padding: 32px 28px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 8px;
-    transition: border-color 0.3s, transform 0.3s;
+    min-width: 260px;
+    max-width: 320px;
+    flex: 1;
+    padding: 36px 28px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(200, 200, 200, 0.06);
     text-decoration: none;
+    transition: all 0.3s ease;
   }
-  .watch-price-card:hover {
-    border-color: rgba(212,165,116,0.4);
-    transform: translateY(-2px);
-    color: #e5e5e5;
+  .purchase-card:hover {
+    border-color: rgba(196, 30, 30, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(196, 30, 30, 0.08);
   }
-  .watch-price-card.featured {
-    border-color: rgba(212,165,116,0.2);
-    background: rgba(212,165,116,0.03);
+  .purchase-card.featured {
+    border-color: rgba(196, 30, 30, 0.2);
+    background: rgba(196, 30, 30, 0.03);
   }
-  .watch-price-badge {
+  .purchase-badge {
     font-size: 9px;
-    font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
-    background: #d4a574;
-    color: #0a0908;
-    padding: 3px 10px;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    background: #c41e1e;
+    color: #fff;
+    padding: 3px 12px;
+    margin-bottom: 16px;
   }
-  .watch-price-label {
+  .purchase-tier {
     font-size: 11px;
     letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #888;
+    color: #666;
     margin-bottom: 8px;
   }
-  .watch-price-amount {
-    font-size: 2.2rem;
-    font-weight: 200;
+  .purchase-price {
+    font-size: 2.8rem;
+    font-weight: 300;
     color: #fff;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
-  .watch-price-detail {
-    font-size: 12px;
-    color: #555;
-  }
-  .watch-also {
+  .purchase-desc {
     font-size: 13px;
-    color: #444;
-  }
-  .watch-also a { color: #d4a574; }
-
-  /* ===== SIGNUP STRIP ===== */
-  .signup-strip {
-    border-top: 1px solid #1a1816;
-  }
-  .signup-strip-inner {
+    color: #555;
     text-align: center;
-  }
-  .signup-strip-text {
+    line-height: 1.6;
     margin-bottom: 24px;
   }
-  .signup-strip-text p {
-    font-size: 1rem;
-    color: #888;
+  .purchase-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c41e1e;
+    padding: 8px 20px;
+    border: 1px solid rgba(196, 30, 30, 0.3);
+    transition: all 0.2s;
   }
-  .signup-strip-form {
+  .purchase-card:hover .purchase-cta {
+    background: #c41e1e;
+    color: #fff;
+    border-color: #c41e1e;
+  }
+  .purchase-also {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #444;
+  }
+  .purchase-also a { color: #666; }
+  .purchase-also a:hover { color: #c41e1e; }
+
+  /* ===== NEXT SESSION ===== */
+  .next-session {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+    background: #0a0a0a;
+  }
+  .next-session-inner {
+    text-align: center;
+    padding: 100px 24px;
+  }
+  .next-session-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #c41e1e;
+    margin-bottom: 24px;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+  .next-session-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #e8d5c4;
+    margin-bottom: 16px;
+  }
+  .next-session-tagline {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .next-session-status {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #333;
+  }
+
+  /* ===== 8. PRODUCER HINT ===== */
+  .producer-hint {
+    border-bottom: 1px solid rgba(196, 30, 30, 0.1);
+  }
+  .producer-hint .section-inner {
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .producer-link {
+    display: inline-block;
+    padding: 24px 40px;
+    border: 1px solid rgba(196, 30, 30, 0.2);
+    background: rgba(196, 30, 30, 0.03);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .producer-link:hover {
+    border-color: #c41e1e;
+    background: rgba(196, 30, 30, 0.08);
+  }
+  .producer-label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #c41e1e;
+    margin-bottom: 8px;
+  }
+  .producer-text {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+    transition: color 0.3s;
+  }
+  .producer-link:hover .producer-text { color: #c8c8c8; }
+
+  /* ===== 9. JOIN THE PROTOCOL ===== */
+  .protocol-join {
+    background: #0d0d0d;
+  }
+  .protocol-join-inner {
+    text-align: center;
+  }
+  .join-sub {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .join-form {
     display: flex;
     gap: 12px;
     justify-content: center;
     max-width: 440px;
-    margin: 0 auto;
+    margin: 0 auto 16px;
   }
-  .signup-strip-form input {
+  .join-form input {
     flex: 1;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(200, 200, 200, 0.08);
     padding: 12px 16px;
-    font-size: 14px;
-    color: #e5e5e5;
-    font-family: inherit;
+    font-size: 13px;
+    color: #c8c8c8;
+    font-family: 'JetBrains Mono', monospace;
     outline: none;
     transition: border-color 0.3s;
   }
-  .signup-strip-form input:focus {
-    border-color: #d4a574;
+  .join-form input:focus { border-color: #c41e1e; }
+  .join-form input::placeholder { color: #444; }
+  .join-success {
+    font-family: 'JetBrains Mono', monospace;
+    color: #c41e1e;
+    font-size: 12px;
+    letter-spacing: 1px;
   }
-  .signup-strip-form input::placeholder { color: #555; }
-  .signup-strip-success {
-    color: #d4a574;
-    font-size: 14px;
-    margin-top: 12px;
+  .join-links {
+    margin-top: 40px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
+  .join-links a { color: #555; }
+  .join-links a:hover { color: #c41e1e; }
+  .join-contact {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #444;
+  }
+  .join-contact a { color: #555; }
+  .join-contact a:hover { color: #c41e1e; }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 768px) {
-    .hero h1 { letter-spacing: 0.08em; }
-    .hero-meta { flex-wrap: wrap; justify-content: center; }
-    .press-marquee { grid-template-columns: 1fr; }
-    .press-quote { border-left: none; border-top: 1px solid #1a1816; }
-    .press-quote:first-child { border-top: none; }
-    .story-layout { flex-direction: column; }
-    .story-poster { display: none; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-item.wide { grid-column: span 1; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .watch-cta-prices { flex-direction: column; align-items: center; }
-    .signup-strip-form { flex-direction: column; }
+    .consent-meta { flex-direction: column; gap: 8px; }
+    .signal-grid { grid-template-columns: 1fr; }
+    .frames-grid { grid-template-columns: 1fr 1fr; }
+    .purchase-grid { flex-direction: column; align-items: center; }
+    .purchase-card { max-width: 100%; min-width: 0; width: 100%; }
+    .windows-grid { grid-template-columns: 1fr; }
+    .join-form { flex-direction: column; }
+    .confession-letter { padding-left: 20px; }
+    .signal-links { font-size: 9px; }
+  }
+
+  @media (max-width: 480px) {
+    .frames-grid { grid-template-columns: 1fr; }
+    .consent-btn { padding: 14px 32px; font-size: 11px; letter-spacing: 2px; }
   }
 </style>
 
 <script is:inline>
-  document.getElementById('signup-form').addEventListener('submit', async (e) => {
+  /* Consent gate */
+  document.getElementById('consent-btn').addEventListener('click', function() {
+    document.getElementById('consent-gate').classList.add('dismissed');
+    document.getElementById('main-content').classList.remove('main-hidden');
+    document.getElementById('main-content').classList.add('main-visible');
+  });
+
+  /* Email signup */
+  document.getElementById('signup-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const form = e.target;
-    const data = {
+    var form = e.target;
+    var data = {
       email: form.email.value,
       source: 'website',
-      source_detail: 'raptus_page_strip',
+      source_detail: 'raptus_v2_protocol',
       territory: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
-      language: navigator.language?.slice(0, 2) || 'en'
+      language: navigator.language ? navigator.language.slice(0, 2) : 'en'
     };
     try {
       await fetch('https://axuaxxvnbyngxupcikmi.supabase.co/rest/v1/uil_subscribers', {
@@ -848,7 +915,7 @@ const film = {
         },
         body: JSON.stringify(data)
       });
-    } catch {}
+    } catch(err) {}
     form.style.display = 'none';
     document.getElementById('signup-success').style.display = 'block';
   });

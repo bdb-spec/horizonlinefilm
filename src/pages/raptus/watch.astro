@@ -2,41 +2,12 @@
 import RaptusBase from '../../layouts/RaptusBase.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<RaptusBase title="Watch Raptus — Rent or Own" description="Watch Raptus — a provocative AI thriller starring Ksenia Solo. Rent $2.99 or own $6.99." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
+<RaptusBase title="Watch Raptus — Begin Your Session" description="Watch Raptus — a provocative AI thriller starring Ksenia Solo. Rent $2.99 or own $6.99." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
 <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
-<style>
-  .hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 120px 24px 60px; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: url('/images/hero-bg.jpg') center/cover; opacity: 0.25; }
-  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,0.8) 0%, rgba(10,9,8,0.4) 40%, rgba(10,9,8,0.9) 100%); }
-  .hero-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; text-align: center; }
-  .hero-inner h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 200; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 8px; }
-  .hero-inner .tagline { font-size: 1.1rem; color: #999; font-weight: 300; margin-bottom: 32px; }
-  .pricing { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 0 24px 80px; max-width: 700px; margin: 0 auto; }
-  .price-card { flex: 1; min-width: 260px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 32px 24px; text-align: center; transition: border-color 0.3s; }
-  .price-card:hover { border-color: rgba(212,165,116,0.3); }
-  .price-card .tier { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #888; margin-bottom: 12px; }
-  .price-card .price { font-size: 2.5rem; font-weight: 200; color: #fff; }
-  .price-card .price span { font-size: 1rem; color: #666; }
-  .price-card .desc { font-size: 0.85rem; color: #666; margin: 12px 0 24px; }
-  .price-card .best { display: inline-block; background: #d4a574; color: #0a0908; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
-  .btn-buy { display: inline-block; padding: 14px 36px; border-radius: 6px; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; }
-  .btn-rent { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #e5e5e5; }
-  .btn-rent:hover { border-color: #d4a574; color: #d4a574; }
-  .btn-own { background: #d4a574; border: 1px solid #d4a574; color: #0a0908; }
-  .btn-own:hover { background: #e8c49a; border-color: #e8c49a; }
-  .synopsis { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; text-align: center; }
-  .synopsis h2 { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #d4a574; margin-bottom: 16px; }
-  .synopsis p { font-size: 1rem; color: #999; line-height: 1.8; }
-  .trailer { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
-  .trailer .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
-  .trailer .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  .also-on { text-align: center; padding: 40px 24px 80px; }
-  .also-on p { font-size: 12px; color: #555; letter-spacing: 1px; }
-  .also-on a { color: #d4a574; text-decoration: underline; }
-</style>
 
 <section class="hero">
   <div class="hero-inner">
+    <p class="hero-protocol mono"><span class="blink">&#9679;</span> SESSION READY</p>
     <h1>Raptus</h1>
     <p class="tagline">She asked for therapy. He was programmed for desire.</p>
   </div>
@@ -44,24 +15,24 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 <section class="pricing">
   <div class="price-card">
-    <div class="tier">Rent</div>
+    <div class="tier mono">RENT</div>
     <div class="price">$2<span>.99</span></div>
-    <div class="desc">48-hour streaming access</div>
-    <a class="btn-buy btn-rent gumroad-button" href="https://horizonline2.gumroad.com/l/raptus-rent">Rent Now</a>
+    <div class="desc">One night. One protocol.<br/>48-hour streaming access.</div>
+    <a class="btn-session gumroad-button" href="https://horizonline2.gumroad.com/l/raptus-rent">Begin Session</a>
   </div>
-  <div class="price-card">
-    <div class="best">Best Value</div>
-    <div class="tier">Own</div>
+  <div class="price-card featured">
+    <div class="best mono">RECOMMENDED</div>
+    <div class="tier mono">OWN</div>
     <div class="price">$6<span>.99</span></div>
-    <div class="desc">Download &amp; stream forever</div>
-    <a class="btn-buy btn-own gumroad-button" href="https://horizonline2.gumroad.com/l/raptus-own">Own It</a>
+    <div class="desc">The session remembers you.<br/>Download &amp; stream forever.</div>
+    <a class="btn-session btn-primary gumroad-button" href="https://horizonline2.gumroad.com/l/raptus-own">Own the Protocol</a>
   </div>
 </section>
 
 <section class="synopsis">
-  <h2>About the Film</h2>
+  <h2 class="mono">ABOUT THE SESSION</h2>
   <p>After surviving a brutal assault, Sarah orders a new form of experimental android therapy called Raptus. But instead of helping her reclaim her mind, her new companion's controls will be pushed to the limit. Part erotic thriller, part dark comedy — a provocative exploration of desire, consent, and what it means to be truly seen.</p>
-  <p style="margin-top: 16px; font-size: 0.85rem; color: #666;">Starring Ksenia Solo (Orphan Black) &middot; Nolan Gerard Funk &middot; Christina Cox &middot; Dir. Bennet de Brabandere &middot; 86 min</p>
+  <p class="cast-line mono">Ksenia Solo &middot; Nolan Gerard Funk &middot; Christina Cox &middot; Dir. Bennet de Brabandere &middot; 86 min</p>
 </section>
 
 <section class="trailer">
@@ -71,6 +42,204 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </section>
 
 <section class="also-on">
-  <p>Also available on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> in the US, UK &amp; Germany</p>
+  <p class="mono">Also available on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> — US, UK &amp; Germany</p>
 </section>
+</RaptusBase>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 24px 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('/images/hero-bg.jpg') center/cover;
+    opacity: 0.2;
+    filter: saturate(0.5);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.5) 40%, rgba(10,10,10,0.95) 100%);
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .hero-protocol {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .blink {
+    animation: pulse-dot 2s ease-in-out infinite;
+    color: #c41e1e;
+    font-size: 8px;
+    margin-right: 4px;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .hero-inner h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    font-size: 1rem;
+    color: #777;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .pricing {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 24px 80px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .price-card {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(200,200,200,0.06);
+    padding: 36px 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .price-card:hover {
+    border-color: rgba(196,30,30,0.3);
+    transform: translateY(-2px);
+  }
+  .price-card.featured {
+    border-color: rgba(196,30,30,0.2);
+    background: rgba(196,30,30,0.03);
+  }
+  .tier {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  .price {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fff;
+  }
+  .price span { font-size: 1rem; color: #555; }
+  .desc {
+    font-size: 13px;
+    color: #555;
+    margin: 12px 0 24px;
+    line-height: 1.6;
+  }
+  .best {
+    font-size: 9px;
+    letter-spacing: 2px;
+    background: #c41e1e;
+    color: #fff;
+    padding: 3px 12px;
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+  .btn-session {
+    display: inline-block;
+    padding: 12px 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: 1px solid rgba(200,200,200,0.15);
+    color: #c8c8c8;
+    background: transparent;
+  }
+  .btn-session:hover { border-color: #c41e1e; color: #c41e1e; }
+  .btn-session.btn-primary {
+    background: #c41e1e;
+    border-color: #c41e1e;
+    color: #fff;
+  }
+  .btn-session.btn-primary:hover { background: #e8d5c4; border-color: #e8d5c4; color: #0a0a0a; }
+
+  .synopsis {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    text-align: center;
+  }
+  .synopsis h2 {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #c41e1e;
+    margin-bottom: 16px;
+  }
+  .synopsis p {
+    font-size: 15px;
+    color: #888;
+    line-height: 1.8;
+  }
+  .cast-line {
+    margin-top: 16px;
+    font-size: 11px !important;
+    color: #555 !important;
+    letter-spacing: 1px;
+  }
+
+  .trailer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .video-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrap iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  .also-on {
+    text-align: center;
+    padding: 40px 24px 80px;
+  }
+  .also-on p {
+    font-size: 10px;
+    color: #444;
+    letter-spacing: 1.5px;
+  }
+  .also-on a { color: #666; }
+  .also-on a:hover { color: #c41e1e; }
+
+  @media (max-width: 768px) {
+    .pricing { flex-direction: column; align-items: center; }
+    .price-card { min-width: 0; width: 100%; }
+  }
+</style>
 </RaptusBase>

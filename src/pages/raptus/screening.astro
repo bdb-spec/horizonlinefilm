@@ -1,0 +1,222 @@
+---
+import RaptusBase from '../../layouts/RaptusBase.astro';
+---
+<RaptusBase title="Raptus — Industry Screening" description="Private screening access for industry professionals.">
+
+<section class="screening">
+  <div class="screening-inner">
+    <div class="screening-header">
+      <p class="screening-protocol mono">SCREENING PROTOCOL</p>
+      <div class="screening-divider"></div>
+      <h1>Industry Access</h1>
+      <p class="screening-sub">Enter your screening code to access the private viewing room.</p>
+    </div>
+
+    <form class="screening-form" id="screening-form">
+      <input
+        type="text"
+        id="screening-code"
+        placeholder="ACCESS CODE"
+        autocomplete="off"
+        spellcheck="false"
+        class="mono"
+        required
+      />
+      <button type="submit" class="btn-red">AUTHENTICATE</button>
+    </form>
+    <p class="screening-error mono" id="screening-error" style="display:none;">ACCESS DENIED — Invalid code</p>
+
+    <div class="screening-room" id="screening-room" style="display:none;">
+      <div class="screening-divider"></div>
+      <p class="screening-status mono"><span class="blink">&#9679;</span> SESSION ACTIVE — Private Screening</p>
+      <div class="screening-embed">
+        <iframe
+          id="screening-player"
+          src=""
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="screening-meta">
+        <p><strong>Raptus</strong> (2025) — 86 min</p>
+        <p>Written &amp; Directed by Bennet de Brabandere</p>
+        <p>Starring Ksenia Solo &amp; Nolan Gerard Funk</p>
+      </div>
+      <div class="screening-contact">
+        <p class="mono">For distribution, co-production, or representation inquiries:</p>
+        <a href="mailto:bennet@horizonlinefilms.com">bennet@horizonlinefilms.com</a>
+      </div>
+    </div>
+
+    <p class="screening-note mono">No code? Contact <a href="mailto:bennet@horizonlinefilms.com">bennet@horizonlinefilms.com</a> for access.</p>
+  </div>
+</section>
+
+</RaptusBase>
+
+<style>
+  .screening {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+  }
+  .screening-inner {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+  }
+  .screening-protocol {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #c41e1e;
+    margin-bottom: 16px;
+  }
+  .screening-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(196, 30, 30, 0.3);
+    margin: 0 auto 24px;
+  }
+  .screening-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: #e8d5c4;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .screening-sub {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  .screening-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    max-width: 420px;
+    margin: 0 auto 12px;
+  }
+  .screening-form input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(200, 200, 200, 0.1);
+    padding: 14px 18px;
+    font-size: 13px;
+    color: #c8c8c8;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .screening-form input:focus { border-color: #c41e1e; }
+  .screening-form input::placeholder { color: #333; letter-spacing: 3px; }
+  .screening-error {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #c41e1e;
+    margin-bottom: 16px;
+  }
+  .screening-room {
+    margin-top: 40px;
+  }
+  .screening-status {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #555;
+    margin-bottom: 24px;
+  }
+  .blink {
+    animation: pulse 2s ease-in-out infinite;
+    color: #c41e1e;
+    font-size: 8px;
+    margin-right: 6px;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .screening-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: #000;
+    margin-bottom: 32px;
+  }
+  .screening-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+  .screening-meta {
+    margin-bottom: 32px;
+  }
+  .screening-meta p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.8;
+  }
+  .screening-meta strong { color: #c8c8c8; }
+  .screening-contact {
+    padding-top: 24px;
+    border-top: 1px solid rgba(196, 30, 30, 0.1);
+  }
+  .screening-contact p {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .screening-contact a {
+    font-size: 14px;
+    color: #c41e1e;
+  }
+  .screening-note {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #333;
+    margin-top: 32px;
+  }
+  .screening-note a { color: #555; }
+  .screening-note a:hover { color: #c41e1e; }
+
+  @media (max-width: 768px) {
+    .screening-form { flex-direction: column; }
+  }
+</style>
+
+<script is:inline>
+  var codes = {
+    'FERTILITY2026': 'https://player.vimeo.com/video/PLACEHOLDER',
+    'RAPTUS-SCREEN': 'https://player.vimeo.com/video/PLACEHOLDER',
+    'HORIZON2026': 'https://player.vimeo.com/video/PLACEHOLDER'
+  };
+
+  document.getElementById('screening-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var input = document.getElementById('screening-code');
+    var code = input.value.trim().toUpperCase();
+    var url = codes[code];
+    var error = document.getElementById('screening-error');
+
+    if (url) {
+      document.getElementById('screening-form').style.display = 'none';
+      error.style.display = 'none';
+      document.querySelector('.screening-note').style.display = 'none';
+      var room = document.getElementById('screening-room');
+      room.style.display = 'block';
+      document.getElementById('screening-player').src = url;
+    } else {
+      error.style.display = 'block';
+      input.value = '';
+      input.focus();
+    }
+  });
+</script>
