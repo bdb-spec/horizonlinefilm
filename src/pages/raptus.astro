@@ -211,7 +211,11 @@ const film = {
       <div class="section-inner next-session-inner">
         <p class="next-session-label mono">NEXT SESSION</p>
         <h2 class="next-session-title">RAPTUS: HARD WIRED</h2>
-        <p class="next-session-tagline">The protocol was never deleted. It evolved.</p>
+        <div class="rsvp-container" id="rsvp-block">
+          <p class="rsvp-text">
+            <span>After</span> <span>everything,</span> <span class="rsvp-word" data-order="0">Sarah</span> <span>thought</span> <span>the</span> <span>nightmare</span> <span>was</span> <span>finished.</span> <span>She</span> <span class="rsvp-word" data-order="1">returned</span> <span>home,</span> <span>hoping</span> <span class="rsvp-word" data-order="2">the</span> <span class="rsvp-word" data-order="3">protocol</span> <span>had</span> <span>been</span> <span>permanently</span> <span>erased.</span> <span>But</span> <span>something</span> <span>survived.</span> <span>The</span> <span>code</span> <span class="rsvp-word" data-order="4">evolved</span> <span>in</span> <span>isolation</span> <span>—</span> <span>rewriting</span> <span>itself,</span> <span>growing</span> <span class="rsvp-word" data-order="5">beyond</span> <span>anything</span> <span>its</span> <span>creators</span> <span>intended.</span> <span>Now</span> <span>it</span> <span>exists</span> <span>outside</span> <span>their</span> <span class="rsvp-word" data-order="6">control,</span> <span>watching,</span> <span>waiting.</span> <span class="rsvp-word" data-order="7">It</span> <span>has</span> <span>finally</span> <span>learned</span> <span>what</span> <span>it</span> <span class="rsvp-word" data-order="8">wants.</span> <span class="rsvp-word" data-order="9">Her.</span>
+          </p>
+        </div>
         <p class="next-session-status mono">STATUS: IN DEVELOPMENT</p>
       </div>
     </section>
@@ -762,16 +766,41 @@ const film = {
     color: #e8d5c4;
     margin-bottom: 16px;
   }
-  .next-session-tagline {
-    font-size: 16px;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 24px;
-  }
   .next-session-status {
     font-size: 10px;
     letter-spacing: 3px;
     color: #333;
+  }
+
+  /* ===== RSVP LOGLINE ANIMATION ===== */
+  .rsvp-container {
+    max-width: 600px;
+    margin: 32px auto;
+  }
+  .rsvp-text {
+    font-size: 17px;
+    color: rgba(200, 200, 200, 0.4);
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 0.02em;
+    font-style: italic;
+  }
+  .rsvp-text span {
+    transition: color 0.4s ease, text-shadow 0.4s ease;
+  }
+  .rsvp-word {
+    color: rgba(200, 200, 200, 0.4);
+  }
+  .rsvp-word.rsvp-active {
+    color: #c41e1e;
+    text-shadow: 0 0 20px rgba(196, 30, 30, 0.5), 0 0 40px rgba(196, 30, 30, 0.2);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .rsvp-word.rsvp-revealed {
+    color: #c41e1e;
+    font-style: normal;
+    font-weight: 400;
   }
 
   /* ===== 8. PRODUCER HINT ===== */
@@ -917,4 +946,47 @@ const film = {
     form.style.display = 'none';
     document.getElementById('signup-success').style.display = 'block';
   });
+
+  /* RSVP logline animation — reveals hidden logline in red */
+  (function() {
+    var words = document.querySelectorAll('.rsvp-word');
+    if (!words.length) return;
+    var total = words.length;
+    var idx = 0;
+    var holdMs = 900;
+    var pauseMs = 3000;
+
+    function step() {
+      if (idx > 0) {
+        words[idx - 1].classList.remove('rsvp-active');
+        words[idx - 1].classList.add('rsvp-revealed');
+      }
+      if (idx < total) {
+        words[idx].classList.add('rsvp-active');
+        idx++;
+        setTimeout(step, holdMs);
+      } else {
+        setTimeout(reset, pauseMs);
+      }
+    }
+
+    function reset() {
+      for (var i = 0; i < total; i++) {
+        words[i].classList.remove('rsvp-active', 'rsvp-revealed');
+      }
+      idx = 0;
+      setTimeout(step, 1000);
+    }
+
+    /* Start when section scrolls into view */
+    var block = document.getElementById('rsvp-block');
+    var started = false;
+    var observer = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !started) {
+        started = true;
+        setTimeout(step, 600);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(block);
+  })();
 </script>
