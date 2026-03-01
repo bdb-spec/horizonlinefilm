@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
+import RaptusBase from '../../layouts/RaptusBase.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Base title="Raptus — Get Early Access" description="Sign up for exclusive behind-the-scenes content and early access to Raptus." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
+<RaptusBase title="Raptus — Hear from the Director" description="Get behind-the-scenes content and director's commentary direct from Bennet de Brabandere." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
 <style>
   .signup-hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 120px 24px 80px; }
   .signup-hero::before { content: ''; position: absolute; inset: 0; background: url('/images/hero-bg.jpg') center/cover; opacity: 0.2; }
@@ -33,7 +33,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <div class="signup-inner">
     <h1>Raptus</h1>
     <p class="tagline">She asked for therapy. He was programmed for desire.</p>
-    <p class="sub">Get exclusive behind-the-scenes content, early access, and be the first to know when new films drop.</p>
+    <p class="sub">Director's notes, behind-the-scenes stories, and first look at new work — direct from Bennet.</p>
 
     <form class="signup-form" id="signup-form">
       <div class="row">
@@ -52,7 +52,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <div class="social-proof">
       <blockquote>&ldquo;A provocative exploration of desire, consent, and what it means to be truly seen.&rdquo;</blockquote>
-      <cite>— Horizon Line Film Company</cite>
+      <cite>— Bennet de Brabandere, Writer/Director</cite>
       <p class="cast-line">Starring Ksenia Solo &middot; Nolan Gerard Funk &middot; Christina Cox &middot; 86 min</p>
     </div>
   </div>
@@ -91,4 +91,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     }
   });
 </script>
-</Base>
+</RaptusBase>

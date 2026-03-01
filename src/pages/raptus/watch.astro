@@ -1,8 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
+import RaptusBase from '../../layouts/RaptusBase.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
-<Base title="Watch Raptus — Rent or Own" description="Watch Raptus — a provocative AI thriller starring Ksenia Solo. Rent $2.99 or own $6.99." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
+<RaptusBase title="Watch Raptus — Rent or Own" description="Watch Raptus — a provocative AI thriller starring Ksenia Solo. Rent $2.99 or own $6.99." ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
 <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
 <style>
   .hero { position: relative; min-height: 60vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 120px 24px 60px; }
@@ -73,4 +73,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <section class="also-on">
   <p>Also available on <a href="https://tv.apple.com/us/movie/raptus/umc.cmc.5v1v5nmgi43c4gv1u6lzq9dsk" target="_blank" rel="noopener">Apple TV</a> in the US, UK &amp; Germany</p>
 </section>
-</Base>
+</RaptusBase>

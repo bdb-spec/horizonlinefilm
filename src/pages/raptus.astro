@@ -1,5 +1,5 @@
 ---
-import Base from '../layouts/Base.astro';
+import RaptusBase from '../layouts/RaptusBase.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const film = {
@@ -33,8 +33,8 @@ const film = {
   ],
 };
 ---
-<Base
-  title={`${film.title} (${film.year}) — Horizon Line Film Company`}
+<RaptusBase
+  title={`${film.title} (${film.year}) — A Film by Bennet de Brabandere`}
   description={film.logline}
   ogImage={film.poster}
 >
@@ -131,6 +131,21 @@ const film = {
       </div>
     </section>
 
+    <!-- DIRECT FROM THE DIRECTOR -->
+    <section class="director-direct">
+      <div class="section-inner director-direct-inner">
+        <h2 class="section-label">Direct from the Director</h2>
+        <blockquote class="director-quote">
+          "I made Raptus because I wanted to explore a question that won't leave me alone: what happens when the thing designed to fix you starts wanting something back? Every scene was a negotiation between comfort and danger. I hope it makes you as uncomfortable as it made me."
+        </blockquote>
+        <p class="director-sig">— Bennet de Brabandere, Writer/Director</p>
+        <div class="director-pitch">
+          <p>When you buy direct, you're supporting the filmmaker — not a platform. Get the director's commentary, behind-the-scenes access, and the cut exactly as intended.</p>
+          <a href={`${base}/raptus/watch`} class="btn-primary btn-sm">Buy Direct — $6.99</a>
+        </div>
+      </div>
+    </section>
+
     <!-- GALLERY -->
     <section class="gallery">
       <div class="section-inner">
@@ -194,8 +209,8 @@ const film = {
     <section class="signup-strip">
       <div class="section-inner signup-strip-inner">
         <div class="signup-strip-text">
-          <h2 class="section-label">Stay in the Loop</h2>
-          <p>Behind-the-scenes content, early access to new films, and no spam. Ever.</p>
+          <h2 class="section-label">Hear from Bennet</h2>
+          <p>Director's notes, behind-the-scenes stories, and first look at new work. No spam. Ever.</p>
         </div>
         <form class="signup-strip-form" id="signup-form">
           <input type="email" name="email" placeholder="Email address" required />
@@ -208,6 +223,11 @@ const film = {
     <!-- CONTACT -->
     <section class="contact">
       <div class="section-inner contact-grid">
+        <div class="contact-block">
+          <h3>From the Director</h3>
+          <p>Questions, feedback, or just want to say hi:</p>
+          <a href="mailto:bennet@horizonlinefilms.com" class="contact-email">bennet@horizonlinefilms.com</a>
+        </div>
         <div class="contact-block">
           <h3>Sales &amp; Press</h3>
           <p>For press materials or distribution inquiries:</p>
@@ -244,7 +264,7 @@ const film = {
       "url": "https://horizonlinefilms.com"
     }
   })} />
-</Base>
+</RaptusBase>
 
 <style>
   /* ===== HERO ===== */
@@ -523,6 +543,40 @@ const film = {
     width: 280px;
     height: auto;
     box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  }
+
+  /* ===== DIRECTOR DIRECT ===== */
+  .director-direct {
+    border-top: 1px solid #1a1816;
+    background: #0d0b09;
+  }
+  .director-direct-inner {
+    text-align: center;
+    max-width: 700px;
+  }
+  .director-quote {
+    font-size: 1.15rem;
+    color: #ccc;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+  .director-sig {
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+  }
+  .director-pitch {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .director-pitch p {
+    font-size: 15px;
+    color: #999;
+    line-height: 1.7;
+    margin-bottom: 24px;
   }
 
   /* ===== GALLERY ===== */

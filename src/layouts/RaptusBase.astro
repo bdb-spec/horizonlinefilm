@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const { title, description = 'Raptus (2025) — A provocative AI thriller by Bennet de Brabandere. Starring Ksenia Solo & Nolan Gerard Funk.', ogImage } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Raptus" />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Inter', system-ui, sans-serif; background: #0a0908; color: #e5e5e5; }
+    body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: #d4a574; text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #e8c49a; }
+    a:focus-visible { outline: 2px solid #d4a574; outline-offset: 2px; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 24px 0;
+    }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    nav .wordmark {
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    nav .wordmark-title {
+      font-size: 14px; font-weight: 700; letter-spacing: 6px;
+      text-transform: uppercase; color: rgba(255,255,255,0.85);
+      transition: color 0.2s;
+    }
+    nav .wordmark:hover .wordmark-title { color: #fff; }
+    nav .wordmark-sub {
+      font-size: 10px; font-weight: 300; letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.35);
+    }
+    nav .links { display: flex; gap: 28px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; align-items: center; }
+    nav .links a { color: rgba(255,255,255,0.4); font-weight: 500; }
+    nav .links a:hover { color: #d4a574; }
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      letter-spacing: 1px;
+    }
+    footer .studio-link {
+      color: #555;
+      transition: color 0.2s;
+    }
+    footer .studio-link:hover { color: #d4a574; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href={`${base}/raptus`} class="wordmark">
+        <span class="wordmark-title">Raptus</span>
+        <span class="wordmark-sub">A film by Bennet de Brabandere</span>
+      </a>
+      <div class="links">
+        <a href={`${base}/raptus/watch`}>Watch</a>
+        <a href="mailto:bennet@horizonlinefilms.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <slot />
+  <footer>
+    <div class="container">
+      <p><a href={`${base}/`} class="studio-link">A Horizon Line Film Company production</a></p>
+    </div>
+  </footer>
+</body>
+</html>

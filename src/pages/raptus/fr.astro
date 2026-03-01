@@ -1,5 +1,5 @@
 ---
-import Base from '../../layouts/Base.astro';
+import RaptusBase from '../../layouts/RaptusBase.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const lang = 'fr';
 const copy = {
@@ -17,7 +17,7 @@ const copy = {
   cast: 'Avec Ksenia Solo · Nolan Gerard Funk · Christina Cox · 86 min',
 };
 ---
-<Base title={copy.title} description={copy.tagline} ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
+<RaptusBase title={copy.title} description={copy.tagline} ogImage={`https://horizonlinefilms.com${base}/images/raptus-poster.jpg`}>
 <style>
   .signup-hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 120px 24px 80px; }
   .signup-hero::before { content: ''; position: absolute; inset: 0; background: url('/images/hero-bg.jpg') center/cover; opacity: 0.2; }
@@ -80,4 +80,4 @@ const copy = {
     } catch { form.style.display = 'none'; document.getElementById('signup-success').style.display = 'block'; }
   });
 </script>
-</Base>
+</RaptusBase>
