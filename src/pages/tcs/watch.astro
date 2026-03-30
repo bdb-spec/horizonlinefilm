@@ -1,0 +1,219 @@
+---
+import Base from '../../layouts/Base.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<Base
+  title="Watch The Christmas Spirit — Horizon Line Film Company"
+  description="Stream, rent, or own The Christmas Spirit. Dark comedy-thriller starring Zion Forrest Lee and Nicolas Grimes."
+  ogImage={`${base}/images/tcs-poster.jpg`}
+>
+  <main>
+    <!-- HERO -->
+    <section class="hero" style={`--hero-bg: url('${base}/images/tcs-hero-bg.jpg')`}>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-label">Now Available</p>
+        <h1>Watch The Christmas Spirit</h1>
+        <p class="hero-tagline">A lone man with the Christmas Spirit trapped in his head must kidnap a teenage girl in order to save Christmas.</p>
+      </div>
+    </section>
+
+    <!-- PRICING TIERS -->
+    <section class="pricing">
+      <div class="section-inner">
+        <h2 class="section-label">Choose How to Watch</h2>
+        <div class="tier-grid">
+
+          <!-- RENT -->
+          <div class="tier-card">
+            <div class="tier-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            </div>
+            <h3 class="tier-name">Rent</h3>
+            <p class="tier-price">$2.99</p>
+            <p class="tier-detail">48-hour streaming window. Watch instantly.</p>
+            <ul class="tier-features">
+              <li>Full film, full HD</li>
+              <li>Watch on any device</li>
+              <li>Starts when you press play</li>
+            </ul>
+            <a href="https://gumroad.com/l/tcs-rent" target="_blank" rel="noopener" class="tier-btn tier-btn-outline">Rent — $2.99</a>
+            <div class="tier-alts">
+              <a href="https://tv.apple.com/us/movie/the-christmas-spirit/umc.cmc.79e40iq77wmjpogs8iaiac6e4" target="_blank" rel="noopener" class="tier-btn-alt">Apple TV</a>
+              <span class="tier-btn-alt-sep">/</span>
+              <a href="https://www.amazon.com/s?k=the+christmas+spirit+2023+movie" target="_blank" rel="noopener" class="tier-btn-alt">Amazon</a>
+            </div>
+          </div>
+
+          <!-- OWN -->
+          <div class="tier-card featured-tier">
+            <div class="tier-badge">Film + Extras</div>
+            <div class="tier-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            </div>
+            <h3 class="tier-name">Own</h3>
+            <p class="tier-price">$6.99</p>
+            <p class="tier-detail">The film plus extras. Yours to keep forever.</p>
+            <ul class="tier-features">
+              <li>Full film — DRM-free HD download</li>
+              <li>Behind-the-scenes production stills</li>
+              <li>Original screenplay PDF</li>
+            </ul>
+            <a href="https://gumroad.com/l/tcs-own" target="_blank" rel="noopener" class="tier-btn tier-btn-primary">Own — $6.99</a>
+            <p class="tier-footnote">Instant download after purchase</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM AVAILABILITY -->
+    <section class="platforms">
+      <div class="section-inner">
+        <h2 class="section-label">Platform Availability</h2>
+        <div class="platform-grid">
+          <a href="https://tv.apple.com/us/movie/the-christmas-spirit/umc.cmc.79e40iq77wmjpogs8iaiac6e4" target="_blank" rel="noopener" class="platform-card">
+            <span class="platform-name">Apple TV</span>
+            <span class="platform-region">US / CA</span>
+          </a>
+          <a href="https://www.amazon.com/s?k=the+christmas+spirit+2023+movie" target="_blank" rel="noopener" class="platform-card">
+            <span class="platform-name">Amazon</span>
+            <span class="platform-region">US</span>
+          </a>
+          <a href="https://www.shudder.com/" target="_blank" rel="noopener" class="platform-card">
+            <span class="platform-name">Shudder / AMC+</span>
+            <span class="platform-region">US / CA</span>
+          </a>
+          <a href="https://tubitv.com/" target="_blank" rel="noopener" class="platform-card">
+            <span class="platform-name">Tubi</span>
+            <span class="platform-region">US (Free)</span>
+          </a>
+          <a href="https://www.plex.tv/" target="_blank" rel="noopener" class="platform-card">
+            <span class="platform-name">Plex</span>
+            <span class="platform-region">US (Free)</span>
+          </a>
+          <a href="https://gumroad.com/l/tcs-own" target="_blank" rel="noopener" class="platform-card platform-direct">
+            <span class="platform-name">Own Direct</span>
+            <span class="platform-region">Worldwide</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNATIONAL -->
+    <section class="international">
+      <div class="section-inner intl-layout">
+        <div class="intl-map">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d4a574" stroke-width="1" width="80" height="80" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <div class="intl-info">
+          <h2 class="section-label">Outside North America?</h2>
+          <h3 class="intl-title">Own Direct — Available Worldwide</h3>
+          <p class="intl-desc">Platform streaming is limited by region. Own the film and extras directly from us. No geo-restrictions. DRM-free download delivered instantly.</p>
+          <div class="intl-price">
+            <span class="intl-amount">$6.99 USD</span>
+            <span class="intl-includes">Film + stills + screenplay</span>
+          </div>
+          <a href="https://gumroad.com/l/tcs-own" target="_blank" rel="noopener" class="tier-btn tier-btn-primary">Own — $6.99 Worldwide</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Base>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--hero-bg) center/cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10,9,8,0.6) 0%, rgba(10,9,8,0.85) 60%, rgba(10,9,8,1) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 1; text-align: center; padding: 120px 24px 60px;
+  }
+  .hero-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #d4a574; margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 200; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; margin-bottom: 12px;
+  }
+  .hero-tagline {
+    font-size: 15px; color: rgba(255,255,255,0.4); font-style: italic; max-width: 500px; margin: 0 auto;
+  }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #d4a574; margin-bottom: 40px; text-align: center;
+  }
+  .pricing { border-top: 1px solid rgba(212,165,116,0.1); }
+  .tier-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; align-items: stretch; max-width: 760px; margin: 0 auto; }
+  .tier-card {
+    position: relative; padding: 48px 32px 40px; background: rgba(255,255,255,0.02); border: 1px solid #1a1816;
+    text-align: center; display: flex; flex-direction: column; align-items: center;
+  }
+  .featured-tier { border-color: rgba(212,165,116,0.3); background: rgba(212,165,116,0.03); }
+  .tier-badge {
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    background: #d4a574; color: #0a0908; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px;
+  }
+  .tier-icon { color: #d4a574; margin-bottom: 20px; opacity: 0.7; }
+  .tier-name { font-size: 20px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase; color: #fff; margin-bottom: 8px; }
+  .tier-price { font-size: 36px; font-weight: 200; color: #fff; margin-bottom: 8px; letter-spacing: -1px; }
+  .tier-detail { font-size: 13px; color: #777; line-height: 1.6; margin-bottom: 24px; max-width: 240px; }
+  .tier-features { list-style: none; margin-bottom: 32px; width: 100%; text-align: left; max-width: 220px; }
+  .tier-features li {
+    font-size: 13px; color: #999; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); padding-left: 16px; position: relative;
+  }
+  .tier-features li::before { content: '—'; position: absolute; left: 0; color: #555; }
+  .tier-btn {
+    display: inline-block; padding: 14px 28px; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; transition: all 0.25s ease; width: 100%; max-width: 240px; text-align: center;
+  }
+  .tier-btn-primary { background: #d4a574; color: #0a0908; margin-bottom: 6px; }
+  .tier-btn-primary:hover { background: #fff; color: #0a0908; }
+  .tier-btn-outline { border: 1px solid rgba(212,165,116,0.3); color: #d4a574; }
+  .tier-btn-outline:hover { border-color: #d4a574; background: rgba(212,165,116,0.05); color: #e8c49a; }
+  .tier-alts { margin-top: 10px; display: flex; align-items: center; gap: 6px; justify-content: center; }
+  .tier-btn-alt { display: block; margin-top: 8px; font-size: 11px; color: #555; letter-spacing: 1px; }
+  .tier-btn-alt:hover { color: #888; }
+  .tier-btn-alt-sep { color: #333; font-size: 11px; }
+  .tier-footnote { margin-top: 12px; font-size: 11px; color: #555; font-style: italic; }
+  .platforms { border-top: 1px solid #1a1816; background: #0d0b09; }
+  .platform-grid { display: flex; justify-content: center; gap: 2px; flex-wrap: wrap; margin-bottom: 24px; }
+  .platform-card {
+    display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 24px 32px;
+    background: rgba(255,255,255,0.02); border: 1px solid #1a1816; transition: border-color 0.2s; min-width: 140px;
+  }
+  .platform-card:hover { border-color: rgba(212,165,116,0.3); color: #e5e5e5; }
+  .platform-name { font-size: 14px; font-weight: 500; color: #ccc; letter-spacing: 0.5px; }
+  .platform-region { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #555; }
+  .platform-direct { border-color: rgba(212,165,116,0.3); background: rgba(212,165,116,0.04); }
+  .platform-direct .platform-name { color: #d4a574; }
+  .platform-direct .platform-region { color: #d4a574; font-weight: 700; }
+  .international { border-top: 1px solid rgba(212,165,116,0.15); background: linear-gradient(135deg, rgba(212,165,116,0.04) 0%, rgba(10,9,8,1) 60%); }
+  .intl-layout { display: flex; gap: 48px; align-items: center; }
+  .intl-map { flex-shrink: 0; opacity: 0.5; }
+  .intl-info { flex: 1; }
+  .intl-info .section-label { text-align: left; margin-bottom: 8px; }
+  .intl-title { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 200; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
+  .intl-desc { font-size: 15px; color: #888; line-height: 1.7; margin-bottom: 24px; max-width: 560px; }
+  .intl-price { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+  .intl-amount { font-size: 28px; font-weight: 200; color: #d4a574; }
+  .intl-includes { font-size: 12px; color: #666; letter-spacing: 0.5px; }
+  @media (max-width: 768px) {
+    .tier-grid { grid-template-columns: 1fr; gap: 16px; }
+    .intl-layout { flex-direction: column; text-align: center; }
+    .intl-info .section-label { text-align: center; }
+    .intl-price { justify-content: center; flex-wrap: wrap; }
+    .intl-desc { margin-left: auto; margin-right: auto; }
+    .platform-grid { flex-direction: column; align-items: center; }
+  }
+</style>
