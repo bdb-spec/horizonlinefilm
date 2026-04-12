@@ -1,175 +1,568 @@
 ---
-import Base from '../layouts/Base.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const films = [
+  {
+    title: 'Raptus',
+    year: 2025,
+    genre: 'Erotic Thriller / Dark Comedy',
+    cast: 'Ksenia Solo, Nolan Gerard Funk, Christina Cox',
+    director: 'Bennet de Brabandere',
+    logline: 'She asked for therapy. He was programmed for desire.',
+    poster: `${base}/images/raptus-poster.jpg`,
+    href: `${base}/raptus`,
+    platforms: ['Apple TV', 'Amazon', 'Google Play', 'Vudu'],
+    runtime: '86 min',
+  },
+  {
+    title: 'The Christmas Spirit',
+    year: 2024,
+    genre: 'Comedy / Thriller / Horror',
+    cast: 'Zion Forrest Lee, Nicolas Grimes, Cole Vigue',
+    director: 'Bennet de Brabandere',
+    logline: 'A lone man with the Christmas Spirit trapped in his head must kidnap a teenage girl in order to save Christmas.',
+    poster: `${base}/images/tcs-poster.jpg`,
+    href: `${base}/tcs`,
+    platforms: ['Apple TV', 'Amazon', 'Google Play', 'Tubi'],
+    runtime: '89 min',
+  },
+  {
+    title: 'Cherrypicker',
+    year: 2021,
+    genre: 'Horror / Dark Comedy',
+    cast: 'Colin Mochrie, Zion Forrest Lee, Marianthi Evans',
+    director: 'Bennet de Brabandere',
+    logline: 'Love is not what it looks like.',
+    poster: `${base}/images/cherrypicker-poster.jpg`,
+    href: `${base}/cherrypicker`,
+    platforms: ['Tubi (Free)', 'Apple TV', 'Amazon', 'Fandango'],
+    runtime: '91 min',
+  },
+  {
+    title: 'Canadian Sniper',
+    year: 2024,
+    genre: 'Drama / War',
+    cast: 'Francois Arnaud, Lothaire Bluteau, Sophie Desmarais',
+    director: 'Michel Kandinsky',
+    logline: 'One bullet will change everything.',
+    poster: `${base}/images/canadian-sniper-poster.png`,
+    href: `${base}/canadian-sniper`,
+    platforms: ['Hoopla (Free)'],
+    runtime: '83 min',
+  },
+  {
+    title: 'Salvation',
+    year: 2019,
+    genre: 'Thriller / Sci-Fi',
+    cast: 'Julian Richings, Zion Forrest Lee, Carlyn Burchell',
+    director: 'Bennet de Brabandere',
+    logline: 'In a world of death, he chose life.',
+    poster: `${base}/images/salvation-poster.jpg`,
+    href: `${base}/salvation`,
+    platforms: ['Tubi (Free)', 'Apple TV', 'Amazon'],
+    runtime: '78 min',
+  },
+];
 ---
-<Base title="Horizon Line Film Company" description="Independent film production and distribution. Toronto-based. Genre-forward.">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warehouse Film Distribution Inc.</title>
+  <meta name="description" content="Independent film distribution. Los Angeles — New York — Toronto.">
+  <meta property="og:title" content="Warehouse Film Distribution Inc.">
+  <meta property="og:description" content="Independent film distribution. Los Angeles — New York — Toronto.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Warehouse Film Distribution">
+  <meta property="og:image" content={`${base}/images/whf-logo-square.png`}>
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href={`${base}/`} class="nav-logo">
+        <img src={`${base}/images/whf-logo.png`} alt="Warehouse Film Distribution Inc." />
+      </a>
+      <div class="nav-links">
+        <a href={`${base}/raptus`}>Raptus</a>
+        <a href={`${base}/tcs`}>Christmas Spirit</a>
+        <a href={`${base}/cherrypicker`}>Cherrypicker</a>
+        <a href={`${base}/salvation`}>Salvation</a>
+        <a href={`${base}/canadian-sniper`}>Canadian Sniper</a>
+        <a href="mailto:info@whfdistribution.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg">
+        <div class="hero-bg-left" style={`background-image: url('${base}/images/raptus-poster.jpg')`}></div>
+        <div class="hero-bg-right" style={`background-image: url('${base}/images/tcs-poster.jpg')`}></div>
+      </div>
+      <div class="hero-grain"></div>
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-        <img src={`${base}/images/logo-concept-a-gpt.svg`} alt="Horizon Line Film Company" class="hero-logo" width="600" height="200" />
+        <div class="hero-rule"></div>
+        <img src={`${base}/images/whf-logo.png`} alt="Warehouse Film Distribution Inc." class="hero-logo" />
+        <div class="hero-cities">
+          <span>Los Angeles</span>
+          <span class="hero-dot"></span>
+          <span>New York</span>
+          <span class="hero-dot"></span>
+          <span>Toronto</span>
+        </div>
+        <div class="hero-rule"></div>
+      </div>
+      <a href="#films" class="hero-scroll" aria-label="Scroll to films">
+        <div class="scroll-line"></div>
+      </a>
+    </section>
+
+    <!-- CATALOGUE -->
+    <section class="catalogue" id="films">
+      <h2 class="section-title">Now Streaming</h2>
+      <div class="film-grid">
+        {films.map(film => (
+          <a href={film.href} class="film-card">
+            <div class="film-poster">
+              <img src={film.poster} alt={`${film.title} poster`} loading="lazy" />
+              <div class="film-poster-overlay">
+                <span class="film-cta">View Film</span>
+              </div>
+            </div>
+            <div class="film-info">
+              <h3 class="film-title">{film.title}</h3>
+              <p class="film-meta">{film.genre} &middot; {film.runtime}</p>
+              <p class="film-cast">{film.cast}</p>
+              <p class="film-logline">{film.logline}</p>
+              <div class="film-platforms">
+                {film.platforms.map(p => (
+                  <span class="platform-tag">{p}</span>
+                ))}
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
-    <section class="now-streaming">
-      <div class="container">
-        <a href={`${base}/raptus`} class="film-card" aria-label="Watch Raptus — Now Streaming">
-          <div class="film-badge">Now Streaming</div>
-          <h3>Raptus</h3>
-          <p class="genre">Erotic Thriller / Dark Comedy</p>
-          <p class="cast">Starring Ksenia Solo &amp; Nolan Gerard Funk</p>
-          <p class="logline">A sex bot therapist navigates the space between transgression and tenderness.</p>
-          <span class="film-cta">Watch Film &rarr;</span>
-        </a>
-        <a href={`${base}/tcs`} class="film-card" aria-label="Watch The Christmas Spirit — Now Streaming">
-          <div class="film-badge">Now Streaming</div>
-          <h3>The Christmas Spirit</h3>
-          <p class="genre">Comedy / Thriller / Horror</p>
-          <p class="cast">Starring Zion Forrest Lee &amp; Nicolas Grimes</p>
-          <p class="logline">A lone man with the Christmas Spirit trapped in his head must kidnap a teenage girl in order to save Christmas.</p>
-          <span class="film-cta">Watch Film &rarr;</span>
-        </a>
-        <p class="slate-note">Full slate available by request &mdash; <a href="mailto:info@horizonlinefilms.com">info@horizonlinefilms.com</a></p>
+    <!-- ABOUT -->
+    <section class="about">
+      <div class="about-inner">
+        <h2 class="section-title">About</h2>
+        <p>Warehouse Film Distribution Inc. is an independent distribution company specializing in genre film across digital platforms in Canada and internationally. Based in Toronto with operations in Los Angeles and New York.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Active Titles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">15+</span>
+            <span class="stat-label">Platforms</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Territories</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact">
+      <div class="contact-inner">
+        <h2 class="section-title">Inquiries</h2>
+        <p>For distribution, acquisition, or press inquiries:</p>
+        <a href="mailto:info@whfdistribution.com" class="contact-email">info@whfdistribution.com</a>
       </div>
     </section>
   </main>
-</Base>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <img src={`${base}/images/whf-logo.png`} alt="WHF" class="footer-logo" />
+      <p class="footer-cities">Los Angeles &mdash; New York &mdash; Toronto</p>
+      <div class="footer-links">
+        <a href={`${base}/raptus`}>Raptus</a>
+        <a href={`${base}/tcs`}>Christmas Spirit</a>
+        <a href={`${base}/cherrypicker`}>Cherrypicker</a>
+        <a href={`${base}/salvation`}>Salvation</a>
+        <a href={`${base}/canadian-sniper`}>Canadian Sniper</a>
+        <a href="mailto:info@whfdistribution.com">Contact</a>
+      </div>
+      <p class="copyright">&copy; {new Date().getFullYear()} Warehouse Film Distribution Inc. All rights reserved.</p>
+    </div>
+  </footer>
 
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #08080a;
+    color: #c8c8c8;
+    scroll-behavior: smooth;
+  }
+  body { min-height: 100vh; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; transition: all 0.3s; }
+  img { max-width: 100%; height: auto; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8, 8, 10, 0.85);
+    backdrop-filter: blur(20px) saturate(1.2);
+    -webkit-backdrop-filter: blur(20px) saturate(1.2);
+    border-bottom: 1px solid rgba(212, 160, 32, 0.08);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 40px;
+  }
+  .nav-logo img {
+    height: 28px; width: auto;
+    filter: invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  .nav-logo:hover img { opacity: 1; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px; font-weight: 400;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  .nav-links a:hover { color: #d4a020; }
+
+  /* ===== HERO ===== */
   .hero {
-    position: relative;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #08080a;
   }
   .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('/images/stills/piano-room.jpg') center/cover no-repeat;
-    opacity: 0.3;
+    position: absolute; inset: 0;
+    display: flex; overflow: hidden;
   }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, #0a0908 0%, transparent 30%, transparent 70%, #0a0908 100%);
+  .hero-bg-left, .hero-bg-right {
+    flex: 1; background-size: cover;
+    filter: grayscale(1) brightness(0.3) contrast(1.2);
+    opacity: 0.4;
+  }
+  .hero-bg-left { background-position: center top; }
+  .hero-bg-right { background-position: center top; }
+  .hero-grain {
+    position: absolute; inset: 0; z-index: 1;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px 128px;
+    pointer-events: none;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 50%, transparent 0%, rgba(8,8,10,0.7) 50%, rgba(8,8,10,0.98) 80%),
+      linear-gradient(to bottom, rgba(8,8,10,0.6) 0%, transparent 20%, transparent 70%, rgba(8,8,10,1) 100%);
   }
   .hero-content {
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 3;
     text-align: center;
-    padding: 120px 24px 60px;
+    padding: 24px;
+    display: flex; flex-direction: column; align-items: center;
+    animation: heroReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @keyframes heroReveal {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .hero-rule {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, #d4a020, transparent);
+    margin: 0;
   }
   .hero-logo {
-    width: min(600px, 85vw);
-    height: auto;
-    animation: fadeIn 1.2s ease;
+    width: min(500px, 82vw); height: auto;
+    margin: 40px 0;
+    filter: invert(1);
+    border: 3px solid rgba(212, 160, 32, 0.5);
+    padding: 12px 20px;
   }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+  .hero-cities {
+    display: flex; align-items: center; gap: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px; font-weight: 400;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #d4a020;
+    margin-bottom: 40px;
+    padding: 10px 28px;
+    border: 1px solid rgba(212, 160, 32, 0.35);
+  }
+  .hero-dot {
+    width: 4px; height: 4px;
+    background: #d4a020;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%);
+    z-index: 3;
+    display: flex; flex-direction: column; align-items: center;
+    animation: heroReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+  }
+  .scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, #d4a020, transparent);
+    animation: scrollPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 0.7; transform: scaleY(1.15); }
   }
 
-  .now-streaming {
-    padding: 40px 0 100px;
+  /* ===== SECTION SHARED ===== */
+  .section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #d4a020;
+    margin-bottom: 56px;
+    text-align: center;
   }
-  .now-streaming .container {
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: linear-gradient(90deg, transparent, #d4a020, transparent);
+    margin: 14px auto 0;
+  }
+
+  /* ===== CATALOGUE ===== */
+  .catalogue {
+    padding: 120px 40px 100px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .film-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
   .film-card {
-    display: block;
-    padding: 36px 32px;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px;
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    color: #e5e5e5;
-    position: relative;
-    background: rgba(255,255,255,0.02);
+    display: flex; flex-direction: column;
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
   }
   .film-card:hover {
-    border-color: rgba(212, 165, 116, 0.4);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    color: #e5e5e5;
+    border-color: rgba(212, 160, 32, 0.2);
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.5),
+      0 0 80px rgba(212, 160, 32, 0.03);
   }
-  .film-card:focus-visible {
-    outline: 2px solid #d4a574;
-    outline-offset: 4px;
+  .film-poster {
+    position: relative; overflow: hidden;
+    aspect-ratio: 2/3;
   }
-  .film-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: #d4a574;
-    color: #0a0908;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 4px 12px;
-    border-radius: 3px;
+  .film-poster img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .film-card h3 {
-    font-size: 32px;
-    font-weight: 200;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 12px;
+  .film-card:hover .film-poster img { transform: scale(1.04); }
+  .film-poster-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(8, 8, 10, 0.65);
+    opacity: 0;
+    transition: opacity 0.4s;
   }
-  .film-card .genre {
-    font-size: 12px;
-    color: #d4a574;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .film-card .cast {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 16px;
-  }
-  .film-card .logline {
-    font-size: 15px;
-    color: #999;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
+  .film-card:hover .film-poster-overlay { opacity: 1; }
   .film-cta {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #d4a574;
-    transition: color 0.2s;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: #fff;
+    padding: 12px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
   }
   .film-card:hover .film-cta {
-    color: #e8c49a;
+    border-color: #d4a020;
+    color: #d4a020;
   }
-  .slate-note {
-    margin-top: 32px;
-    font-size: 13px;
-    color: #444;
+  .film-info {
+    padding: 28px 24px 24px;
+    display: flex; flex-direction: column; flex: 1;
+  }
+  .film-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px; font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .film-meta {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px; font-weight: 300;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(212, 160, 32, 0.6);
+    margin-bottom: 12px;
+  }
+  .film-cast {
+    font-size: 13px; color: #666;
+    margin-bottom: 12px;
+  }
+  .film-logline {
+    font-size: 14px; color: #888;
+    line-height: 1.7; flex: 1;
+    margin-bottom: 20px;
+  }
+  .film-platforms { display: flex; gap: 6px; flex-wrap: wrap; }
+  .platform-tag {
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px; font-weight: 400;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #555;
+    transition: border-color 0.3s;
+  }
+  .film-card:hover .platform-tag { border-color: rgba(212, 160, 32, 0.15); }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: 100px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .about-inner {
+    max-width: 640px; margin: 0 auto;
     text-align: center;
-    letter-spacing: 0.3px;
   }
-  .slate-note a {
-    color: #666;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    transition: color 0.2s, border-color 0.2s;
+  .about-inner > p {
+    font-size: 15px; color: #777;
+    line-height: 1.9; margin-bottom: 56px;
+    font-weight: 300;
   }
-  .slate-note a:hover {
-    color: #d4a574;
-    border-color: rgba(212,165,116,0.3);
+  .about-stats {
+    display: flex; justify-content: center; gap: 72px;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px; font-weight: 300;
+    color: #d4a020;
+    letter-spacing: 2px;
+  }
+  .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: #444;
+    font-weight: 300;
   }
 
+  /* ===== CONTACT ===== */
+  .contact {
+    padding: 100px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  .contact-inner {
+    max-width: 500px; margin: 0 auto;
+    text-align: center;
+  }
+  .contact-inner > p {
+    font-size: 14px; color: #666;
+    margin-bottom: 24px; font-weight: 300;
+  }
+  .contact-email {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px; font-weight: 300;
+    letter-spacing: 3px;
+    color: #d4a020;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(212, 160, 32, 0.2);
+  }
+  .contact-email:hover {
+    color: #e8c040;
+    border-color: rgba(212, 160, 32, 0.5);
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 56px 40px;
+    border-top: 1px solid rgba(212, 160, 32, 0.15);
+    background: #060608;
+    text-align: center;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-logo {
+    height: 20px; width: auto;
+    margin-bottom: 16px;
+    filter: invert(1);
+    opacity: 0.3;
+  }
+  .footer-cities {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px; font-weight: 300;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #333; margin-bottom: 24px;
+  }
+  .footer-links {
+    display: flex; justify-content: center; gap: 28px;
+    margin-bottom: 28px;
+  }
+  .footer-links a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: #333; font-weight: 400;
+  }
+  .footer-links a:hover { color: #d4a020; }
+  .copyright { font-size: 10px; color: #222; letter-spacing: 0.5px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .film-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    .nav-inner { padding: 14px 24px; }
+  }
   @media (max-width: 768px) {
-    .hero-content { padding: 100px 24px 40px; }
-    .film-card h3 { font-size: 24px; letter-spacing: 4px; }
+    .about-stats { gap: 40px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
+    .hero-cities { font-size: 9px; letter-spacing: 3px; gap: 10px; }
+    .catalogue { padding: 100px 24px 80px; }
+  }
+  @media (max-width: 480px) {
+    .about-stats { flex-direction: column; gap: 28px; }
+    .hero-logo { width: 90vw; }
+    .hero-cities { flex-wrap: wrap; justify-content: center; }
   }
 </style>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Warehouse Film Distribution Inc.",
+  "url": "https://whfdistribution.com",
+  "description": "Independent film distribution. Los Angeles, New York, Toronto.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@whfdistribution.com",
+    "contactType": "general"
+  }
+})} />
+
+</body>
+</html>
