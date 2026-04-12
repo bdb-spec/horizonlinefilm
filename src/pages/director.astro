@@ -1,7 +1,7 @@
 ---
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const heroTrailer = 'https://www.youtube.com/embed/tSI3klFR1FI?autoplay=1&mute=1&controls=0&loop=1&playlist=tSI3klFR1FI&showinfo=0&rel=0&modestbranding=1';
+const heroTrailer = 'https://player.vimeo.com/video/1182440107?background=1&autoplay=1&loop=1&muted=1&quality=720p';
 const heroTrailerPoster = `${base}/images/raptus-poster.jpg`;
 
 const films = [
@@ -151,7 +151,7 @@ const fertility = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bennet De Brabandere — Writer/Director</title>
-  <meta name="description" content="Five films. Each one bigger, bolder, more unpredictable than the last. A vision at work. Writer/Director portfolio." />
+  <meta name="description" content="Five films. Each bigger, bolder, more unpredictable than the last. Writer/Director portfolio." />
   <meta property="og:title" content="Bennet De Brabandere — Writer/Director" />
   <meta property="og:description" content="Genre filmmaker with an ascending track record. Raptus (Apple TV, NYT-reviewed). FERTILITY in development." />
   <meta property="og:type" content="website" />
@@ -211,7 +211,8 @@ const fertility = {
       <div class="hero-content fade-in">
         <p class="hero-label">Writer / Director</p>
         <h1 class="hero-name">Bennet De Brabandere</h1>
-        <p class="hero-sub">Five films. Each one bigger, bolder, more unpredictable than the last. A vision at work.</p>
+        <p class="hero-sub">Five films. Each bigger, bolder, more unpredictable than the last.</p>
+        <p class="hero-sub-2">A vision at work.</p>
         <div class="hero-ctas">
           <a href="#the-arc" class="hero-btn hero-btn-primary">The Work &darr;</a>
           <a href="mailto:bdb@merc3.com?subject=FERTILITY%20—%20Script%20Request" class="hero-btn hero-btn-secondary">Request Script &rarr;</a>
@@ -223,7 +224,7 @@ const fertility = {
     <section class="nyt-banner fade-in">
       <div class="section-inner">
         <p class="nyt-label">The New York Times</p>
-        <blockquote class="nyt-quote">"Lurid and darkly funny. A delirious, uncomfortable back and forth that recalls the unearthly soapiness of <em>Malignant</em>."</blockquote>
+        <blockquote class="nyt-quote">"The latest oddity from the writer-director Bennet De Brabandere, the director of the twisted evil kid horror-comedy <em>Ankle Biters</em>."</blockquote>
         <p class="nyt-context">Five Horror Movies to Stream</p>
         <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
       </div>
@@ -542,6 +543,16 @@ const fertility = {
     max-width: 480px;
     margin: 0 auto 32px;
     line-height: 1.8;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  }
+  .hero-sub-2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: #8b1a1a;
+    letter-spacing: 2px;
+    margin: 0 auto 32px;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   }
   .hero-ctas {
