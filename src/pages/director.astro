@@ -156,7 +156,7 @@ const fertility = {
   <meta property="og:description" content="Genre filmmaker with an ascending track record. Raptus (Apple TV, NYT-reviewed). FERTILITY in development." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Horizon Line Film Company" />
-  <meta property="og:image" content={`${base}/images/raptus-poster.jpg`} />
+  <meta property="og:image" content={`${base}/images/bennet-de-brabandere-og.jpg`} />
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -212,7 +212,6 @@ const fertility = {
         <p class="hero-label">Writer / Director</p>
         <h1 class="hero-name">Bennet De Brabandere</h1>
         <p class="hero-sub">Five films. Each bigger, bolder, more unpredictable than the last.</p>
-        <p class="hero-sub-2">A vision at work.</p>
         <div class="hero-ctas">
           <a href="#the-arc" class="hero-btn hero-btn-primary">The Work &darr;</a>
           <a href="mailto:bdb@merc3.com?subject=FERTILITY%20—%20Script%20Request" class="hero-btn hero-btn-secondary">Request Script &rarr;</a>
@@ -506,9 +505,9 @@ const fertility = {
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(8, 8, 8, 0.5) 0%,
-      rgba(8, 8, 8, 0.7) 50%,
-      rgba(8, 8, 8, 0.9) 100%
+      rgba(8, 8, 8, 0.6) 0%,
+      rgba(8, 8, 8, 0.75) 50%,
+      rgba(8, 8, 8, 0.92) 100%
     );
   }
   .hero-content {
@@ -1065,40 +1064,45 @@ const fertility = {
       grid-template-columns: 1fr;
       gap: 24px;
     }
-    .film-poster-link {
-      max-width: 200px;
-    }
-    .film-stills-strip {
-      max-width: 200px;
-    }
+    .film-poster-link { max-width: 200px; }
+    .film-stills-strip { max-width: 200px; }
     .hero { min-height: 70vh; }
-    .hero-content { padding: 100px 24px 60px; }
-    .hero-video { display: none; }
-    .hero-video-overlay { display: none; }
+    .hero-content { padding: 80px 20px 50px; }
+    .hero-video-wrap { display: none !important; }
     .hero {
-      background: url('/images/raptus-poster.jpg') center/cover no-repeat #080808;
+      background: url('/images/bennet-de-brabandere-og.jpg') center 20%/cover no-repeat #080808;
     }
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(8, 8, 8, 0.75);
+      background: rgba(8, 8, 8, 0.7);
     }
+    .hero-name { font-size: 36px; letter-spacing: 4px; }
+    .hero-sub { font-size: 14px; }
     .arc { padding: 80px 0; }
     .fertility { padding: 80px 0; }
     .voice { padding: 80px 0; }
-    .nyt-banner { padding: 56px 24px; }
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
-    .cred-line { font-size: 10px; letter-spacing: 1.5px; }
+    .nyt-banner { padding: 48px 20px; }
+    .nyt-quote { font-size: 16px !important; }
+    /* Collapse nav to 3 key links on mobile */
+    .nav-links { gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav-links a { font-size: 9px; letter-spacing: 1px; }
+    /* Hide individual film links on mobile - keep Director + Contact */
+    .nav-links a:nth-child(1),
+    .nav-links a:nth-child(2),
+    .nav-links a:nth-child(3),
+    .nav-links a:nth-child(4) { display: none; }
+    .cred-line { font-size: 9px; letter-spacing: 1px; }
     .hero-ctas { flex-direction: column; align-items: center; }
+    .hero-btn { padding: 12px 24px; font-size: 10px; }
   }
 
   @media (max-width: 480px) {
     .film-poster-link { max-width: 160px; }
     .film-stills-strip { max-width: 160px; }
     .fertility-comps { flex-wrap: wrap; }
-    .hero-name { letter-spacing: 1px; }
+    .hero-name { font-size: 30px; letter-spacing: 3px; }
   }
 </style>
 
