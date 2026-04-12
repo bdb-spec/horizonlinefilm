@@ -2,6 +2,6 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://whfdistribution.com',
+  site: 'https://horizonlinefilms.com',
   base: '/',
 });
