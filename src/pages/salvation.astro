@@ -1,0 +1,436 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const film = {
+  title: 'Salvation',
+  year: 2019,
+  runtime: '78 min',
+  genres: ['Thriller', 'Sci-Fi'],
+  director: 'Bennet De Brabandere',
+  tagline: 'In a world of death, he chose life.',
+  starringLine: 'Julian Richings & Zion Forrest Lee',
+  filmmakers: [
+    { name: 'Bennet De Brabandere', role: 'Writer / Director / DP / Editor / Production Design' },
+    { name: 'Michel Kandinsky', role: 'Producer' },
+    { name: 'Alan Zielonko', role: 'Producer' },
+  ],
+  cast: [
+    { name: 'Julian Richings', role: 'John', note: 'Supernatural, Man of Steel, Cube' },
+    { name: 'Zion Forrest Lee', role: 'Danny', note: 'Cherrypicker, The Christmas Spirit' },
+    { name: 'Carlyn Burchell', role: 'Mary', note: '' },
+    { name: 'Matia Jackett', role: 'Sam', note: 'Cherrypicker' },
+    { name: 'Lily Gail Reid', role: 'Grace', note: '' },
+    { name: 'Jordan Mills', role: 'Jesse', note: '' },
+  ],
+  logline: 'An apocalypse survivor in search of his lost daughter is drawn into a deadly creation myth.',
+  synopsis: `Set in a post-apocalyptic world where the human population has been wiped out by a fungus, Danny searches for his daughter. Ten years later, alone, he heads north. After breaking his leg, he is rescued by an orphaned girl, Sam. Together they wait out the winter while his leg mends. In the spring, Danny discovers a boot-print that does not belong to him — another man is alive. The newcomer challenges Danny's version of the apocalypse, threatening his new life. The inevitable clash reveals that true power is not rooted in the apocalyptic past, but with who will create the future.`,
+  poster: `${base}/images/salvation-poster.jpg`,
+  heroBg: `${base}/images/salvation-poster.jpg`,
+  stills: [
+    { src: `${base}/images/stills-salvation/still-01.jpg`, alt: 'Danny walks through the ruins' },
+    { src: `${base}/images/stills-salvation/still-02.jpg`, alt: 'Sam confronts Danny in the forest' },
+    { src: `${base}/images/stills-salvation/still-03.jpg`, alt: 'Danny bloodied in the wilderness' },
+    { src: `${base}/images/stills-salvation/still-04.jpg`, alt: 'Production still' },
+    { src: `${base}/images/stills-salvation/still-05.jpg`, alt: 'Production still' },
+    { src: `${base}/images/stills-salvation/still-06.jpg`, alt: 'Production still' },
+  ],
+  trailer: 'https://player.vimeo.com/video/1178906372',
+  imdb: 'https://www.imdb.com/title/tt6223148/',
+  letterboxd: 'https://letterboxd.com/film/salvation-2022/',
+  appleTV: 'https://tv.apple.com/us/movie/salvation/umc.cmc.lql5xywq22hfeok051iqzb6y',
+  tubi: 'https://tubitv.com/movies/672835/salvation',
+  amazon: 'https://www.amazon.com/Salvation-Julian-Richings/dp/B0B77FLBX4',
+};
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{film.title} — Warehouse Film Distribution</title>
+  <meta name="description" content={film.logline}>
+  <meta property="og:title" content={film.title}>
+  <meta property="og:description" content={film.logline}>
+  <meta property="og:image" content={film.poster}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="https://www.whfdistribution.com" class="logo">WHF Distribution</a>
+      <div class="nav-links">
+        <a href={`${base}/director`}>Director</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#about">About</a>
+        <a href={film.tubi} target="_blank" rel="noopener">Watch Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" style={`background-image: url('${film.heroBg}')`}></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-meta">
+          {film.genres.map(g => <span class="genre-pill">{g}</span>)}
+          <span class="genre-pill year">{film.year}</span>
+        </p>
+        <h1 class="title-main">SALVATION</h1>
+        <p class="hero-sub">{film.tagline}</p>
+        <p class="hero-cast">Starring <strong>{film.starringLine}</strong></p>
+        <div class="hero-cta">
+          {film.trailer && <a href="#trailer" class="btn-primary">Watch Trailer</a>}
+          <a href={film.tubi} target="_blank" rel="noopener" class="btn-ghost">Stream Free on Tubi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAILER -->
+    {film.trailer && (
+    <section class="trailer" id="trailer">
+      <div class="section-inner">
+        <h2 class="section-label">Watch The Trailer</h2>
+        <div class="trailer-embed">
+          <iframe
+            src={film.trailer}
+            title={`${film.title} — Trailer`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    )}
+
+    <!-- STORY -->
+    <section class="story" id="about">
+      <div class="section-inner story-layout">
+        <div class="story-text">
+          <h2 class="section-label">The Story</h2>
+          <p class="synopsis">{film.synopsis}</p>
+          <p class="director-credit">Written, directed, shot, edited & designed by <strong>{film.director}</strong></p>
+          <p class="awards-note">8 wins &middot; 13 nominations</p>
+        </div>
+        <div class="story-poster">
+          <img src={film.poster} alt={`${film.title} — Official Poster`} loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="section-inner">
+        <h2 class="section-label">Gallery</h2>
+        <div class="gallery-grid">
+          {film.stills.map(s => (
+            <div class="gallery-item">
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CAST & CREW -->
+    <section class="cast">
+      <div class="section-inner">
+        <h2 class="section-label">Cast & Filmmakers</h2>
+        <div class="filmmakers">
+          {film.filmmakers.map(f => (
+            <div class="filmmaker-card">
+              <p class="cast-name">{f.name}</p>
+              <p class="cast-role">{f.role}</p>
+            </div>
+          ))}
+        </div>
+        <div class="cast-divider"></div>
+        <div class="cast-grid">
+          {film.cast.map(c => (
+            <div class="cast-card">
+              <p class="cast-name">{c.name}</p>
+              {c.role && <p class="cast-role">{c.role}</p>}
+              {c.note && <p class="cast-known">{c.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE TO WATCH -->
+    <section class="where">
+      <div class="section-inner">
+        <h2 class="section-label">Available Now</h2>
+        <p class="where-headline">Streaming everywhere.</p>
+        <p class="where-body">Released by <a href="https://www.whfdistribution.com" target="_blank" rel="noopener">Warehouse Film Distribution Inc.</a> via Dark Star Pictures across all major platforms.</p>
+        <div class="platform-row">
+          <a href={film.tubi} target="_blank" rel="noopener" class="platform-badge">Tubi (Free)</a>
+          <a href={film.appleTV} target="_blank" rel="noopener" class="platform-badge">Apple TV</a>
+          <a href={film.amazon} target="_blank" rel="noopener" class="platform-badge">Amazon</a>
+          <span class="platform-badge">Hoopla</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-dist">Distributed by <a href="https://www.whfdistribution.com">Warehouse Film Distribution Inc.</a></p>
+        <div class="footer-links">
+          <a href={film.imdb} target="_blank" rel="noopener">IMDb</a>
+          <a href={film.letterboxd} target="_blank" rel="noopener">Letterboxd</a>
+          <a href="mailto:info@whfdistribution.com">Press Inquiries</a>
+        </div>
+        <p class="copyright">&copy; 2018 Mercury_1 Film Productions Inc. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Movie",
+    "name": film.title,
+    "datePublished": String(film.year),
+    "genre": film.genres,
+    "director": { "@type": "Person", "name": film.director },
+    "actor": film.cast.map(c => ({ "@type": "Person", "name": c.name })),
+    "description": film.logline,
+    "duration": "PT78M",
+    ...(film.trailer ? {
+      "trailer": {
+        "@type": "VideoObject",
+        "name": `${film.title} — Trailer`,
+        "embedUrl": film.trailer,
+      }
+    } : {}),
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Warehouse Film Distribution Inc.",
+      "url": "https://www.whfdistribution.com"
+    }
+  })} />
+</body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0a08;
+    color: #d5d0c8;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #b08840; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #d4a850; }
+  img { max-width: 100%; height: auto; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 10, 8, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(176, 136, 64, 0.2);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+    letter-spacing: 3px; text-transform: uppercase; color: #fff;
+  }
+  .logo:hover { color: #b08840; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  }
+  .nav-links a:hover { color: #b08840; }
+
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #0a0a08;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center 30%;
+    opacity: 0.4;
+    filter: brightness(0.7) saturate(0.6);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, transparent 0%, rgba(10,10,8,0.6) 50%, rgba(10,10,8,0.98) 80%),
+      linear-gradient(to bottom, rgba(10,10,8,0.4) 0%, transparent 20%, transparent 50%, rgba(10,10,8,0.8) 75%, rgba(10,10,8,1) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 3; text-align: center;
+    padding: 80px 24px 0; max-width: 900px;
+  }
+  .hero-meta {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .genre-pill {
+    padding: 4px 14px; border: 1px solid rgba(176, 136, 64, 0.4); border-radius: 3px;
+    color: #b08840; font-family: 'Oswald', sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .genre-pill.year { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); }
+  .title-main {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(4rem, 16vw, 10rem);
+    font-weight: 700; line-height: 0.9;
+    text-transform: uppercase; color: #fff;
+    letter-spacing: 12px;
+    margin-bottom: 24px;
+    text-shadow: 0 0 60px rgba(176, 136, 64, 0.3), 0 4px 0 rgba(0,0,0,0.4);
+  }
+  .hero-sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight: 300; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b08840;
+    margin-bottom: 16px;
+  }
+  .hero-cast {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px; color: rgba(255,255,255,0.35);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 36px;
+  }
+  .hero-cast strong { color: rgba(255,255,255,0.6); }
+  .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block; padding: 16px 40px;
+    background: #b08840; color: #0a0a08;
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    border: 2px solid #b08840; transition: all 0.25s ease;
+  }
+  .btn-primary:hover { background: #d4a850; border-color: #d4a850; color: #0a0a08; }
+  .btn-ghost {
+    display: inline-block; padding: 16px 40px;
+    border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; transition: all 0.25s ease;
+  }
+  .btn-ghost:hover { border-color: #b08840; color: #b08840; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+  .section-label {
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #b08840; margin-bottom: 40px; text-align: center;
+  }
+
+  .trailer { border-top: 1px solid rgba(176, 136, 64, 0.15); }
+  .trailer-embed {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    background: #000; max-width: 900px; margin: 0 auto;
+    border: 1px solid rgba(176, 136, 64, 0.2);
+  }
+  .trailer-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+  }
+
+  .story { border-top: 1px solid rgba(176, 136, 64, 0.15); }
+  .story-layout { display: flex; gap: 64px; align-items: flex-start; }
+  .story-text { flex: 1; }
+  .synopsis { font-size: 17px; color: #aaa; line-height: 1.8; max-width: 600px; margin-bottom: 32px; }
+  .director-credit {
+    font-family: 'Oswald', sans-serif; font-size: 14px;
+    color: #666; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .director-credit strong { color: #b08840; }
+  .awards-note {
+    font-family: 'Oswald', sans-serif; font-size: 12px;
+    color: #555; letter-spacing: 2px; text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .story-poster { flex-shrink: 0; }
+  .story-poster img {
+    width: 280px; height: auto;
+    box-shadow: 0 16px 48px rgba(176, 136, 64, 0.15), 0 0 60px rgba(176, 136, 64, 0.05);
+    border: 1px solid rgba(176, 136, 64, 0.15);
+  }
+
+  .gallery { border-top: 1px solid rgba(176, 136, 64, 0.15); background: #0d0d0a; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .gallery-item { overflow: hidden; aspect-ratio: 16/9; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  .cast { border-top: 1px solid rgba(176, 136, 64, 0.15); }
+  .cast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
+  .cast-name {
+    font-family: 'Oswald', sans-serif; font-size: 16px;
+    font-weight: 600; color: #d5d0c8; margin-bottom: 2px;
+  }
+  .cast-role { font-size: 13px; color: #888; font-style: italic; }
+  .cast-known { font-size: 11px; color: #b08840; margin-top: 3px; letter-spacing: 0.5px; font-weight: 500; }
+  .filmmakers { display: flex; gap: 48px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filmmaker-card .cast-name { font-size: 20px; }
+  .cast-divider { width: 60px; height: 2px; background: #b08840; margin-bottom: 32px; }
+
+  .where {
+    border-top: 2px solid rgba(176, 136, 64, 0.3);
+    background: linear-gradient(180deg, #0e0e0a 0%, #0a0a08 100%);
+    text-align: center;
+  }
+  .where-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
+    text-transform: uppercase; color: #fff; margin-bottom: 16px;
+  }
+  .where-body { font-size: 16px; color: #888; margin-bottom: 36px; line-height: 1.7; }
+  .where-body a { color: #b08840; font-weight: 500; }
+  .platform-row {
+    display: flex; justify-content: center; gap: 8px;
+    flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .platform-badge {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 10px 20px; border: 1px solid rgba(176, 136, 64, 0.2);
+    color: #ccc; background: rgba(176, 136, 64, 0.03);
+    transition: all 0.2s;
+  }
+  .platform-badge:hover { border-color: #b08840; color: #fff; background: rgba(176, 136, 64, 0.1); }
+
+  footer {
+    padding: 48px 24px; border-top: 1px solid rgba(176, 136, 64, 0.15);
+    text-align: center; background: #080806;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-dist {
+    font-family: 'Oswald', sans-serif; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 16px;
+  }
+  .footer-dist a { color: #888; }
+  .footer-dist a:hover { color: #b08840; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 24px; }
+  .footer-links a {
+    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    color: #444; font-weight: 500;
+  }
+  .footer-links a:hover { color: #b08840; }
+  .copyright { font-size: 11px; color: #333; letter-spacing: 0.5px; }
+
+  @media (max-width: 768px) {
+    .title-main { font-size: clamp(3rem, 12vw, 5rem); letter-spacing: 6px; }
+    .hero-meta { flex-wrap: wrap; justify-content: center; }
+    .story-layout { flex-direction: column; }
+    .story-poster { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .filmmakers { gap: 24px; }
+    .nav-links { gap: 16px; }
+  }
+</style>

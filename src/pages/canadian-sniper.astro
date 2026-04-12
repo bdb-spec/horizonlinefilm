@@ -1,0 +1,472 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const film = {
+  title: 'Canadian Sniper',
+  year: 2024,
+  runtime: '83 min',
+  genres: ['Drama', 'War'],
+  director: 'Michel Kandinsky',
+  tagline: 'One bullet will change everything.',
+  starringLine: 'Francois Arnaud & Lothaire Bluteau',
+  filmmakers: [
+    { name: 'Michel Kandinsky', role: 'Writer / Director' },
+    { name: 'Rick Bartram', role: 'Producer / Editor' },
+    { name: 'Dev Singh', role: 'Producer' },
+  ],
+  cast: [
+    { name: 'Francois Arnaud', role: 'Sniper', note: 'The Borgias, Blindspot, Midnight Texas' },
+    { name: 'Lothaire Bluteau', role: 'Sheriff Charron', note: 'Jesus of Montreal, Black Robe, I Shot Andy Warhol' },
+    { name: 'Sophie Desmarais', role: 'Waitress', note: 'Sarah Prefers to Run, Falcon Lake' },
+    { name: 'Roch Castonguay', role: 'Father', note: '' },
+    { name: 'Philip Riccio', role: 'Gun Clerk', note: 'The Expanse, Hemlock Grove' },
+    { name: 'Maxwell McCabe-Lokos', role: 'American Hunter', note: 'Closet Monster, Born to Be Blue' },
+    { name: 'Joe Pingue', role: 'American Hunter', note: 'Cinderella Man, Bulletproof Monk' },
+  ],
+  logline: 'While attempting to peacefully reintegrate into civilian life on a remote farm, an army sniper silently struggles to discern reality from the haunting uncertainty of P.T.S.D.',
+  synopsis: `A former elite sniper returns to his small Canadian hometown after military service, struggling with PTSD while investigating his father's disappearance. As reality and traumatic memories blur, he battles violent impulses while attempting to rebuild his life. Shot in Levack, Greater Sudbury, the film is a quiet, haunting study of a man after war — exploring trauma through posture, routine, and silence rather than overt spectacle.`,
+  poster: `${base}/images/canadian-sniper-poster.png`,
+  heroBg: `${base}/images/canadian-sniper-poster.png`,
+  stills: [
+    { src: `${base}/images/stills-canadian-sniper/frame-07.jpg`, alt: 'The Sniper cleaning his rifle in the workshop' },
+    { src: `${base}/images/stills-canadian-sniper/frame-03.jpg`, alt: 'Eyes through the scope' },
+    { src: `${base}/images/stills-canadian-sniper/frame-04.jpg`, alt: 'Arriving at the Blue Bird Restaurant' },
+    { src: `${base}/images/stills-canadian-sniper/frame-10.jpg`, alt: 'Ghillie suit at the barn' },
+    { src: `${base}/images/stills-canadian-sniper/frame-05.jpg`, alt: 'Soldier in dress uniform' },
+    { src: `${base}/images/stills-canadian-sniper/frame-09.jpg`, alt: 'Did you kill anyone?' },
+  ],
+  trailer: 'https://player.vimeo.com/video/1178976473',
+  imdb: 'https://www.imdb.com/title/tt30223155/',
+  letterboxd: 'https://letterboxd.com/film/canadian-sniper/',
+  hoopla: 'https://www.hoopladigital.com/',
+};
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{film.title} — Warehouse Film Distribution</title>
+  <meta name="description" content={film.logline}>
+  <meta property="og:title" content={film.title}>
+  <meta property="og:description" content={film.logline}>
+  <meta property="og:image" content={film.poster}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="https://www.whfdistribution.com" class="logo">WHF Distribution</a>
+      <div class="nav-links">
+        <a href="#trailer">Trailer</a>
+        <a href="#about">About</a>
+        <a href={film.hoopla} target="_blank" rel="noopener">Watch Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" style={`background-image: url('${film.heroBg}')`}></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-meta">
+          {film.genres.map(g => <span class="genre-pill">{g}</span>)}
+          <span class="genre-pill year">{film.year}</span>
+        </p>
+        <h1 class="title-main">CANADIAN<br/>SNIPER</h1>
+        <p class="hero-sub">{film.tagline}</p>
+        <p class="hero-cast">Starring <strong>{film.starringLine}</strong></p>
+        <div class="hero-cta">
+          {film.trailer && <a href="#trailer" class="btn-primary">Watch Trailer</a>}
+          <a href={film.hoopla} target="_blank" rel="noopener" class="btn-ghost">Stream Free on Hoopla</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAILER -->
+    {film.trailer && (
+    <section class="trailer" id="trailer">
+      <div class="section-inner">
+        <h2 class="section-label">Watch The Trailer</h2>
+        <div class="trailer-embed">
+          <iframe
+            src={film.trailer}
+            title={`${film.title} — Trailer`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    )}
+
+    <!-- STORY -->
+    <section class="story" id="about">
+      <div class="section-inner story-layout">
+        <div class="story-text">
+          <h2 class="section-label">The Story</h2>
+          <p class="synopsis">{film.synopsis}</p>
+          <p class="director-credit">Written & directed by <strong>{film.director}</strong></p>
+          <p class="awards-note">2 wins &middot; AzIFF &middot; Boston Film Festival &middot; VIFF Vienna</p>
+          <p class="awards-detail">Best Director & Best Actor (Francois Arnaud) — Vienna Independent Film Festival 2024</p>
+        </div>
+        <div class="story-poster">
+          <img src={film.poster} alt={`${film.title} — Official Poster`} loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="section-inner">
+        <h2 class="section-label">Gallery</h2>
+        <div class="gallery-grid">
+          {film.stills.map(s => (
+            <div class="gallery-item">
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESS -->
+    <section class="press">
+      <div class="section-inner">
+        <h2 class="section-label">Press</h2>
+        <div class="press-grid">
+          <blockquote class="press-quote">
+            <p>"A fascinating character study of a PTSD-stricken ex-military officer who yearns to start his life over. Francois Arnaud's performance is nothing short of amazing."</p>
+            <cite>Indie World Cinema — <strong>A</strong></cite>
+          </blockquote>
+          <blockquote class="press-quote">
+            <p>"The kind of film that asks for patience and, for those willing to give it, quietly rewards that investment with something haunting and unexpectedly intimate."</p>
+            <cite>CineDump — Jessie Hobson</cite>
+          </blockquote>
+          <blockquote class="press-quote">
+            <p>"Francois Arnaud shows off some incredible range, playing a man who is essentially a shell of himself, vibrating with this low-level frequency of trauma."</p>
+            <cite>IMDb User Review</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAST & CREW -->
+    <section class="cast">
+      <div class="section-inner">
+        <h2 class="section-label">Cast & Filmmakers</h2>
+        <div class="filmmakers">
+          {film.filmmakers.map(f => (
+            <div class="filmmaker-card">
+              <p class="cast-name">{f.name}</p>
+              <p class="cast-role">{f.role}</p>
+            </div>
+          ))}
+        </div>
+        <div class="cast-divider"></div>
+        <div class="cast-grid">
+          {film.cast.map(c => (
+            <div class="cast-card">
+              <p class="cast-name">{c.name}</p>
+              {c.role && <p class="cast-role">{c.role}</p>}
+              {c.note && <p class="cast-known">{c.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE TO WATCH -->
+    <section class="where">
+      <div class="section-inner">
+        <h2 class="section-label">Available Now</h2>
+        <p class="where-headline">Streaming now.</p>
+        <p class="where-body">Released by <a href="https://www.whfdistribution.com" target="_blank" rel="noopener">Warehouse Film Distribution Inc.</a> in Canada across all major platforms.</p>
+        <div class="platform-row">
+          <a href={film.hoopla} target="_blank" rel="noopener" class="platform-badge">Hoopla (Free)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-dist">Distributed by <a href="https://www.whfdistribution.com">Warehouse Film Distribution Inc.</a></p>
+        <div class="footer-links">
+          <a href={film.imdb} target="_blank" rel="noopener">IMDb</a>
+          <a href={film.letterboxd} target="_blank" rel="noopener">Letterboxd</a>
+          <a href="mailto:info@whfdistribution.com">Press Inquiries</a>
+        </div>
+        <p class="copyright">&copy; 2024 The OnOFF Company. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Movie",
+    "name": film.title,
+    "datePublished": String(film.year),
+    "genre": film.genres,
+    "director": { "@type": "Person", "name": film.director },
+    "actor": film.cast.map(c => ({ "@type": "Person", "name": c.name })),
+    "description": film.logline,
+    "duration": "PT83M",
+    ...(film.trailer ? {
+      "trailer": {
+        "@type": "VideoObject",
+        "name": `${film.title} — Trailer`,
+        "embedUrl": film.trailer,
+      }
+    } : {}),
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Warehouse Film Distribution Inc.",
+      "url": "https://www.whfdistribution.com"
+    }
+  })} />
+</body>
+</html>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0c0e;
+    color: #c8cdd5;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #5a7a8a; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #8ab0c4; }
+  img { max-width: 100%; height: auto; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 12, 14, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(90, 122, 138, 0.2);
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+    letter-spacing: 3px; text-transform: uppercase; color: #fff;
+  }
+  .logo:hover { color: #5a7a8a; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  }
+  .nav-links a:hover { color: #8ab0c4; }
+
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #0a0c0e;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center 20%;
+    opacity: 0.35;
+    filter: brightness(0.6) saturate(0.3);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, transparent 0%, rgba(10,12,14,0.6) 50%, rgba(10,12,14,0.98) 80%),
+      linear-gradient(to bottom, rgba(10,12,14,0.4) 0%, transparent 20%, transparent 50%, rgba(10,12,14,0.8) 75%, rgba(10,12,14,1) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 3; text-align: center;
+    padding: 80px 24px 0; max-width: 900px;
+  }
+  .hero-meta {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .genre-pill {
+    padding: 4px 14px; border: 1px solid rgba(90, 122, 138, 0.4); border-radius: 3px;
+    color: #5a7a8a; font-family: 'Oswald', sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .genre-pill.year { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); }
+  .title-main {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3.5rem, 14vw, 8rem);
+    font-weight: 700; line-height: 0.9;
+    text-transform: uppercase; color: #fff;
+    letter-spacing: 10px;
+    margin-bottom: 24px;
+    text-shadow: 0 0 60px rgba(90, 122, 138, 0.2), 0 4px 0 rgba(0,0,0,0.4);
+  }
+  .hero-sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight: 300; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #cc3333;
+    margin-bottom: 16px;
+  }
+  .hero-cast {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px; color: rgba(255,255,255,0.35);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 36px;
+  }
+  .hero-cast strong { color: rgba(255,255,255,0.6); }
+  .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block; padding: 16px 40px;
+    background: #5a7a8a; color: #fff;
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    border: 2px solid #5a7a8a; transition: all 0.25s ease;
+  }
+  .btn-primary:hover { background: #8ab0c4; border-color: #8ab0c4; color: #0a0c0e; }
+  .btn-ghost {
+    display: inline-block; padding: 16px 40px;
+    border: 2px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6);
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; transition: all 0.25s ease;
+  }
+  .btn-ghost:hover { border-color: #5a7a8a; color: #8ab0c4; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+  .section-label {
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #5a7a8a; margin-bottom: 40px; text-align: center;
+  }
+
+  .trailer { border-top: 1px solid rgba(90, 122, 138, 0.15); }
+  .trailer-embed {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    background: #000; max-width: 900px; margin: 0 auto;
+    border: 1px solid rgba(90, 122, 138, 0.2);
+  }
+  .trailer-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+  }
+
+  .story { border-top: 1px solid rgba(90, 122, 138, 0.15); }
+  .story-layout { display: flex; gap: 64px; align-items: flex-start; }
+  .story-text { flex: 1; }
+  .synopsis { font-size: 17px; color: #aaa; line-height: 1.8; max-width: 600px; margin-bottom: 32px; }
+  .director-credit {
+    font-family: 'Oswald', sans-serif; font-size: 14px;
+    color: #666; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .director-credit strong { color: #8ab0c4; }
+  .awards-note {
+    font-family: 'Oswald', sans-serif; font-size: 12px;
+    color: #555; letter-spacing: 2px; text-transform: uppercase;
+    margin-top: 12px;
+  }
+  .awards-detail {
+    font-size: 13px; color: #5a7a8a; margin-top: 8px; font-style: italic;
+  }
+  .story-poster { flex-shrink: 0; }
+  .story-poster img {
+    width: 280px; height: auto;
+    box-shadow: 0 16px 48px rgba(90, 122, 138, 0.15), 0 0 60px rgba(90, 122, 138, 0.05);
+    border: 1px solid rgba(90, 122, 138, 0.15);
+  }
+
+  .gallery { border-top: 1px solid rgba(90, 122, 138, 0.15); background: #0c0e10; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .gallery-item { overflow: hidden; aspect-ratio: 16/9; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  .press { border-top: 1px solid rgba(90, 122, 138, 0.15); background: #0a0c0e; }
+  .press-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto; }
+  .press-quote {
+    padding: 24px; border-left: 3px solid #5a7a8a;
+    background: rgba(90, 122, 138, 0.03);
+  }
+  .press-quote p {
+    font-size: 15px; color: #bbb; line-height: 1.7; font-style: italic; margin-bottom: 12px;
+  }
+  .press-quote cite {
+    font-size: 12px; color: #666; font-style: normal;
+    font-family: 'Oswald', sans-serif; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .press-quote cite strong { color: #5a7a8a; }
+
+  .cast { border-top: 1px solid rgba(90, 122, 138, 0.15); }
+  .cast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
+  .cast-name {
+    font-family: 'Oswald', sans-serif; font-size: 16px;
+    font-weight: 600; color: #c8cdd5; margin-bottom: 2px;
+  }
+  .cast-role { font-size: 13px; color: #888; font-style: italic; }
+  .cast-known { font-size: 11px; color: #5a7a8a; margin-top: 3px; letter-spacing: 0.5px; font-weight: 500; }
+  .filmmakers { display: flex; gap: 48px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filmmaker-card .cast-name { font-size: 20px; }
+  .cast-divider { width: 60px; height: 2px; background: #5a7a8a; margin-bottom: 32px; }
+
+  .where {
+    border-top: 2px solid rgba(90, 122, 138, 0.3);
+    background: linear-gradient(180deg, #0c0e10 0%, #0a0c0e 100%);
+    text-align: center;
+  }
+  .where-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
+    text-transform: uppercase; color: #fff; margin-bottom: 16px;
+  }
+  .where-body { font-size: 16px; color: #888; margin-bottom: 36px; line-height: 1.7; }
+  .where-body a { color: #5a7a8a; font-weight: 500; }
+  .platform-row {
+    display: flex; justify-content: center; gap: 8px;
+    flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .platform-badge {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 10px 20px; border: 1px solid rgba(90, 122, 138, 0.2);
+    color: #ccc; background: rgba(90, 122, 138, 0.03);
+    transition: all 0.2s;
+  }
+  .platform-badge:hover { border-color: #5a7a8a; color: #fff; background: rgba(90, 122, 138, 0.1); }
+
+  footer {
+    padding: 48px 24px; border-top: 1px solid rgba(90, 122, 138, 0.15);
+    text-align: center; background: #080a0c;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-dist {
+    font-family: 'Oswald', sans-serif; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 16px;
+  }
+  .footer-dist a { color: #888; }
+  .footer-dist a:hover { color: #5a7a8a; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 24px; }
+  .footer-links a {
+    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    color: #444; font-weight: 500;
+  }
+  .footer-links a:hover { color: #8ab0c4; }
+  .copyright { font-size: 11px; color: #333; letter-spacing: 0.5px; }
+
+  @media (max-width: 768px) {
+    .title-main { font-size: clamp(2.5rem, 10vw, 4rem); letter-spacing: 6px; }
+    .hero-meta { flex-wrap: wrap; justify-content: center; }
+    .story-layout { flex-direction: column; }
+    .story-poster { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .filmmakers { gap: 24px; }
+    .nav-links { gap: 16px; }
+    .press-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,567 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const film = {
+  title: 'Cherrypicker',
+  altTitle: 'Ankle Biters',
+  year: 2021,
+  runtime: '91 min',
+  genres: ['Horror', 'Dark Comedy'],
+  director: 'Bennet De Brabandere',
+  tagline: 'Love is not what it looks like.',
+  starringLine: 'Colin Mochrie & Zion Forrest Lee',
+  filmmakers: [
+    { name: 'Bennet De Brabandere', role: 'Writer / Director / Editor' },
+    { name: 'Michael Flax', role: 'Producer' },
+    { name: 'Francois Dagenais', role: 'Producer / SFX' },
+  ],
+  cast: [
+    { name: 'Colin Mochrie', role: 'Detective Morton', note: "Whose Line Is It Anyway?" },
+    { name: 'Zion Forrest Lee', role: 'Sean Chase', note: 'The Christmas Spirit, Salvation' },
+    { name: 'Marianthi Evans', role: 'Laura Haywood', note: '' },
+    { name: 'Matia Jackett', role: 'Matia Gaddis', note: '' },
+    { name: 'Alex Gordon', role: 'Officer Angela Taylor', note: '' },
+    { name: 'Heidi von Palleske', role: 'Talkshow Host', note: 'Dead Ringers' },
+    { name: 'Michael Copeman', role: 'Mr. Chase', note: '' },
+    { name: 'Lily Gail Reid', role: 'Lily', note: '' },
+    { name: 'Rosalee Reid', role: 'Rosalee', note: '' },
+    { name: 'Violet Reid', role: 'Violet', note: '' },
+    { name: 'Dahlia Reid', role: 'Dahlia', note: '' },
+    { name: 'Jani Lauzon', role: 'Mrs. Chase', note: '' },
+    { name: 'Evert Houston', role: 'Louis', note: '' },
+  ],
+  logline: 'A retired hockey enforcer invites a widowed mother and her four young daughters to his lakeside cottage for the summer. But the girls misread his intentions, and what follows is a chain of brutal crimes made in the name of love.',
+  synopsis: `Sean Chase, a pro hockey enforcer with a broken neck, has fallen in love with Laura Haywood, a recently widowed mother of four. When Sean invites the family to his lakeside cottage — planning to propose — the daughters mistake his intentions. Snooping through their mother's phone, they find footage they don't understand and make a series of catastrophically wrong conclusions. What starts as childhood pranks escalates into a nihilistic gore-comedy that pushes the audience to the edge of what they're willing to laugh at. A pitch-black Canadian debut with a no-fucks-given attitude and a cast that commits 100% to the bit.`,
+  poster: `${base}/images/cherrypicker-poster.jpg`,
+  heroBg: `${base}/images/cherrypicker-poster.jpg`,
+  stills: [
+    { src: `${base}/images/stills-cherrypicker/frame-01.jpg`, alt: 'Sean Chase with the engagement ring' },
+    { src: `${base}/images/stills-cherrypicker/frame-05.jpg`, alt: 'The four girls at the cottage door' },
+    { src: `${base}/images/stills-cherrypicker/frame-08.jpg`, alt: 'Sean at the lake' },
+    { src: `${base}/images/stills-cherrypicker/frame-09.jpg`, alt: 'The girls discover the truth' },
+    { src: `${base}/images/stills-cherrypicker/frame-04.jpg`, alt: 'Laura Haywood' },
+    { src: `${base}/images/stills-cherrypicker/frame-10.jpg`, alt: 'Innocence before the storm' },
+  ],
+  trailer: 'https://player.vimeo.com/video/1178901603',
+  pressQuotes: [
+    { text: '"A pitch black comedy with serious consequences. I love the way this film really has a no fucks given attitude."', source: 'MLMillerWrites', author: '' },
+    { text: '"An ultimately uncompromised, pessimistic attitude separates Cherrypicker from big-studio dark comedies. It sticks by its nasty notions of morality and justice to the bitter end."', source: 'Movies & Mania', author: 'Charles Cassady Jr.', rating: '3/5' },
+    { text: '"A deliciously dark comedy. These little monsters seem fully aware of the effects of their acts."', source: 'Screen Anarchy', author: '' },
+    { text: '"Actors are all on the mark, especially the spooky kids. A potential cult item."', source: 'Video Librarian', author: 'Charles Cassady', rating: '2.5/5' },
+    { text: '"It has a wonderfully sick sense of humor with John Waters-level quirk."', source: 'Macabre Daily', author: 'Lowell Greenblatt' },
+    { text: '"Great special effects, great scripts, great acting. Already a cult classic."', source: 'Letterboxd', author: 'LifeCommand', rating: '5/5' },
+    { text: '"The mark of a truly entertaining B movie is the cast committing 100% to the bit, and this cast does."', source: 'IMDb', author: 'Featured Review' },
+    { text: '"Funny and something different. The makeup effects are pretty crazy."', source: 'Horror News Network', author: 'Janel Spiegel' },
+  ],
+  imdb: 'https://www.imdb.com/title/tt6969954/',
+  letterboxd: 'https://letterboxd.com/film/ankle-biters-2021/',
+  rottenTomatoes: 'https://www.rottentomatoes.com/m/ankle_biters_2021',
+  appleTV: 'https://tv.apple.com/us/movie/ankle-biters/umc.cmc.3gybgtg7vihtss59waiafm1gt',
+  tubi: 'https://tubitv.com/movies/672001/ankle-biters',
+  amazon: 'https://www.amazon.com/Ankle-Biters-Colin-Mochrie/dp/B0CHNFM1LD',
+};
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{film.title} — Warehouse Film Distribution</title>
+  <meta name="description" content={film.logline}>
+  <meta property="og:title" content={film.title}>
+  <meta property="og:description" content={film.logline}>
+  <meta property="og:image" content={film.poster}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="https://www.whfdistribution.com" class="logo">WHF Distribution</a>
+      <div class="nav-links">
+        <a href={`${base}/director`}>Director</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#about">About</a>
+        <a href={film.tubi} target="_blank" rel="noopener">Watch Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" style={`background-image: url('${film.heroBg}')`}></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-meta">
+          {film.genres.map(g => <span class="genre-pill">{g}</span>)}
+        </p>
+        <h1 class="title-main">
+          <span>C</span><span>h</span><span>e</span><span>r</span><span>r</span><span>y</span><span>p</span><span>i</span><span>c</span><span>k</span><span>e</span><span>r</span>
+        </h1>
+        <p class="hero-sub">{film.tagline}</p>
+        <p class="hero-cast">Starring <strong>{film.starringLine}</strong></p>
+        <div class="hero-cta">
+          {film.trailer && <a href="#trailer" class="btn-primary">Watch Trailer</a>}
+          <a href={film.tubi} target="_blank" rel="noopener" class="btn-ghost">Stream Free on Tubi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT THEY'RE SAYING -->
+    <section class="press">
+      <div class="section-inner">
+        <h2 class="section-label">What They're Saying</h2>
+        <div class="featured-quote">
+          <blockquote>{film.pressQuotes[0].text}</blockquote>
+          <cite>{film.pressQuotes[0].source}</cite>
+        </div>
+        <div class="press-grid">
+          {film.pressQuotes.slice(1).map(q => (
+            <div class="press-card">
+              <blockquote>{q.text}</blockquote>
+              <cite>
+                <span class="source">{q.source}</span>
+                {q.author && ` — ${q.author}`}
+                {q.rating && <span class="rating">{q.rating}</span>}
+              </cite>
+            </div>
+          ))}
+        </div>
+        <div class="press-links">
+          <a href={film.imdb} target="_blank" rel="noopener">IMDb</a>
+          <a href={film.letterboxd} target="_blank" rel="noopener">Letterboxd</a>
+          <a href={film.rottenTomatoes} target="_blank" rel="noopener">Rotten Tomatoes</a>
+          <a href={film.appleTV} target="_blank" rel="noopener">Apple TV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAILER -->
+    {film.trailer && (
+    <section class="trailer" id="trailer">
+      <div class="section-inner">
+        <h2 class="section-label">Watch The Trailer</h2>
+        <div class="trailer-embed">
+          <iframe
+            src={film.trailer}
+            title={`${film.title} — Trailer`}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    )}
+
+    <!-- STORY -->
+    <section class="story" id="about">
+      <div class="section-inner story-layout">
+        <div class="story-text">
+          <h2 class="section-label">The Story</h2>
+          <p class="synopsis">{film.synopsis}</p>
+          <p class="director-credit">A film by <strong>{film.director}</strong></p>
+        </div>
+        <div class="story-poster">
+          <img src={film.poster} alt={`${film.title} — Official Poster`} loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="section-inner">
+        <h2 class="section-label">Gallery</h2>
+        <div class="gallery-grid">
+          {film.stills.map(s => (
+            <div class="gallery-item">
+              <img src={s.src} alt={s.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CAST & CREW -->
+    <section class="cast">
+      <div class="section-inner">
+        <h2 class="section-label">Cast & Filmmakers</h2>
+        <div class="filmmakers">
+          {film.filmmakers.map(f => (
+            <div class="filmmaker-card">
+              <p class="cast-name">{f.name}</p>
+              <p class="cast-role">{f.role}</p>
+            </div>
+          ))}
+        </div>
+        <div class="cast-divider"></div>
+        <div class="cast-grid">
+          {film.cast.map(c => (
+            <div class="cast-card">
+              <p class="cast-name">{c.name}</p>
+              {c.role && <p class="cast-role">{c.role}</p>}
+              {c.note && <p class="cast-known">{c.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE TO WATCH -->
+    <section class="where">
+      <div class="section-inner">
+        <h2 class="section-label">Available Now</h2>
+        <p class="where-headline">Streaming everywhere.</p>
+        <p class="where-body">Released by <a href="https://www.whfdistribution.com" target="_blank" rel="noopener">Warehouse Film Distribution Inc.</a> in Canada across all major platforms.</p>
+        <div class="platform-row">
+          <a href={film.tubi} target="_blank" rel="noopener" class="platform-badge">Tubi (Free)</a>
+          <a href={film.appleTV} target="_blank" rel="noopener" class="platform-badge">Apple TV</a>
+          <a href={film.amazon} target="_blank" rel="noopener" class="platform-badge">Amazon</a>
+          <span class="platform-badge">Fandango</span>
+          <span class="platform-badge">Philo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-dist">Distributed by <a href="https://www.whfdistribution.com">Warehouse Film Distribution Inc.</a></p>
+        <div class="footer-links">
+          <a href={film.imdb} target="_blank" rel="noopener">IMDb</a>
+          <a href={film.letterboxd} target="_blank" rel="noopener">Letterboxd</a>
+          <a href="mailto:info@whfdistribution.com">Press Inquiries</a>
+        </div>
+        <p class="copyright">&copy; 2021 Warehouse Film Distribution Inc. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Movie",
+    "name": film.title,
+    "alternateName": film.altTitle,
+    "datePublished": String(film.year),
+    "genre": film.genres,
+    "director": { "@type": "Person", "name": film.director },
+    "actor": film.cast.map(c => ({ "@type": "Person", "name": c.name })),
+    "description": film.logline,
+    "duration": "PT91M",
+    ...(film.trailer ? {
+      "trailer": {
+        "@type": "VideoObject",
+        "name": `${film.title} — Trailer`,
+        "embedUrl": film.trailer,
+      }
+    } : {}),
+    "productionCompany": {
+      "@type": "Organization",
+      "name": "Warehouse Film Distribution Inc.",
+      "url": "https://www.whfdistribution.com"
+    }
+  })} />
+</body>
+</html>
+
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #0a0806;
+    color: #e5e5e5;
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: #8b0000; text-decoration: none; transition: color 0.2s; }
+  a:hover { color: #cc0000; }
+  img { max-width: 100%; height: auto; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10, 8, 6, 0.85); backdrop-filter: blur(12px);
+    border-bottom: 2px solid #8b0000;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px;
+    letter-spacing: 3px; text-transform: uppercase; color: #fff;
+  }
+  .logo:hover { color: #8b0000; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6);
+  }
+  .nav-links a:hover { color: #cc0000; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #0a0806;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center top;
+    opacity: 0.35;
+    filter: brightness(0.8);
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, transparent 0%, rgba(10,8,6,0.6) 50%, rgba(10,8,6,0.98) 80%),
+      linear-gradient(to bottom,
+        rgba(10, 8, 6, 0.4) 0%,
+        rgba(10, 8, 6, 0.0) 20%,
+        rgba(10, 8, 6, 0.0) 50%,
+        rgba(10, 8, 6, 0.7) 75%,
+        rgba(10, 8, 6, 1) 100%
+      );
+  }
+  .hero-content {
+    position: relative; z-index: 3; text-align: center;
+    padding: 40px 24px 0; max-width: 900px;
+  }
+  .hero-meta {
+    display: flex; align-items: center; justify-content: center;
+    gap: 10px; margin-bottom: 24px; flex-wrap: wrap;
+  }
+  .genre-pill {
+    padding: 4px 14px; border: 2px solid #8b0000; border-radius: 3px;
+    color: #cc3333; font-family: 'Oswald', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .title-main {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(5rem, 18vw, 11rem);
+    font-weight: 400; line-height: 1;
+    font-style: italic;
+    color: #e84b8a;
+    margin-bottom: 24px;
+    -webkit-text-stroke: 2px #cc0000;
+    text-shadow: 0 0 40px rgba(232, 75, 138, 0.4), 0 3px 0 rgba(0,0,0,0.3);
+    display: flex; justify-content: center;
+  }
+  .title-main span {
+    display: inline-block;
+  }
+  .title-main span:nth-child(1)  { transform: rotate(-4deg) translateY(0px); }
+  .title-main span:nth-child(2)  { transform: rotate(-3deg) translateY(4px); }
+  .title-main span:nth-child(3)  { transform: rotate(-2deg) translateY(7px); }
+  .title-main span:nth-child(4)  { transform: rotate(-1deg) translateY(9px); }
+  .title-main span:nth-child(5)  { transform: rotate(0deg) translateY(10px); }
+  .title-main span:nth-child(6)  { transform: rotate(0deg) translateY(10px); }
+  .title-main span:nth-child(7)  { transform: rotate(0deg) translateY(10px); }
+  .title-main span:nth-child(8)  { transform: rotate(1deg) translateY(9px); }
+  .title-main span:nth-child(9)  { transform: rotate(2deg) translateY(7px); }
+  .title-main span:nth-child(10) { transform: rotate(3deg) translateY(4px); }
+  .title-main span:nth-child(11) { transform: rotate(3.5deg) translateY(2px); }
+  .title-main span:nth-child(12) { transform: rotate(4deg) translateY(0px); }
+  .hero-sub {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 400; letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #cc3333;
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  .hero-cast {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px; color: rgba(255,255,255,0.4);
+    letter-spacing: 2px; text-transform: uppercase; margin-bottom: 36px;
+  }
+  .hero-cast strong { color: rgba(255,255,255,0.7); }
+  .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ===== BUTTONS ===== */
+  .btn-primary {
+    display: inline-block; padding: 16px 40px;
+    background: #8b0000; color: #fff;
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    border: 2px solid #8b0000; transition: all 0.25s ease;
+  }
+  .btn-primary:hover { background: #cc0000; border-color: #cc0000; color: #fff; box-shadow: 0 0 20px rgba(139,0,0,0.4); }
+  .btn-ghost {
+    display: inline-block; padding: 16px 40px;
+    border: 2px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7);
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; transition: all 0.25s ease;
+  }
+  .btn-ghost:hover { border-color: #4caf50; color: #4caf50; }
+
+  /* ===== SECTIONS ===== */
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+  .section-label {
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 600;
+    letter-spacing: 5px; text-transform: uppercase;
+    color: #8b0000; margin-bottom: 40px; text-align: center;
+  }
+
+  /* ===== PRESS ===== */
+  .press {
+    border-top: 3px solid #8b0000;
+    background: linear-gradient(180deg, #100808 0%, #0a0806 100%);
+  }
+  .featured-quote { text-align: center; margin-bottom: 48px; padding: 0 24px; }
+  .featured-quote blockquote {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: #e8d5c4; line-height: 1.5; margin-bottom: 16px;
+    font-weight: 300; font-style: italic;
+  }
+  .featured-quote cite {
+    font-family: 'Oswald', sans-serif; font-size: 14px; font-style: normal;
+    color: #888; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .press-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px; margin-bottom: 32px;
+  }
+  .press-card {
+    padding: 28px; background: rgba(139, 0, 0, 0.06);
+    border: 1px solid rgba(139, 0, 0, 0.15);
+  }
+  .press-card blockquote {
+    font-size: 15px; color: #ccc; font-style: italic;
+    font-weight: 300; line-height: 1.7; margin-bottom: 12px;
+  }
+  .press-card cite { font-size: 11px; font-style: normal; color: #666; letter-spacing: 0.5px; }
+  .press-card .source {
+    color: #8b0000; font-family: 'Oswald', sans-serif;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 10px;
+  }
+  .press-card .rating {
+    display: inline-block; margin-left: 8px;
+    padding: 1px 8px; border: 1px solid rgba(139,0,0,0.3);
+    font-size: 10px; color: #cc3333;
+  }
+  .press-links {
+    display: flex; gap: 24px; justify-content: center;
+    padding-top: 24px; border-top: 1px solid rgba(139, 0, 0, 0.15);
+  }
+  .press-links a {
+    font-family: 'Oswald', sans-serif; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; color: #555; font-weight: 500;
+  }
+  .press-links a:hover { color: #cc0000; }
+
+  /* ===== TRAILER ===== */
+  .trailer { border-top: 1px solid rgba(139, 0, 0, 0.2); }
+  .trailer-embed {
+    position: relative; padding-bottom: 56.25%; height: 0;
+    background: #000; max-width: 900px; margin: 0 auto;
+    border: 2px solid rgba(139, 0, 0, 0.3);
+  }
+  .trailer-embed iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+  }
+
+  /* ===== STORY ===== */
+  .story { border-top: 1px solid rgba(139, 0, 0, 0.2); }
+  .story-layout { display: flex; gap: 64px; align-items: flex-start; }
+  .story-text { flex: 1; }
+  .synopsis { font-size: 17px; color: #bbb; line-height: 1.8; max-width: 600px; margin-bottom: 32px; }
+  .director-credit {
+    font-family: 'Oswald', sans-serif; font-size: 15px;
+    color: #666; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .director-credit strong { color: #8b0000; }
+  .story-poster { flex-shrink: 0; }
+  .story-poster img {
+    width: 300px; height: auto;
+    box-shadow: 0 16px 48px rgba(139, 0, 0, 0.2), 0 0 80px rgba(139, 0, 0, 0.1);
+    border: 2px solid rgba(139, 0, 0, 0.2);
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery {
+    border-top: 1px solid rgba(139, 0, 0, 0.2);
+    background: #0d0908;
+  }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .gallery-item { overflow: hidden; aspect-ratio: 16/9; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .gallery-item:hover img { transform: scale(1.05); }
+
+  /* ===== CAST ===== */
+  .cast { border-top: 1px solid rgba(139, 0, 0, 0.2); }
+  .cast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 28px; }
+  .cast-name {
+    font-family: 'Oswald', sans-serif; font-size: 16px;
+    font-weight: 600; color: #e5e5e5; margin-bottom: 2px;
+  }
+  .cast-role { font-size: 13px; color: #888; font-style: italic; }
+  .cast-known { font-size: 11px; color: #8b0000; margin-top: 3px; letter-spacing: 0.5px; font-weight: 500; }
+  .filmmakers { display: flex; gap: 48px; margin-bottom: 24px; flex-wrap: wrap; }
+  .filmmaker-card .cast-name { font-size: 20px; }
+  .cast-divider { width: 60px; height: 2px; background: #8b0000; margin-bottom: 32px; }
+
+  /* ===== WHERE TO WATCH ===== */
+  .where {
+    border-top: 3px solid #8b0000;
+    background: linear-gradient(180deg, #100808 0%, #0a0806 100%);
+    text-align: center;
+  }
+  .where-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700;
+    text-transform: uppercase; color: #fff; margin-bottom: 16px;
+  }
+  .where-body { font-size: 16px; color: #999; margin-bottom: 36px; line-height: 1.7; }
+  .where-body a { color: #8b0000; font-weight: 500; }
+  .platform-row {
+    display: flex; justify-content: center; gap: 8px;
+    flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .platform-badge {
+    font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 10px 20px; border: 1px solid rgba(139, 0, 0, 0.3);
+    color: #ccc; background: rgba(139, 0, 0, 0.05);
+    transition: all 0.2s;
+  }
+  .platform-badge:hover { border-color: #8b0000; color: #fff; background: rgba(139, 0, 0, 0.15); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 48px 24px; border-top: 2px solid #8b0000;
+    text-align: center; background: #080604;
+  }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-dist {
+    font-family: 'Oswald', sans-serif; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 16px;
+  }
+  .footer-dist a { color: #888; }
+  .footer-dist a:hover { color: #8b0000; }
+  .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 24px; }
+  .footer-links a {
+    font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+    color: #444; font-weight: 500;
+  }
+  .footer-links a:hover { color: #cc0000; }
+  .copyright { font-size: 11px; color: #333; letter-spacing: 0.5px; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .title-main { font-size: clamp(3rem, 12vw, 5rem); }
+    .hero-meta { flex-wrap: wrap; justify-content: center; }
+    .press-grid { grid-template-columns: 1fr; }
+    .story-layout { flex-direction: column; }
+    .story-poster { display: none; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .filmmakers { gap: 24px; }
+    .nav-links { gap: 16px; }
+  }
+</style>

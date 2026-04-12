@@ -1,0 +1,1108 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const heroTrailer = 'https://www.youtube.com/embed/tSI3klFR1FI?autoplay=1&mute=1&controls=0&loop=1&playlist=tSI3klFR1FI&showinfo=0&rel=0&modestbranding=1';
+const heroTrailerPoster = `${base}/images/raptus-poster.jpg`;
+
+const films = [
+  {
+    num: '01',
+    title: 'Raptus',
+    year: 2025,
+    genre: 'Sci-Fi Thriller / Dark Comedy',
+    role: 'Writer / Director',
+    roleLine: 'Ksenia Solo. Apple TV worldwide. The New York Times.',
+    logline: 'After a brutal assault, Sarah enters an experimental android-therapy program. Her new companion begins to blur care with control.',
+    proved: 'The first film with a recognizable cast, international distribution, and real budget on the line. Ksenia Solo brought a performance that required trust between actor and director. Nolan Gerard Funk embodied the design perfectly. Apple TV worldwide. German theatrical. The machine worked at every level.',
+    capability: 'Studio-level production with name cast, international distribution, thematic ambition within genre constraints.',
+    cast: 'Ksenia Solo, Nolan Gerard Funk, Christina Cox',
+    poster: `${base}/images/raptus-poster.jpg`,
+    stills: [
+      `${base}/images/stills/raptus-closeup.jpg`,
+      `${base}/images/stills/piano-room.jpg`,
+      `${base}/images/stills/sarah-stun-gun.jpg`,
+    ],
+    projectUrl: `${base}/raptus`,
+    press: [
+      {
+        quote: 'Lurid and darkly funny. A delirious, uncomfortable back and forth that recalls the unearthly soapiness of Malignant.',
+        source: 'The New York Times',
+        context: 'Five Horror Movies to Stream',
+        url: 'https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share',
+      },
+      {
+        quote: 'The last 20 minutes are white-knuckle-thrilling in the best way possible.',
+        source: 'Film Threat',
+        context: '8.5/10',
+        url: null,
+      },
+      {
+        quote: 'Solo and Funk\'s performances are both excellent.',
+        source: 'Film Blitz',
+        context: null,
+        url: null,
+      },
+    ],
+  },
+  {
+    num: '02',
+    title: 'The Christmas Spirit',
+    year: 2022,
+    genre: 'Comedy / Thriller / Horror',
+    role: 'Writer / Director / Editor',
+    roleLine: 'An original take on the Christmas movie. Apple TV.',
+    logline: 'A lone man with the Christmas Spirit trapped in his head must kidnap a teenage girl in order to save Christmas.',
+    proved: 'A good director creates his own genre. This is what happens when you take a Christmas movie and refuse to follow any of the usual formulas. Original story, original tone, original rules. The audience either gets it or they don\'t. They got it.',
+    capability: 'Genre invention. Proof that the voice isn\'t limited to one lane.',
+    cast: 'Zion Forrest Lee, Nicolas Grimes, Christian Potenza',
+    poster: `${base}/images/tcs-poster.jpg`,
+    stills: [
+      `${base}/images/stills-tcs/still-02.jpg`,
+      `${base}/images/stills-tcs/still-01.jpg`,
+      `${base}/images/stills-tcs/still-04.jpg`,
+    ],
+    projectUrl: `${base}/tcs`,
+    press: [
+      {
+        quote: 'The anti-Christmas story with over-the-top violent situations.',
+        source: 'Film Threat',
+        context: null,
+        url: null,
+      },
+      {
+        quote: 'The best Christmas horror comedy since Rare Exports. A truly original work.',
+        source: 'Letterboxd',
+        context: null,
+        url: null,
+      },
+    ],
+  },
+  {
+    num: '03',
+    title: 'Cherrypicker',
+    aka: 'Ankle Biters',
+    year: 2021,
+    genre: 'Horror Comedy',
+    role: 'Writer / Director',
+    roleLine: 'Ensemble cast. Colin Mochrie. Distributed.',
+    logline: 'A group of friends discovers that the babysitters they hired have a much darker agenda.',
+    proved: 'The leap from solo filmmaker to ensemble director. Colin Mochrie required a director who could hold comedic timing and horror tension in the same scene. Comedy earns trust. Horror spends it. Audiences loved it.',
+    capability: 'Ensemble direction, tone control across genres, commercial distribution.',
+    cast: 'Colin Mochrie, Zion Forrest Lee, Marianthi Evans',
+    poster: `${base}/images/cherrypicker-poster.jpg`,
+    stills: [
+      `${base}/images/stills-cherrypicker/frame-01.jpg`,
+      `${base}/images/stills-cherrypicker/frame-10.jpg`,
+      `${base}/images/stills-cherrypicker/frame-09.jpg`,
+    ],
+    projectUrl: `${base}/cherrypicker`,
+    press: [
+      {
+        quote: 'A pitch black comedy with serious consequences. I love the way this film really has a no fucks given attitude.',
+        source: 'MLMillerWrites',
+        context: null,
+        url: null,
+      },
+    ],
+  },
+  {
+    num: '04',
+    title: 'Salvation',
+    year: 2019,
+    genre: 'Thriller',
+    role: 'Writer / Director / DP / Editor / Production Designer',
+    roleLine: 'Wrote. Directed. Shot. Edited. Designed.',
+    logline: 'An apocalypse survivor in search of his lost daughter is drawn into a deadly creation myth.',
+    proved: 'Punk rock filmmaking. Made with a crew of director, soundman, and actors. Shot in Detroit, Canada, and Iraq where footage of a naked man climbing a ziggurat was smuggled out of a warzone under threat of a ten year prison sentence. A demonstration of fearless storytelling and flat out commitment. Winner — Best Film, Best Cinematography, Best Production Design — Hollywood North Film Awards.',
+    capability: 'Total creative self-sufficiency. Can build a film from nothing.',
+    cast: 'Julian Richings, Zion Forrest Lee',
+    poster: `${base}/images/salvation-poster.jpg`,
+    stills: [
+      `${base}/images/stills-salvation/still-01.jpg`,
+      `${base}/images/stills-salvation/still-02.jpg`,
+      `${base}/images/stills-salvation/still-03.jpg`,
+    ],
+    projectUrl: `${base}/salvation`,
+    press: [
+      {
+        quote: 'Excellent film!',
+        source: 'Bruce La Bruce',
+        context: null,
+        url: null,
+      },
+    ],
+  },
+];
+
+const fertility = {
+  title: 'FERTILITY',
+  year: 'In Development',
+  genre: 'Horror',
+  tagline: 'Your bloodline is not your own.',
+  logline: 'A lawyer and his wife hire a fertility clinic to carry their child. The clinic is a front for a centuries-old breeding program. The surrogate is his mother. The child was never theirs to choose.',
+  comps: ['Hereditary', 'Rosemary\'s Baby', 'The Substance'],
+  thesis: 'What you think you chose was designed before you were born.',
+  scriptStatus: 'Script complete. Circulating.',
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bennet De Brabandere — Writer/Director</title>
+  <meta name="description" content="Five films. Each one bigger, bolder, more unpredictable than the last. A vision at work. Writer/Director portfolio." />
+  <meta property="og:title" content="Bennet De Brabandere — Writer/Director" />
+  <meta property="og:description" content="Genre filmmaker with an ascending track record. Raptus (Apple TV, NYT-reviewed). FERTILITY in development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Horizon Line Film Company" />
+  <meta property="og:image" content={`${base}/images/raptus-poster.jpg`} />
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bennet De Brabandere",
+    "jobTitle": "Writer/Director",
+    "url": "https://horizonlinefilms.com/director",
+    "sameAs": ["https://www.imdb.com/name/nm3185193/"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Horizon Line Film Company",
+      "url": "https://horizonlinefilms.com"
+    }
+  })} />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo-placeholder"></div>
+      <div class="nav-links">
+        <a href={`${base}/raptus`}>Raptus</a>
+        <a href={`${base}/tcs`}>The Christmas Spirit</a>
+        <a href={`${base}/cherrypicker`}>Cherrypicker</a>
+        <a href={`${base}/salvation`}>Salvation</a>
+        <a href={`${base}/director`} class="active">Director</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO — Video-led -->
+    <section class="hero">
+      <div class="hero-video-wrap">
+        <iframe
+          src={heroTrailer}
+          title="Raptus Trailer"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          loading="lazy"
+          class="hero-video"
+        ></iframe>
+        <div class="hero-video-overlay"></div>
+      </div>
+      <div class="hero-content fade-in">
+        <p class="hero-label">Writer / Director</p>
+        <h1 class="hero-name">Bennet De Brabandere</h1>
+        <p class="hero-sub">Five films. Each one bigger, bolder, more unpredictable than the last. A vision at work.</p>
+        <div class="hero-ctas">
+          <a href="#the-arc" class="hero-btn hero-btn-primary">The Work &darr;</a>
+          <a href="mailto:bdb@merc3.com?subject=FERTILITY%20—%20Script%20Request" class="hero-btn hero-btn-secondary">Request Script &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NYT BANNER -->
+    <section class="nyt-banner fade-in">
+      <div class="section-inner">
+        <p class="nyt-label">The New York Times</p>
+        <blockquote class="nyt-quote">"Lurid and darkly funny. A delirious, uncomfortable back and forth that recalls the unearthly soapiness of <em>Malignant</em>."</blockquote>
+        <p class="nyt-context">Five Horror Movies to Stream</p>
+        <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <section class="credibility-strip fade-in">
+      <div class="section-inner">
+        <div class="cred-line cred-platforms">
+          <span>Apple TV Worldwide</span>
+          <span class="cred-sep">/</span>
+          <span>German Theatrical</span>
+          <span class="cred-sep">/</span>
+          <span>Tubi</span>
+        </div>
+        <div class="cred-line cred-cast">
+          <span>Ksenia Solo</span>
+          <span class="cred-sep">/</span>
+          <span>Colin Mochrie</span>
+          <span class="cred-sep">/</span>
+          <span>Julian Richings</span>
+          <span class="cred-sep">/</span>
+          <span>Nolan Gerard Funk</span>
+          <span class="cred-sep">/</span>
+          <span>Christina Cox</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ARC -->
+    <section class="arc" id="the-arc">
+      <div class="section-inner">
+        <h2 class="section-heading fade-in">The Arc</h2>
+        <p class="arc-intro fade-in">Most directors tell you about their vision. Here are five films that show it.</p>
+
+        <div class="timeline">
+          {films.map((film, i) => (
+            <div class="film-card fade-in">
+              <div class="film-card-inner">
+                <div class="film-poster-col">
+                  <a href={film.projectUrl} class="film-poster-link">
+                    <img src={film.poster} alt={`${film.title} poster`} class="film-poster" loading="lazy" />
+                    <div class="film-poster-overlay">
+                      <span>View Project &rarr;</span>
+                    </div>
+                  </a>
+                  {film.stills && film.stills.length > 0 && (
+                    <div class="film-stills-strip">
+                      {film.stills.map(still => (
+                        <img src={still} alt={`${film.title} production still`} class="film-still-thumb" loading="lazy" />
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div class="film-content-col">
+                  <div class="film-header">
+                    <span class="film-num">{film.num}</span>
+                    <div>
+                      <h3 class="film-title">
+                        <a href={film.projectUrl}>{film.title}</a>
+                        <span class="film-year">({film.year})</span>
+                      </h3>
+                      {film.aka && <p class="film-aka">a.k.a. {film.aka}</p>}
+                    </div>
+                  </div>
+                  <p class="film-genre">{film.genre}</p>
+                  <p class="film-role-line">{film.roleLine}</p>
+                  <p class="film-cast">{film.cast}</p>
+                  <p class="film-proved">{film.proved}</p>
+                  <p class="film-capability">{film.capability}</p>
+                  {film.press.length > 0 && (
+                    <div class="film-press">
+                      {film.press.map(p => (
+                        <div class="press-quote">
+                          <blockquote>"{p.quote}"</blockquote>
+                          <cite>
+                            {p.url ? <a href={p.url} target="_blank" rel="noopener">{p.source}</a> : <span>{p.source}</span>}
+                            {p.context && <span class="press-context"> / {p.context}</span>}
+                          </cite>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <a href={film.projectUrl} class="film-watch">View Project &rarr;</a>
+                </div>
+              </div>
+              {i < films.length - 1 && <div class="timeline-connector"></div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FERTILITY TEASER -->
+    <section class="fertility fade-in">
+      <div class="section-inner">
+        <div class="fertility-inner">
+          <p class="fertility-label">Everything above builds to this.</p>
+          <h2 class="fertility-title">{fertility.title}</h2>
+          <p class="fertility-tagline">{fertility.tagline}</p>
+          <div class="fertility-rule"></div>
+          <p class="fertility-logline">{fertility.logline}</p>
+          <div class="fertility-comps">
+            {fertility.comps.map((c, i) => (
+              <Fragment>
+                <span class="comp">{c}</span>
+                {i < fertility.comps.length - 1 && <span class="comp-sep">/</span>}
+              </Fragment>
+            ))}
+          </div>
+          <p class="fertility-thesis">"{fertility.thesis}"</p>
+          <p class="fertility-status">{fertility.scriptStatus}</p>
+          <a href="mailto:bdb@merc3.com?subject=FERTILITY" class="fertility-cta">Request Script / Meeting &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIRECTOR VOICE -->
+    <section class="voice fade-in">
+      <div class="section-inner">
+        <h2 class="section-heading">In His Own Words</h2>
+        <div class="voice-text">
+          <p>A terrible and grandiose masterpiece of horror. That's the vision of FERTILITY. I'm ready to make it. Here's how we got here.</p>
+          <p>I started in a room by myself. Writing, directing, shooting, editing, designing the sets. Salvation was a film made with no crew, no budget, and no excuse not to make it. You learn fast when every department is your problem.</p>
+          <p>Cherrypicker proved I could work with actors. Colin Mochrie taught me something on that set: comedy and horror live in the same room. The audience laughing is the audience with their guard down. That's when you hit them.</p>
+          <p>The Christmas Spirit proved something else: a good director can create his own genre. I took a Christmas movie and refused to follow any of the usual formulas. Original story, original tone, original rules. If you can bend a genre to your voice instead of bending your voice to a genre, you're not a hired gun. You're a filmmaker.</p>
+          <p>Raptus was the machine at work. Apple TV worldwide, German theatrical, international distribution, real money on the line. Sci-fi on the surface. Domestic horror underneath.</p>
+          <p>Every film has been bigger, darker, more technically demanding than the last. Every film has delivered.</p>
+          <p>FERTILITY is the most ambitious thing I've written. Intelligent. Monstrous. Wide audience potential. 50% financed. Cast-ready script.</p>
+          <p>Interested? <a href="mailto:bdb@merc3.com?subject=FERTILITY" class="voice-cta">Let's talk</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact fade-in" id="contact">
+      <div class="section-inner">
+        <div class="contact-inner">
+          <h2 class="section-heading">Contact</h2>
+          <p class="contact-company">In association with Horizon Line Film Company</p>
+          <a href="mailto:bdb@merc3.com" class="contact-email">bdb@merc3.com</a>
+          <div class="contact-inquiries">
+            <span>Script Requests</span>
+            <span class="contact-sep">/</span>
+            <span>General Meetings</span>
+            <span class="contact-sep">/</span>
+            <span>Press Inquiries</span>
+          </div>
+          <div class="contact-links">
+            <a href="https://www.imdb.com/name/nm3185193/" target="_blank" rel="noopener">IMDb</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; {new Date().getFullYear()} Bennet De Brabandere. In association with Horizon Line Film Company.</p>
+  </footer>
+
+</body>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #080808;
+    color: #c8c8c8;
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+  body {
+    min-height: 100vh;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { color: inherit; text-decoration: none; transition: color 0.3s; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  /* Fade-in on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(8, 8, 8, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(139, 26, 26, 0.1);
+  }
+  .nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+  }
+  .nav-logo img {
+    height: 24px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  .nav-logo:hover img { opacity: 1; }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+  }
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: #8b1a1a; }
+
+  /* ===== HERO (video-led) ===== */
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.15);
+  }
+  .hero-video-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78vh; /* 16:9 */
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    border: none;
+    pointer-events: none;
+  }
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 8, 8, 0.5) 0%,
+      rgba(8, 8, 8, 0.7) 50%,
+      rgba(8, 8, 8, 0.9) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 120px 24px 80px;
+  }
+  .hero-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    margin-bottom: 24px;
+  }
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 9vw, 96px);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.05;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
+  }
+  .hero-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: #ccc;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.8;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-btn {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    transition: all 0.3s;
+  }
+  .hero-btn-primary {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .hero-btn-primary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .hero-btn-secondary {
+    color: #8b1a1a;
+    border: 1px solid rgba(139, 26, 26, 0.4);
+  }
+  .hero-btn-secondary:hover {
+    background: rgba(139, 26, 26, 0.1);
+    border-color: #8b1a1a;
+    color: #b22222;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video-wrap { display: none; }
+    .hero { background: #080808; }
+  }
+
+  /* ===== NYT BANNER ===== */
+  .nyt-banner {
+    padding: 72px 24px;
+    background: #0c0c0c;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.15);
+    text-align: center;
+  }
+  .nyt-label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    margin-bottom: 24px;
+  }
+  .nyt-quote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 400;
+    font-style: italic;
+    color: #e0e0e0;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    border: none;
+    padding: 0;
+  }
+  .nyt-context {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .nyt-link {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.3);
+    padding-bottom: 2px;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .nyt-link:hover {
+    color: #b22222;
+    border-color: #b22222;
+  }
+
+  /* ===== CREDIBILITY STRIP ===== */
+  .credibility-strip {
+    padding: 28px 24px;
+    background: #0a0a0a;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.1);
+    text-align: center;
+  }
+  .cred-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .cred-platforms {
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .cred-cast {
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+  }
+  .cred-sep { color: rgba(139, 26, 26, 0.3); }
+
+  /* ===== THE ARC ===== */
+  .arc {
+    padding: 100px 0;
+  }
+  .arc-intro {
+    font-size: 15px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .film-card { margin-bottom: 0; }
+  .film-card-inner {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .film-poster-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+  .film-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .film-poster-link:hover .film-poster {
+    transform: scale(1.03);
+  }
+  .film-poster-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 8, 8, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .film-poster-overlay span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .film-poster-link:hover .film-poster-overlay { opacity: 1; }
+
+  .film-stills-strip {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .film-still-thumb {
+    height: 56px;
+    width: auto;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    filter: grayscale(0.5);
+    transition: filter 0.3s;
+    flex: 1;
+    min-width: 0;
+  }
+  .film-still-thumb:hover { filter: grayscale(0); }
+
+  .film-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .film-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: rgba(139, 26, 26, 0.4);
+    line-height: 1;
+  }
+  .film-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .film-title a {
+    color: #fff;
+    transition: color 0.3s;
+  }
+  .film-title a:hover { color: #8b1a1a; }
+  .film-year {
+    font-weight: 400;
+    font-size: 18px;
+    color: #555;
+  }
+  .film-aka {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+  }
+  .film-genre {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    margin-bottom: 6px;
+  }
+  .film-role-line {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .film-cast {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 16px;
+  }
+  .film-proved {
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+  .film-capability {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .film-press {
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(139, 26, 26, 0.3);
+  }
+  .press-quote {
+    margin-bottom: 12px;
+  }
+  .press-quote blockquote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: #bbb;
+    line-height: 1.7;
+    border: none;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+  .press-quote cite {
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: #555;
+  }
+  .press-quote cite a {
+    color: #8b1a1a;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.2);
+  }
+  .press-quote cite a:hover {
+    color: #b22222;
+  }
+  .press-context { color: #444; }
+
+  .film-watch {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    transition: color 0.3s;
+  }
+  .film-watch:hover { color: #b22222; }
+
+  .timeline-connector {
+    width: 1px;
+    height: 64px;
+    background: linear-gradient(to bottom, rgba(139, 26, 26, 0.3), transparent);
+    margin: 32px auto;
+  }
+
+  /* ===== FERTILITY ===== */
+  .fertility {
+    padding: 100px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(139, 26, 26, 0.15);
+    border-bottom: 1px solid rgba(139, 26, 26, 0.15);
+  }
+  .fertility-inner {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .fertility-label {
+    font-size: 13px;
+    font-weight: 300;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 32px;
+  }
+  .fertility-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 700;
+    color: #8b1a1a;
+    letter-spacing: 6px;
+    margin-bottom: 16px;
+  }
+  .fertility-tagline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: #999;
+    margin-bottom: 32px;
+  }
+  .fertility-rule {
+    width: 40px;
+    height: 1px;
+    background: #8b1a1a;
+    margin: 0 auto 32px;
+  }
+  .fertility-logline {
+    font-size: 16px;
+    font-weight: 300;
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 32px;
+  }
+  .fertility-comps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .comp {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+  }
+  .comp-sep { color: rgba(139, 26, 26, 0.4); }
+  .fertility-thesis {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 16px;
+  }
+  .fertility-status {
+    font-size: 12px;
+    color: #444;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+  }
+  .fertility-cta {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #8b1a1a;
+    padding: 14px 32px;
+    border: 1px solid rgba(139, 26, 26, 0.4);
+    transition: all 0.3s;
+  }
+  .fertility-cta:hover {
+    background: rgba(139, 26, 26, 0.1);
+    border-color: #8b1a1a;
+    color: #b22222;
+  }
+
+  /* ===== VOICE ===== */
+  .voice {
+    padding: 100px 0;
+  }
+  .voice-text {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .voice-text p {
+    font-size: 15px;
+    font-weight: 300;
+    color: #999;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+  .voice-text p:first-child {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ccc;
+    line-height: 1.7;
+  }
+  .voice-text p:last-child {
+    font-weight: 400;
+    color: #bbb;
+  }
+  .voice-cta {
+    color: #8b1a1a;
+    border-bottom: 1px solid rgba(139, 26, 26, 0.4);
+    padding-bottom: 1px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .voice-cta:hover {
+    color: #b22222;
+    border-color: #b22222;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    padding: 80px 0;
+    border-top: 1px solid rgba(139, 26, 26, 0.15);
+  }
+  .contact-inner { text-align: center; }
+  .contact-company {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  .contact-inquiries {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  .contact-email {
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #8b1a1a;
+    margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+  .contact-email:hover { color: #b22222; }
+  .contact-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    color: #444;
+    letter-spacing: 1px;
+  }
+  .contact-links a {
+    color: #666;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.3s;
+  }
+  .contact-links a:hover { color: #8b1a1a; }
+  .contact-sep { color: #333; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 40px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center;
+    font-size: 11px;
+    color: #333;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .film-card-inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .film-poster-link {
+      max-width: 200px;
+    }
+    .film-stills-strip {
+      max-width: 200px;
+    }
+    .hero { min-height: 70vh; }
+    .hero-content { padding: 100px 24px 60px; }
+    .hero-video { display: none; }
+    .hero-video-overlay { display: none; }
+    .hero {
+      background: url('/images/raptus-poster.jpg') center/cover no-repeat #080808;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 8, 8, 0.75);
+    }
+    .arc { padding: 80px 0; }
+    .fertility { padding: 80px 0; }
+    .voice { padding: 80px 0; }
+    .nyt-banner { padding: 56px 24px; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 10px; letter-spacing: 1.5px; }
+    .cred-line { font-size: 10px; letter-spacing: 1.5px; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 480px) {
+    .film-poster-link { max-width: 160px; }
+    .film-stills-strip { max-width: 160px; }
+    .fertility-comps { flex-wrap: wrap; }
+    .hero-name { letter-spacing: 1px; }
+  }
+</style>
+
+<script>
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</html>
