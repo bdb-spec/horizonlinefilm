@@ -236,21 +236,12 @@ const fertility = {
       <div class="hero-content fade-in">
         <p class="hero-label">Writer / Director</p>
         <h1 class="hero-name">Bennet De Brabandere</h1>
-        <p class="hero-sub">Five films. Each bigger, bolder, more unpredictable than the last.</p>
-        <div class="hero-ctas">
-          <a href="#the-arc" class="hero-btn hero-btn-primary">The Work &darr;</a>
-          <a href="mailto:bdb@merc3.com?subject=FERTILITY%20—%20Script%20Request" class="hero-btn hero-btn-secondary">Request Script &rarr;</a>
+        <div class="hero-nyt">
+          <p class="nyt-label">The New York Times</p>
+          <blockquote class="nyt-quote">"The latest oddity from the writer-director Bennet De Brabandere, the director of the twisted evil kid horror-comedy <em>Ankle Biters</em>."</blockquote>
+          <p class="nyt-context">Five Horror Movies to Stream</p>
+          <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
         </div>
-      </div>
-    </section>
-
-    <!-- NYT BANNER -->
-    <section class="nyt-banner fade-in">
-      <div class="section-inner">
-        <p class="nyt-label">The New York Times</p>
-        <blockquote class="nyt-quote">"The latest oddity from the writer-director Bennet De Brabandere, the director of the twisted evil kid horror-comedy <em>Ankle Biters</em>."</blockquote>
-        <p class="nyt-context">Five Horror Movies to Stream</p>
-        <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
       </div>
     </section>
 
@@ -603,6 +594,17 @@ const fertility = {
   @media (prefers-reduced-motion: reduce) {
     .hero-video-wrap { display: none; }
     .hero { background: #080808; }
+  }
+
+  /* ===== HERO NYT FEATURE ===== */
+  .hero-nyt {
+    margin-top: 32px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-nyt .nyt-quote {
+    font-size: clamp(16px, 2.4vw, 22px);
   }
 
   /* ===== NYT BANNER ===== */
