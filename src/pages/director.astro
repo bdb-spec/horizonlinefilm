@@ -237,10 +237,9 @@ const fertility = {
         <p class="hero-label">Writer / Director</p>
         <h1 class="hero-name">Bennet De Brabandere</h1>
         <div class="hero-nyt">
-          <p class="nyt-label">The New York Times</p>
           <blockquote class="nyt-quote">"The latest oddity from the writer-director Bennet De Brabandere, the director of the twisted evil kid horror-comedy <em>Ankle Biters</em>."</blockquote>
+          <p class="nyt-label nyt-label-below">The New York Times</p>
           <p class="nyt-context">Five Horror Movies to Stream</p>
-          <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
         </div>
       </div>
     </section>
@@ -256,6 +255,9 @@ const fertility = {
           <span>Amazon Prime</span>
           <span class="cred-sep">/</span>
           <span>Tubi</span>
+        </div>
+        <div class="cred-nyt-link">
+          <a href="https://www.nytimes.com/2026/02/27/movies/horror-movies-streaming.html?unlocked_article_code=1.RFA.y6av.R5snUFJyfeOV&smid=url-share" target="_blank" rel="noopener" class="nyt-link">Read in The New York Times &rarr;</a>
         </div>
       </div>
     </section>
@@ -605,6 +607,15 @@ const fertility = {
   }
   .hero-nyt .nyt-quote {
     font-size: clamp(16px, 2.4vw, 22px);
+    margin-bottom: 24px;
+  }
+  .nyt-label-below {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  .cred-nyt-link {
+    margin-top: 20px;
+    text-align: center;
   }
 
   /* ===== NYT BANNER ===== */
